@@ -1,0 +1,11 @@
+type: Floor
+variants: 6
+hasColor: true
+mapColor: 465b5a
+useColor: true
+allowCorePlacement: false
+placeablePlayer: false
+placeableOn: false
+status: in-the-woods
+statusDuration: 15
+walkSound: leaves-rustling

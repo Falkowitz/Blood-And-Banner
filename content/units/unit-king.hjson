@@ -1,0 +1,77 @@
+type: flying
+coreUnitDock: true
+isEnemy: false
+targetPriority: -3
+flying: true
+health: 100
+lowAltitude: true
+shadowElevation: 0
+shadowElevationScl: 0
+hitSize: 4
+speed: 3
+drag: 0.05
+drawCell: true
+accel: 0.05
+engineSize: 0
+targetGround: false
+targetAir: false
+buildBeamOffset: 0
+drawBuildBeam: false
+rotateSpeed: 10
+buildSpeed: 1
+buildRange: 400000
+mineSpeed: 0
+mineTier: 1
+itemCapacity: 0
+targetable: false
+hittable: false
+payloadCapacity: 0
+pickupUnits: false
+outlines: false
+fogRadius: 0
+createScorch: false
+drawMinimap: false
+immunities: [
+bnb-vulnerable
+bnb-slowness25
+bnb-slowness30
+bnb-slowness35
+bnb-slowness40
+bnb-slowness45
+bnb-slowness50
+bnb-recovery0.8
+bnb-recovery1
+bnb-recovery1.2
+bnb-recovery1.5
+]
+lightRadius: 0
+
+abilities: 
+[
+	{
+	type: StatusFieldAbility
+	effect: none
+	reload: 1
+	effectY: 0
+	effectX: 0
+	parentizeEffects: true
+	activeEffect: {
+		cone: 0
+		followParent: true
+		rotWithParent: false
+		useRotation: false
+		particles: 1
+		lifetime: 3
+		randLength: false
+		length: 0
+		region: bnb-unit-king-full
+		sizeFrom: 4
+		sizeTo: 4
+		spin: 0
+		lightScl: 0
+		lightOpacity: 0
+		lightColor: ffffff00
+		layer: 95.2
+		}
+	}
+]

@@ -1,0 +1,13 @@
+type: Wall
+health: 250
+size: 1
+rotate: true
+category: defense
+fogRadius: 1
+buildVisibility: editorOnly
+placeSound: block-place
+breakSound: wooden-building-destroy
+destroySound: wooden-building-destroy
+squareSprite: false
+drawTeamOverlay: false
+variants: 3

@@ -1,0 +1,6 @@
+healthMultiplier: 0.5
+speedMultiplier: 0.75
+damageMultiplier: 0.9
+color: ffffff
+outline: false
+show: true

@@ -1,0 +1,10 @@
+type: Floor
+variants: 16
+supportsOverlay: true
+hasColor: true
+mapColor: a0b78d
+useColor: true
+allowCorePlacement: false
+placeablePlayer: false
+placeableOn: false
+walkSound: walk-on-grass

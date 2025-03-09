@@ -1,0 +1,8 @@
+name: bnb
+displayName: Blood & Banner
+description: Medieval strategy mod where you control unit battalions
+author: Fitz
+minGameVersion: 136
+version: 0.1
+hideBrowser: true
+//dependencies: ["multi-crafter"]

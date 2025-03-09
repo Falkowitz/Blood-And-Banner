@@ -1,0 +1,15 @@
+type: Wall
+size: 1
+health: 250
+solid: true
+destructible: true
+breakable: false
+drawTeamOverlay: false
+hasShadow: false
+variants: 55
+drawCracks: false
+underBullets: true
+createRubble: false
+destroySound: foliage-rip
+breakSound: foliage-rip
+buildVisibility: sandboxOnly

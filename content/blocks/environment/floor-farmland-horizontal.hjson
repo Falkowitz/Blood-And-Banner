@@ -1,0 +1,11 @@
+type: Floor
+variants: 0
+hasColor: true
+mapColor: 7f716d
+useColor: true
+allowCorePlacement: false
+placeablePlayer: false
+placeableOn: false
+status: on-fields
+statusDuration: 15
+walksound: walk-on-field

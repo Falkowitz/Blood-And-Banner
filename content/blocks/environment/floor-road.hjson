@@ -1,0 +1,12 @@
+type: Floor
+variants: 0
+supportsOverlay: true
+hasColor: true
+mapColor: c5beac
+useColor: true
+allowCorePlacement: false
+placeablePlayer: false
+placeableOn: false
+status: on-a-road
+statusDuration: 15
+walkSound: stepping-on-sand

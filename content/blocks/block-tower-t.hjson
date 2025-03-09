@@ -1,0 +1,13 @@
+type: Wall
+health: 12500
+size: 1
+rotate: true
+quickRotate: true
+category: defense
+fogRadius: 1
+buildVisibility: editorOnly
+placeSound: stone-building-destroyed
+breakSound: stone-building-destroyed
+destroySound: block-destroy
+squareSprite: false
+drawTeamOverlay: false

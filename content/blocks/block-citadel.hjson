@@ -1,0 +1,19 @@
+ type: CoreBlock
+health: 10000
+itemCapacity: 100
+size: 2
+unitCapModifier: 0
+unitType: unit-king
+category: effect
+fogRadius: 8
+hasItems: true
+customShadow: true
+solid: true
+alwaysUnlocked: true
+allowResupply: true
+placeSound: stone-building-destroyed
+breakSound: stone-building-destroyed
+destroySound: block-destroy
+thrusterLength: 0
+squareSprite: false
+buildVisibility: editorOnly

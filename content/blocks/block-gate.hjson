@@ -1,0 +1,13 @@
+type: Door
+health: 5000
+size: 1
+rotate: true
+category: defense
+fogRadius: 1
+buildVisibility: editorOnly
+placeSound: stone-building-destroyed
+breakSound: stone-building-destroyed
+destroySound: block-destroy
+squareSprite: false
+drawTeamOverlay: false
+doorSound: gate-open

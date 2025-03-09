@@ -1,0 +1,185 @@
+type: mech
+mechSideSway: 0
+mechFrontSway: 0
+strafePenalty: 0.7
+
+fogRadius: 8
+speed: 0.18
+range: 64
+maxRange: 64
+targetAir: false
+createScorch: false
+commands: [move]
+outlines: false
+lightRadius: 64
+deathExplosionEffect: none
+rotateSpeed: 2.5
+health: 1350
+armor: 0
+hitSize: 8
+groundLayer: 29
+healFlash: false
+deathSound: battalion-death
+rotateMoveFirst: true
+
+weapons:
+[
+	{
+	name: unit-bowmen-soldiers
+	mirror: false
+	reload: 136
+	x: 0
+	y: 0
+	shootX: 0
+	shootY: 0
+	shootSound: arrow1
+	soundPitchMin: 0.8
+	soundPitchMax: 1.2
+	shootStatus: slowness45
+	shootStatusDuration: 136
+	rotate: true
+	rotateSpeed: 2.5
+	recoil: 0.4
+	recoilPow: 1
+	recoilTime: 68
+	predictTarget: true
+	inaccuracy: 5
+	bullet:
+		{
+		type: ArtilleryBulletType
+		sprite: bnb-arrow-front
+		backSprite: bnb-arrow-back
+		frontColor: b0bac0
+		backColor: 90776a
+		shootEffect: none
+		smokeEffect: none
+		hitEffect: {
+			type: WaveEffect
+			lifetime: 15
+			followParent: false
+			sizeTo: 4
+			lightScl: 0
+			lightOpacity: 0
+			}
+		despawnEffect: none
+		range: 64
+		maxRange: 64
+		damage: 35
+		speed: 1
+		lifetime: 64
+		hitSound: arrow-hit
+		despawnSound: arrow-hit
+		hitShake: 0
+		despawnShake: 0
+		despawnHit: true
+		scaleLife: true
+		splashDamage: 35
+		splashDamageRadius: 8
+		width: 4
+		height: 4
+		shrinkX: 0
+		shrinkY: 1
+		scaleLife: true
+		trailColor: ffffffff
+		trailLength: 4
+		trailWidth: 0.2
+		trailSize: 0.2
+		trailEffect: none
+		lightRadius: 0
+		lightOpacity: 1
+		lightColor: ffffff
+		collidesTeam: true
+		}
+	}
+
+
+	{
+	name: none
+	x: 0
+	y: 0
+	shootX: 0
+	shootY: 0
+	mirror: false
+	display: false
+	minShootVelocity: 0.01
+	alwaysShooting: true
+	rotate: false
+	shootSound: march
+	reload: 120
+	bullet: {
+		type: BasicBulletType
+		shootEffect: none
+		smokeEffect: none
+		despawnEffect: none
+		hitEffect: none
+		collides: false
+		hittable: false
+		reflectable: false
+		absorbable: false
+		width: 0
+		height: 0
+		instantDisappear: true
+		damage: 0
+		splashDamage: 0
+		shrinkX: 0
+		shrinkY: 0
+		lightRadius: 0
+		lightOpacity: 0
+		lightColor: ffffff
+		}
+	}
+
+]
+
+abilities: 
+[
+	{
+	type: SpawnDeathAbility
+	unit: dead
+	spread: 0.1
+	display: false
+	}
+
+	{
+	type: StatusFieldAbility
+	effect: none
+	reload: 1
+	effectY: 0
+	effectX: 0
+	parentizeEffects: true
+	activeEffect: {
+		cone: 0
+		followParent: true
+		rotWithParent: false
+		useRotation: false
+		particles: 1
+		lifetime: 3
+		randLength: false
+		length: 0
+		region: bnb-unit-bowmen-full
+		sizeFrom: 4
+		sizeTo: 4
+		spin: 0
+		lightScl: 0
+		lightOpacity: 0
+		lightColor: ffffff00
+		layer: 95.1
+		}
+	}
+
+	{
+	type: StatusFieldAbility
+	effect: recovery0.8
+	duration: 600
+	reload: 600
+	range: 0
+	applyEffect: none
+	activeEffect: none
+	}
+]
+
+immunities: 
+[
+bnb-vulnerable
+bnb-on-fields
+]

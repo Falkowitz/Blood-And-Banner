@@ -1,0 +1,15 @@
+type: Wall
+size: 1
+health: 5000
+solid: true
+destructible: true
+breakable: false
+drawTeamOverlay: false
+hasShadow: true
+variants: 5
+drawCracks: false
+underBullets: true
+createRubble: false
+destroySound: stone-destroyed
+breakSound: stone-destroyed
+buildVisibility: sandboxOnly

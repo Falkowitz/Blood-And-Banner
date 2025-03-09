@@ -1,0 +1,12 @@
+type: Prop
+size: 1
+solid: false
+drawTeamOverlay: false
+hasShadow: false
+variants: 3
+drawCracks: false
+underBullets: true
+createRubble: false
+destroySound: foliage-rip
+breakSound: foliage-rip
+buildVisibility: sandboxOnly

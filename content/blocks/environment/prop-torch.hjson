@@ -1,0 +1,16 @@
+type: LightBlock
+breakable: false
+destructible: true
+size: 1
+health: 100
+category: effect
+buildVisibility: sandboxOnly
+solid: false 
+placeSound: block-place
+breakSound: wood-destroyed
+destroySound: wood-destroyed
+fogRadius: 8
+radius: 8
+configurable: false
+hasShadow: false
+drawTeamOverlay: false

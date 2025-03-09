@@ -1,0 +1,69 @@
+health: 999999
+type: missile
+internal: true
+hidden: true
+armor: 0
+groundLayer: 29
+speed: 0
+rotateSpeed: 0
+hitSize: 8
+outlines: false
+createScorch: false
+fogRadius: 0
+drawCell: true
+targetAir: false
+physics: false
+targetGround: false
+hittable: false
+drawMinimap: false
+targetable: false
+killable: true
+useUnitCap: false
+playerControllable: false
+logicControllable: false
+isEnemy: false
+lifetime: 3600
+deathExplosionEffect: none
+deathSound: none
+defaultController: MissileAI
+
+weapons:
+[
+{
+name: dead-top
+noAttack: true
+x: 0
+y: 0
+mirror: false
+}
+]
+
+abilities: 
+[
+	{
+	type: StatusFieldAbility
+	effect: none
+	reload: 1
+	effectY: 0
+	effectX: 0
+	parentizeEffects: true
+	activeEffect: {
+		cone: 0
+		followParent: true
+		rotWithParent: false
+		useRotation: false
+		particles: 1
+		lifetime: 3
+		randLength: false
+		length: 0
+		region: bnb-dead-banner
+		sizeFrom: 4
+		sizeTo: 4
+		spin: 0
+		lightScl: 0
+		lightOpacity: 0
+		lightColor: ffffff00
+		layer: 95.05
+		}
+	}
+]

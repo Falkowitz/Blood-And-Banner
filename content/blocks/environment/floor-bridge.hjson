@@ -1,0 +1,9 @@
+type: Floor
+variants: 0
+hasColor: true
+mapColor: 85a478
+useColor: true
+allowCorePlacement: false
+placeablePlayer: false
+placeableOn: false
+walkSound: stepping-on-wood

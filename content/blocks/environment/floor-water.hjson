@@ -1,0 +1,14 @@
+type: Floor
+walkSound: water-splashes
+status: in-water
+statusDuration: 15
+variants: 0
+isLiquid: true
+albedo: 0.9
+supportsOverlay: true
+hasColor: true
+mapColor: 61a6b4
+useColor: true
+cacheLayer: water
+liquidDrop: water
+drownTime: 240
