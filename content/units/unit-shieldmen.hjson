@@ -156,6 +156,7 @@ abilities:
 	activeEffect: none
 	}
 	
+
 	{
 	type: ForceFieldAbility
 	radius: 8
@@ -164,6 +165,23 @@ abilities:
 	cooldown: 600
 	sides: 16
 	}
+
+
+/*
+	{
+	type: ShieldArcAbility
+	radius: 8
+	regen: 0.33
+	max: 1200
+	cooldown: 600
+	angle: 85
+	x: 0
+	y: 0
+	whenShooting: false
+	width: 8
+	drawArc: true
+	}
+*/
 
 ]
 
