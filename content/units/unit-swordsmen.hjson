@@ -31,7 +31,7 @@ weapons:
 	x: 0
 	y: 0
 	shootX: 0
-	shootY: 0
+	shootY: -8
 	shootSound: melee1
 	soundPitchMin: 0.8
 	soundPitchMax: 1.2
@@ -44,7 +44,7 @@ weapons:
 	recoilTime: 40
 	bullet:
 		{
-		type: BasicBulletType
+		type: ArtilleryBulletType
 		shootEffect: none
 		smokeEffect: none
 		hitEffect: none
@@ -53,7 +53,7 @@ weapons:
 		maxRange: 8
 		damage: 45
 		speed: 4
-		lifetime: 2
+		lifetime: 4
 		hitSound: none
 		despawnSound: none
 		hitShake: 0
@@ -62,13 +62,13 @@ weapons:
 		splashDamage: 45
 		splashDamageRadius: 8
 		//instantDisappear: true
-		width: 0
-		height: 0
+		width: 2
+		height: 2
 		hittable: false
-		reflectable: false
 		absorbable: false
 		shieldDamageMultiplier: 10000
 		hitSize: 8
+		scaleLife: true
 		}
 	}
 

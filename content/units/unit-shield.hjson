@@ -1,0 +1,72 @@
+type: missile
+health: 1200
+speed: 0
+rotateSpeed: 0
+internal: true
+createScorch: false
+physics: false
+armor: 0
+groundLayer: 29
+targetGround: false
+targetAir: false
+hittable: false
+targetable: false
+killable: true
+playerControllable: false
+logicControllable: false
+isEnemy: false
+lifetime: 3600
+deathExplosionEffect: none
+deathSound: none
+defaultController: MissileAI
+outlines: false
+
+weapons:
+[
+{
+name: unit-shield-weapon
+noAttack: true
+x: 0
+y: 0
+mirror: false
+}
+]
+
+abilities:
+[
+	{
+	type: ForceFieldAbility
+	radius: 16
+	regen: 600
+	max: 1200
+	cooldown: 600
+	sides: 6
+	}
+
+	{
+	type: StatusFieldAbility
+	effect: none
+	reload: 1
+	effectY: 0
+	effectX: 0
+	parentizeEffects: true
+	activeEffect: {
+		cone: 0
+		followParent: true
+		rotWithParent: false
+		useRotation: false
+		particles: 1
+		lifetime: 3
+		randLength: false
+		length: 0
+		region: bnb-ranged-shield
+		sizeFrom: 2
+		sizeTo: 2
+		spin: 0
+		lightScl: 0
+		lightOpacity: 0
+		lightColor: ffffff00
+		layer: 95.105
+		}
+	}
+]
