@@ -3,6 +3,7 @@ health: 1200
 speed: 0
 rotateSpeed: 0
 internal: true
+hidden: true
 createScorch: false
 physics: false
 armor: 0
@@ -10,7 +11,7 @@ groundLayer: 29
 targetGround: false
 targetAir: false
 hittable: false
-targetable: false
+targetable: true
 killable: true
 playerControllable: false
 logicControllable: false
@@ -36,7 +37,7 @@ abilities:
 [
 	{
 	type: ForceFieldAbility
-	radius: 16
+	radius: 8
 	regen: 600
 	max: 1200
 	cooldown: 600

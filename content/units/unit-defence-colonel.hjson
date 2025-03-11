@@ -123,6 +123,14 @@ abilities:
 	}
 
 	{
+	type: ShieldRegenFieldAbility
+	amount: 300
+	max: 300
+	reload: 3600
+	range: 128
+	}
+
+	{
 	type: StatusFieldAbility
 	effect: none
 	reload: 1

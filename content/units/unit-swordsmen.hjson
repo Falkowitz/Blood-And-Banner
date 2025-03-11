@@ -31,7 +31,7 @@ weapons:
 	x: 0
 	y: 0
 	shootX: 0
-	shootY: -8
+	shootY: 0
 	shootSound: melee1
 	soundPitchMin: 0.8
 	soundPitchMax: 1.2
@@ -53,7 +53,7 @@ weapons:
 		maxRange: 8
 		damage: 45
 		speed: 4
-		lifetime: 4
+		lifetime: 2
 		hitSound: none
 		despawnSound: none
 		hitShake: 0
@@ -62,8 +62,8 @@ weapons:
 		splashDamage: 45
 		splashDamageRadius: 8
 		//instantDisappear: true
-		width: 2
-		height: 2
+		width: 0
+		height: 0
 		hittable: false
 		absorbable: false
 		shieldDamageMultiplier: 10000

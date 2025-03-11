@@ -1,0 +1,37 @@
+type: tank
+strafePenalty: 0.8
+drag: 0.05
+accel: 0.1
+fogRadius: 16
+speed: 0.05
+range: 128
+maxRange: 128
+aimDst: 64
+targetAir: false
+createScorch: false
+commands: [move]
+outlines: false
+lightRadius: 16
+deathExplosionEffect: dynamicExplosion
+rotateSpeed: 2
+health: 1600
+armor: 5
+hitSize: 8
+groundLayer: 29
+healFlash: false
+deathSound: battalion-death
+omniMovement: false
+rotateMoveFirst: true
+
+treadFranes: 1
+treadRects:
+[
+	{
+	x: 0
+	y: 0
+	width: 0
+	height: 0
+	}
+]
+
+weapons: 
