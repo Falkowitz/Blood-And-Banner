@@ -1,7 +1,14 @@
-type: missile
+type: mech
+mechSideSway: 0
+mechFrontSway: 0
+strafePenalty: 0.5
+
+accel: 1
+drag: 0.1
+
 health: 1200
-speed: 0
-rotateSpeed: 0
+speed: 0.1
+rotateSpeed: 10
 internal: true
 hidden: true
 createScorch: false
@@ -16,11 +23,11 @@ killable: true
 playerControllable: false
 logicControllable: false
 isEnemy: false
-lifetime: 3600
 deathExplosionEffect: none
 deathSound: none
-defaultController: MissileAI
+defaultController: DefenderAI
 outlines: false
+controller: DefenderAI
 
 weapons:
 [
@@ -31,13 +38,61 @@ x: 0
 y: 0
 mirror: false
 }
+
+
+{
+name: none
+x: 0
+y: 0
+shootX: 0
+shootY: 0
+mirror: false
+display: false
+alwaysShooting: true
+rotate: false
+shootSound: none
+reload: 0
+bullet: {
+	type: BasicBulletType
+	shootEffect: none
+	smokeEffect: none
+	despawnEffect: none
+	hitEffect: none
+	collides: false
+	hittable: false
+	reflectable: false
+	absorbable: false
+	width: 0
+	height: 0
+	instantDisappear: true
+	damage: 0
+	splashDamage: 0
+	shrinkX: 0
+	shrinkY: 0
+	lightRadius: 0
+	lightOpacity: 0
+	lightColor: ffffff
+	killShooter: true
+	}
+
+shoot:
+{
+shots: 1
+shotDelay: 0
+firstShotDelay: 3600
+}
+
+}
+
+
+
 ]
 
 abilities:
 [
 	{
 	type: ForceFieldAbility
-	radius: 8
+	radius: 16
 	regen: 600
 	max: 1200
 	cooldown: 600

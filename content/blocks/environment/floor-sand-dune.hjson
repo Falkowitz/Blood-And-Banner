@@ -1,0 +1,12 @@
+type: Floor
+variants: 0
+supportsOverlay: true
+hasColor: true
+mapColor: fff6cc
+useColor: true
+allowCorePlacement: false
+placeablePlayer: false
+placeableOn: false
+walkSound: stepping-on-sand
+//status: on-a-sand-dune
+//statusDuration: 15

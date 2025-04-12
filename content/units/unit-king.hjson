@@ -33,11 +33,7 @@ createScorch: false
 drawMinimap: false
 immunities: [
 bnb-vulnerable
-bnb-slowness25
-bnb-slowness30
-bnb-slowness35
-bnb-slowness40
-bnb-slowness45
+bnb-slowness90
 bnb-slowness50
 bnb-recovery0.8
 bnb-recovery1

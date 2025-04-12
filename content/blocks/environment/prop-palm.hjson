@@ -1,0 +1,15 @@
+type: Wall
+size: 1
+health: 500
+solid: false
+destructible: true
+breakable: false
+drawTeamOverlay: false
+hasShadow: false
+variants: 5
+drawCracks: false
+underBullets: true
+createRubble: false
+destroySound: palm-tree-fall
+breakSound: palm-tree-fall
+buildVisibility: sandboxOnly

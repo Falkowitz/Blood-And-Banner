@@ -38,7 +38,7 @@ weapons:
 	shootSound: melee1
 	soundPitchMin: 0.8
 	soundPitchMax: 1.2
-	shootStatus: slowness35
+	shootStatus: slowness50
 	shootStatusDuration: 80
 	rotate: true
 	rotateSpeed: 4
@@ -146,6 +146,33 @@ abilities:
 		lightOpacity: 0
 		lightColor: ffffff00
 		layer: 95.1
+		}
+	}
+
+	{
+	type: StatusFieldAbility
+	effect: none
+	reload: 1
+	effectY: 0
+	effectX: 0
+	parentizeEffects: true
+	activeEffect: {
+		cone: 0
+		followParent: true
+		rotWithParent: false
+		useRotation: false
+		particles: 1
+		lifetime: 3
+		randLength: false
+		length: 0
+		region: bnb-16circle
+		sizeFrom: 130
+		sizeTo: 130
+		spin: 0
+		lightScl: 0
+		lightOpacity: 0
+		lightColor: ffffff00
+		layer: 95.05
 		}
 	}
 

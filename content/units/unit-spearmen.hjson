@@ -35,7 +35,7 @@ weapons:
 	shootSound: melee2
 	soundPitchMin: 0.8
 	soundPitchMax: 1.2
-	shootStatus: slowness40
+	shootStatus: slowness90
 	shootStatusDuration: 104
 	rotate: true
 	rotateSpeed: 1.5

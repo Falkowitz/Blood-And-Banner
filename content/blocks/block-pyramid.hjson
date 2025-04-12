@@ -1,0 +1,13 @@
+type: Wall
+health: 2500
+size: 1
+rotate: true
+category: defense
+fogRadius: 1
+buildVisibility: editorOnly
+placeSound: block-place
+breakSound: sandstone-building-destroyed
+destroySound: sandstone-building-destroyed
+squareSprite: false
+drawTeamOverlay: false
+variants: 11

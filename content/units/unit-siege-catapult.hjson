@@ -47,6 +47,7 @@ weapons:
 	reload: 9999
 	shootSound: none
 	display: false
+	recoil: 0
 	bullet:
 		{
 		type: BasicBulletType
@@ -195,4 +196,9 @@ abilities:
 	spread: 0.1
 	display: false
 	}
+]
+
+immunities: 
+[
+bnb-vulnerable
 ]

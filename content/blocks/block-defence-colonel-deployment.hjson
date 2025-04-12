@@ -46,6 +46,7 @@ destroyBulletSameTeam: true
 createRubble: false
 
 placeSound: defence-colonel-dep
+placePitchChange: false
 breakSound: none
 destroySound: none
 

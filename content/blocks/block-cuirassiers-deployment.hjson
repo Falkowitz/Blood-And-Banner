@@ -46,6 +46,7 @@ destroyBulletSameTeam: true
 createRubble: false
 
 placeSound: cuirassiers-dep
+placePitchChange: false
 breakSound: none
 destroySound: none
 

@@ -1,0 +1,48 @@
+type: GenericCrafter
+variants: 0
+rotate: false
+health: 1000
+hasItems: true
+hasLiquids: false
+hasPower: false
+solid: true
+buildVisibility: editorOnly
+squareSprite: true
+size: 1
+destructible: false
+underBullets: true
+targetable: false
+consumesPower: false
+fogRadius: 0
+itemCapacity: 5
+customShadow: true
+loopSound: manpower-prod
+loopSoundVolume: 0.3
+ambientSound: manpower-prod
+ambientSoundVolume: 0.3
+
+placeSound: stone-building-destroyed
+breakSound: stone-building-destroyed
+destroySound: block-destroy
+
+warmupSpeed: 1
+outputItem: materials/1
+craftTime: 3600
+craftEffect:
+{
+	type: ParticleEffect
+	region: bnb-materials-production
+	particles: 1
+	length: 24
+	lifetime: 180
+	randLength: true
+	sizeFrom: 4
+	sizeTo: 0
+	useRotation: false
+	offset: -90
+	baseRotation: 90
+	layer: 140.1
+	lightScl: 0
+	lightOpacity: 0
+	cone: 0
+}

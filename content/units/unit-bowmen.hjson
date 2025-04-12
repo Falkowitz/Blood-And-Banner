@@ -35,7 +35,7 @@ weapons:
 	shootSound: arrow1
 	soundPitchMin: 0.8
 	soundPitchMax: 1.2
-	shootStatus: slowness45
+	shootStatus: slowness90
 	shootStatusDuration: 136
 	rotate: true
 	rotateSpeed: 2.5
@@ -47,8 +47,8 @@ weapons:
 	bullet:
 		{
 		type: ArtilleryBulletType
-		sprite: bnb-arrow-front
-		backSprite: bnb-arrow-back
+		sprite: bnb-arrows-front
+		backSprite: bnb-arrows-back
 		frontColor: b0bac0
 		backColor: 90776a
 		shootEffect: none

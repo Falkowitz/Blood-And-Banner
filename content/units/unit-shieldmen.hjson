@@ -35,7 +35,7 @@ weapons:
 	shootSound: melee3
 	soundPitchMin: 0.8
 	soundPitchMax: 1.2
-	shootStatus: slowness40
+	shootStatus: slowness90
 	shootStatusDuration: 88
 	rotate: true
 	rotateSpeed: 1.5
@@ -107,7 +107,7 @@ weapons:
 		lightColor: ffffff
 		}
 	}
-
+/*
 	{
 	name: none
 	x: 0
@@ -147,6 +147,7 @@ weapons:
 		rangeOverride: 64
 		}
 	}
+*/
 
 ]
 
@@ -196,16 +197,16 @@ abilities:
 	activeEffect: none
 	}
 	
-/*
+
 	{
 	type: ForceFieldAbility
-	radius: 8
-	regen: 0.33
+	radius: 12
+	regen: 1.66
 	max: 1200
-	cooldown: 600
-	sides: 16
+	cooldown: 180
+	sides: 6
 	}
-*/
+
 
 /*
 	{

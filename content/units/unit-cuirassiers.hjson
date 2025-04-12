@@ -3,7 +3,7 @@ mechSideSway: 0
 mechFrontSway: 0
 strafePenalty: 0.5
 drag: 0.01
-accel: 0.01
+accel: 0.02
 
 fogRadius: 12
 speed: 0.25
@@ -110,7 +110,7 @@ weapons:
 	shootSound: cavalry1
 	soundPitchMin: 0.8
 	soundPitchMax: 1.2
-	shootStatus: slowness25
+	shootStatus: slowness50
 	shootStatusDuration: 64
 	rotate: true
 	rotateSpeed: 3

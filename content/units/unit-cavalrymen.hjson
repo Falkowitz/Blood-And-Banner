@@ -51,7 +51,7 @@ weapons:
 	shootSound: cavalry2
 	soundPitchMin: 0.8
 	soundPitchMax: 1.2
-	shootStatus: slowness25
+	shootStatus: slowness50
 	shootStatusDuration: 48
 	rotate: true
 	rotateSpeed: 4
