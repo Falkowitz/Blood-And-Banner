@@ -166,4 +166,5 @@ immunities:
 [
 bnb-vulnerable
 bnb-on-fields
+bnb-on-dune
 ]

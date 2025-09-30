@@ -203,9 +203,3 @@ abilities:
 	}
 
 ]
-
-immunities: 
-[
-bnb-vulnerable
-bnb-on-fields
-]

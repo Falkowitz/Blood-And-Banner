@@ -39,8 +39,11 @@ bnb-recovery0.8
 bnb-recovery1
 bnb-recovery1.2
 bnb-recovery1.5
+bnb-attack-buff
+bnb-defence-buff
+bnb-maneuver-buff
 ]
-lightRadius: 0
+lightRadius: 24
 
 abilities: 
 [

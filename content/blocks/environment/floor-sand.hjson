@@ -8,3 +8,5 @@ allowCorePlacement: false
 placeablePlayer: false
 placeableOn: false
 walkSound: stepping-on-sand
+status: on-sand
+statusDuration: 15

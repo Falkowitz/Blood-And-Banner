@@ -1,4 +1,5 @@
-speedMultiplier: 1.25
+speedMultiplier: 2
+healthMultipler: 0.8
 color: f25555
 outline: false
 show: true

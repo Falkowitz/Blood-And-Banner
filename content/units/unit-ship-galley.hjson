@@ -600,4 +600,14 @@ abilities:
 	spread: 0.1
 	display: false
 	}
+
+	{
+	type: StatusFieldAbility
+	effect: recovery0.8
+	duration: 600
+	reload: 600
+	range: 0
+	applyEffect: none
+	activeEffect: none
+	}
 ]

@@ -57,6 +57,9 @@ weapons:
 	minShootVelocity: 0.2
 	bullet:
 		{
+		lightRadius: 0
+		lightOpacity: 0
+		lightColor: ffffff
 		type: BasicBulletType
 		shootEffect: none
 		smokeEffect: none
@@ -100,8 +103,8 @@ weapons:
 
 
 	{
-	name: none
-	mirror: unit-cuirassiers-soldiers
+	name: unit-cuirassiers-soldiers
+	mirror: none
 	reload: 64
 	x: 0
 	y: 0
@@ -117,6 +120,7 @@ weapons:
 	recoil: -1
 	recoilPow: 1
 	recoilTime: 32
+	layerOffset: 1
 	bullet:
 		{
 		type: BasicBulletType
