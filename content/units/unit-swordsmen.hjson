@@ -5,8 +5,8 @@ strafePenalty: 0.5
 
 fogRadius: 2
 speed: 0.12
-range: 8
-maxRange: 8
+maxRange: 16
+range: 16
 targetAir: false
 createScorch: false
 commands: [move]
@@ -48,8 +48,7 @@ weapons:
 		shootEffect: none
 		smokeEffect: none
 		hitEffect: none
-		//despawnEffect: none
-		range: 8
+		despawnEffect: none
 		maxRange: 8
 		damage: 45
 		speed: 4
@@ -61,14 +60,13 @@ weapons:
 		despawnHit: true
 		splashDamage: 45
 		splashDamageRadius: 8
-		//instantDisappear: true
 		width: 0
 		height: 0
 		hittable: false
 		absorbable: false
-		shieldDamageMultiplier: 10000
 		hitSize: 8
 		scaleLife: true
+		collideTerrain: true
 		}
 	}
 
@@ -93,7 +91,7 @@ weapons:
 		despawnEffect: none
 		hitEffect: none
 		collides: false
-		hittable: false
+		hittable: true
 		reflectable: false
 		absorbable: false
 		width: 0
@@ -106,6 +104,57 @@ weapons:
 		lightRadius: 0
 		lightOpacity: 0
 		lightColor: ffffff
+		}
+	}
+
+	{
+	name: none
+	type: PointDefenseWeapon
+	mirror: false
+	x: 0
+	y: 0
+	shootX: 0
+	shootY: 0
+	reload: 30
+	rotate: true
+	beamEffect: 
+			{
+			type: ParticleEffect
+			region: "bnb-effect-man-corpse"
+			offsetX: 0
+			offsetY: 0
+			colorFrom: ffffffff
+			colorTo: 00000000
+			interp: fade
+			spin: 0
+			followParent: true
+			rotWithParent: true
+			useRotation: true
+			sizeFrom: 1
+			sizeTo: 1
+			randLength: true
+			length: 0
+			baseLength: 5
+			cone: 0
+			particles: 4
+			lifetime: 3600
+			lightScl: 0
+			lightOpacity: 0
+			lightColor: 00ffffff
+			layer: 28.8
+			baseRotation: 360
+			}
+	targetInterval: 1
+	targetSwitchInterval: 1
+	//shootSound: none
+	//useAttackRange: true
+	bullet:
+		{
+		range: 8
+		maxRange: 8
+		damage: 0
+		despawnEffect: none
+		hitEffect: none
 		}
 	}
 

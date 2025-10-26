@@ -7,8 +7,7 @@ accel: 0.05
 
 fogRadius: 16
 speed: 0.3
-range: 8
-maxRange: 8
+maxRange: 16
 targetAir: false
 createScorch: false
 commands: [move]
@@ -64,8 +63,7 @@ weapons:
 		shootEffect: none
 		smokeEffect: none
 		hitEffect: none
-		//despawnEffect: none
-		range: 8
+		despawnEffect: none
 		maxRange: 8
 		damage: 50
 		speed: 4
@@ -77,13 +75,12 @@ weapons:
 		despawnHit: true
 		splashDamage: 50
 		splashDamageRadius: 8
-		//instantDisappear: true
 		width: 0
 		height: 0
-		hittable: false
+		hittable: true
 		reflectable: false
 		absorbable: false
-		shieldDamageMultiplier: 10000
+		collideTerrain: true
 		}
 	}
 
@@ -170,5 +167,28 @@ abilities:
 	range: 0
 	applyEffect: none
 	activeEffect: none
+	}
+
+	{
+	type: MoveEffectAbility
+	minVelocity: 0.01
+	effect: 
+		{
+		type: ParticleEffect
+		particles: 1
+		cone: 0
+		length: 0
+		colorFrom: ffffffff
+		colorTo: ffffff00
+		lifetime: 120
+		lightScl: 0
+		lightOpacity: 0
+		sizeFrom: 4
+		sizeTo: 0
+		rotWithParent: true
+		parentizeEffects: true
+		rotateEffect: true
+		layer: 28.9
+		}
 	}
 ]

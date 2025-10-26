@@ -344,6 +344,7 @@ weapons:
 		lightOpacity: 1
 		lightColor: ffffff
 		collidesTeam: true
+		collideTerrain: true
 		}
 	}
 
@@ -410,6 +411,7 @@ weapons:
 		lightOpacity: 1
 		lightColor: ffffff
 		collidesTeam: true
+		collideTerrain: true
 		}
 	}
 
@@ -476,6 +478,7 @@ weapons:
 		lightOpacity: 1
 		lightColor: ffffff
 		collidesTeam: true
+		collideTerrain: true
 		}
 	}
 
@@ -542,6 +545,7 @@ weapons:
 		lightOpacity: 1
 		lightColor: ffffff
 		collidesTeam: true
+		collideTerrain: true
 		}
 	}
 

@@ -5,8 +5,7 @@ strafePenalty: 0.6
 
 fogRadius: 4
 speed: 0.1
-range: 16
-maxRange: 16
+maxRange: 24
 targetAir: false
 createScorch: false
 commands: [move]
@@ -48,12 +47,11 @@ weapons:
 		shootEffect: none
 		smokeEffect: none
 		hitEffect: none
-		//despawnEffect: none
-		range: 16
+		despawnEffect: none
 		maxRange: 16
 		damage: 30
-		speed: 4
-		lifetime: 4
+		speed: 1
+		lifetime: 16
 		hitSound: none
 		despawnSound: none
 		hitShake: 0
@@ -61,10 +59,9 @@ weapons:
 		despawnHit: true
 		splashDamage: 30
 		splashDamageRadius: 8
-		//instantDisappear: true
 		width: 0
 		height: 0
-		hittable: false
+		hittable: true
 		reflectable: false
 		absorbable: false
 		status: vulnerable
@@ -72,7 +69,7 @@ weapons:
 		hitSize: 8
 		pierce: true
 		pierceCap: -1
-		shieldDamageMultiplier: 10000
+		collideTerrain: true
 		}
 	}
 

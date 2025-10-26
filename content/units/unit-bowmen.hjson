@@ -70,6 +70,7 @@ weapons:
 		hitSound: arrow-hit
 		despawnSound: arrow-hit
 		hitShake: 0
+		hittable: true
 		despawnShake: 0
 		despawnHit: true
 		scaleLife: true
@@ -89,6 +90,7 @@ weapons:
 		lightOpacity: 1
 		lightColor: ffffff
 		collidesTeam: true
+		collideTerrain: true
 		}
 	}
 

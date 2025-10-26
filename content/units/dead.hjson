@@ -26,17 +26,7 @@ lifetime: 3600
 deathExplosionEffect: none
 deathSound: none
 defaultController: MissileAI
-
-weapons:
-[
-{
-name: dead-top
-noAttack: true
-x: 0
-y: 0
-mirror: false
-}
-]
+drawBody: false
 
 abilities: 
 [

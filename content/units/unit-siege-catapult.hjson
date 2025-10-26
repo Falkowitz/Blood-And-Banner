@@ -137,6 +137,7 @@ weapons:
 		trailWidth: 0.4
 		trailSize: 0.4
 		trailEffect: none
+		collideTerrain: true
 		}
 	}
 

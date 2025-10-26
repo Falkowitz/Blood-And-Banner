@@ -7,8 +7,7 @@ accel: 0.02
 
 fogRadius: 12
 speed: 0.25
-range: 16
-maxRange: 16
+maxRange: 24
 targetAir: false
 createScorch: false
 commands: [move]
@@ -54,7 +53,7 @@ weapons:
 	soundPitchMax: 1.2
 	rotate: true
 	rotateSpeed: 3
-	minShootVelocity: 0.2
+	minShootVelocity: 0.125
 	bullet:
 		{
 		lightRadius: 0
@@ -65,8 +64,7 @@ weapons:
 		smokeEffect: none
 		hitEffect: none
 		despawnEffect: none
-		range: 16
-		maxRange: 16
+		maxRange: 24
 		damage: 15
 		speed: 4
 		lifetime: 4
@@ -77,7 +75,6 @@ weapons:
 		despawnHit: true
 		splashDamage: 15
 		splashDamageRadius: 8
-		//instantDisappear: true
 		width: 0
 		height: 0
 		hittable: false
@@ -86,11 +83,8 @@ weapons:
 		status: vulnerable
 		statusDuration: 120
 		hitSize: 4
-		//pierce: true
-		//pierceCap: -1
 		knockback: 4
 		impact: true
-		shieldDamageMultiplier: 99999
 		}
 		shoot: {
 			type: ShootSpread
@@ -127,8 +121,7 @@ weapons:
 		shootEffect: none
 		smokeEffect: none
 		hitEffect: none
-		//despawnEffect: none
-		range: 16
+		despawnEffect: none
 		maxRange: 16
 		damage: 30
 		speed: 4
@@ -140,10 +133,9 @@ weapons:
 		despawnHit: true
 		splashDamage: 30
 		splashDamageRadius: 8
-		//instantDisappear: true
 		width: 0
 		height: 0
-		hittable: false
+		hittable: true
 		reflectable: false
 		absorbable: false
 		status: vulnerable
@@ -151,7 +143,7 @@ weapons:
 		hitSize: 8
 		pierce: true
 		pierceCap: -1
-		shieldDamageMultiplier: 10000
+		collideTerrain: true
 		}
 	}
 
@@ -238,5 +230,28 @@ abilities:
 	range: 0
 	applyEffect: none
 	activeEffect: none
+	}
+
+	{
+	type: MoveEffectAbility
+	minVelocity: 0.125
+	effect: 
+		{
+		type: ParticleEffect
+		particles: 1
+		cone: 0
+		length: 0
+		colorFrom: ffffffff
+		colorTo: ffffff00
+		lifetime: 120
+		lightScl: 0
+		lightOpacity: 0
+		sizeFrom: 4
+		sizeTo: 0
+		rotWithParent: true
+		parentizeEffects: true
+		rotateEffect: true
+		layer: 28.9
+		}
 	}
 ]

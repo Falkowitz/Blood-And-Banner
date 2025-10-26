@@ -71,6 +71,7 @@ weapons:
 		reflectable: false
 		absorbable: false
 		shieldDamageMultiplier: 10000
+		collideTerrain: true
 		}
 	}
 

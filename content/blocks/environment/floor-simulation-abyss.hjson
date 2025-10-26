@@ -1,0 +1,14 @@
+type: Floor
+walkSound: none
+status: none
+statusDuration: 60
+variants: 0
+isLiquid: true
+albedo: 0.1
+supportsOverlay: true
+hasColor: true
+mapColor: dfe9e6
+useColor: true
+cacheLayer: water
+drownTime: 180
+speedMultiplier: 0.25

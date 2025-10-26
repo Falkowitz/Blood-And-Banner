@@ -1,0 +1,11 @@
+type: Floor
+variants: 0
+supportsOverlay: true
+hasColor: true
+mapColor: ffffff
+useColor: true
+allowCorePlacement: false
+placeablePlayer: true
+placeableOn: true
+walkSound: none
+speedMultiplier: 0.25

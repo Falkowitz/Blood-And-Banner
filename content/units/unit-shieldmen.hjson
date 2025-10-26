@@ -5,8 +5,7 @@ strafePenalty: 0.6
 
 fogRadius: 2
 speed: 0.1
-range: 8
-maxRange: 64
+maxRange: 16
 targetAir: false
 createScorch: false
 commands: [move]
@@ -48,7 +47,7 @@ weapons:
 		shootEffect: none
 		smokeEffect: none
 		hitEffect: none
-		//despawnEffect: none
+		despawnEffect: none
 		damage: 25
 		speed: 4
 		lifetime: 2
@@ -59,15 +58,14 @@ weapons:
 		despawnHit: true
 		splashDamage: 25
 		splashDamageRadius: 8
-		//instantDisappear: true
 		width: 0
 		height: 0
-		hittable: false
+		hittable: true
 		reflectable: false
 		absorbable: false
-		shieldDamageMultiplier: 10000
 		knockback: 1
 		impact: true
+		collideTerrain: true
 		}
 	}
 
@@ -107,47 +105,6 @@ weapons:
 		lightColor: ffffff
 		}
 	}
-/*
-	{
-	name: none
-	x: 0
-	y: 0
-	shootX: 0
-	shootY: 8
-	mirror: false
-	display: false
-	rotate: true
-	rotateSpeed: 1.5
-	shootSound: shield-up
-	reload: 5400
-	bullet:
-		{
-		type: BasicBulletType
-		shootEffect: none
-		smokeEffect: none
-		despawnEffect: none
-		hitEffect: none
-		collides: false
-		hittable: false
-		reflectable: false
-		absorbable: false
-		width: 0
-		height: 0
-		instantDisappear: true
-		damage: 0
-		splashDamage: 0
-		shrinkX: 0
-		shrinkY: 0
-		lightRadius: 0
-		lightOpacity: 0
-		lightColor: ffffff
-		spawnUnit: unit-shield
-		range: 64
-		maxRange: 64
-		rangeOverride: 64
-		}
-	}
-*/
 
 ]
 
@@ -201,7 +158,7 @@ abilities:
 	{
 	type: ForceFieldAbility
 	radius: 12
-	regen: 0.833
+	regen: 0.166
 	max: 1200
 	cooldown: 180
 	sides: 6
