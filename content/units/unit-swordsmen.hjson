@@ -12,7 +12,7 @@ createScorch: false
 commands: [move]
 outlines: false
 lightRadius: 8
-deathExplosionEffect: none
+rotateMoveFirst: true
 rotateSpeed: 2
 health: 2100
 armor: 10
@@ -20,7 +20,7 @@ hitSize: 8
 groundLayer: 29
 healFlash: false
 deathSound: battalion-death
-rotateMoveFirst: true
+deathExplosionEffect: none
 
 weapons:
 [
@@ -107,57 +107,6 @@ weapons:
 		}
 	}
 
-	{
-	name: none
-	type: PointDefenseWeapon
-	mirror: false
-	x: 0
-	y: 0
-	shootX: 0
-	shootY: 0
-	reload: 30
-	rotate: true
-	beamEffect: 
-			{
-			type: ParticleEffect
-			region: "bnb-effect-man-corpse"
-			offsetX: 0
-			offsetY: 0
-			colorFrom: ffffffff
-			colorTo: 00000000
-			interp: fade
-			spin: 0
-			followParent: true
-			rotWithParent: true
-			useRotation: true
-			sizeFrom: 1
-			sizeTo: 1
-			randLength: true
-			length: 0
-			baseLength: 5
-			cone: 0
-			particles: 4
-			lifetime: 3600
-			lightScl: 0
-			lightOpacity: 0
-			lightColor: 00ffffff
-			layer: 28.8
-			baseRotation: 360
-			}
-	targetInterval: 1
-	targetSwitchInterval: 1
-	//shootSound: none
-	//useAttackRange: true
-	bullet:
-		{
-		range: 8
-		maxRange: 8
-		damage: 0
-		despawnEffect: none
-		hitEffect: none
-		}
-	}
-
 ]
 
 abilities: 
@@ -166,6 +115,14 @@ abilities:
 	type: SpawnDeathAbility
 	unit: dead
 	spread: 0.1
+	display: false
+	}
+
+	{
+	type: SpawnDeathAbility
+	unit: dead-man
+	spread: 6
+	amount: 16
 	display: false
 	}
 

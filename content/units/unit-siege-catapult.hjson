@@ -108,13 +108,11 @@ weapons:
 		backSprite: none
 		shootEffect: none
 		smokeEffect: none
-		hitEffect: explosion
-		despawnEffect: explosion
+		despawnEffect: none
 		hitSound: boulder-shatter
-		despawnSound: boulder-shatter
-		hitShake: 0
+		hitShake: 5
 		despawnShake: 5
-		spin: 1
+		spin: 3
 		shrinkX: 0
 		shrinkY: 0
 		range: 128
@@ -127,8 +125,8 @@ weapons:
 		hittable: false
 		despawnHit: true
 		scaleLife: true
-		width: 2
-		height: 2
+		width: 8
+		height: 8
 		lightRadius: 0
 		lightOpacity: 1
 		lightColor: ffffff
@@ -138,6 +136,33 @@ weapons:
 		trailSize: 0.4
 		trailEffect: none
 		collideTerrain: true
+		hitEffect:
+			{
+			type: ParticleEffect
+			region: "bnb-catapult-boulder-crater"
+			offsetX: 0
+			offsetY: 0
+			colorFrom: ffffffff
+			colorTo: ffffff00
+			interp: fade
+			spin: 0
+			followParent: true
+			rotWithParent: true
+			useRotation: true
+			sizeFrom: 2
+			sizeTo: 2
+			randLength: true
+			length: 0
+			baseLength: 0.1
+			cone: 0
+			particles: 16
+			lifetime: 3600
+			lightScl: 0
+			lightOpacity: 0
+			lightColor: 00ffffff
+			layer: 28.1
+			baseRotation: 360
+			}
 		}
 	}
 

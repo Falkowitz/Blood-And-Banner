@@ -1,4 +1,4 @@
-type: tank
+type: mech
 mechSideSway: 0
 mechFrontSway: 0
 strafePenalty: 0.4
@@ -7,7 +7,8 @@ accel: 0.05
 
 fogRadius: 16
 speed: 0.3
-maxRange: 16
+range: 8
+maxRange: 8
 targetAir: false
 createScorch: false
 commands: [move]
@@ -15,7 +16,7 @@ outlines: false
 lightRadius: 8
 deathExplosionEffect: none
 rotateSpeed: 4
-health: 1800
+health: 1150
 armor: 10
 hitSize: 8
 groundLayer: 29
@@ -23,49 +24,37 @@ healFlash: false
 deathSound: battalion-death
 omniMovement: false
 rotateMoveFirst: true
-//circleTarget: true
-
-//treadEffect: none
-treadFrames: 1
-treadRects:
-[
-	{
-	x: 0
-	y: 0
-	width: 0
-	height: 0
-	}
-]
 
 weapons:
 [
 	{
-	name: unit-cavalrymen-soldiers
+	name: unit-universal-colonel-soldiers
 	mirror: false
-	reload: 48
+	reload: 80
 	x: 0
 	y: 0
 	shootX: 0
 	shootY: 0
-	shootSound: cavalry2
+	shootSound: melee1
 	soundPitchMin: 0.8
 	soundPitchMax: 1.2
 	shootStatus: slowness50
-	shootStatusDuration: 48
+	shootStatusDuration: 80
 	rotate: true
 	rotateSpeed: 4
-	recoil: -1
+	recoil: -0.4
 	recoilPow: 1
-	recoilTime: 24
+	recoilTime: 40
 	bullet:
 		{
 		type: BasicBulletType
 		shootEffect: none
 		smokeEffect: none
 		hitEffect: none
-		despawnEffect: none
+		//despawnEffect: none
+		range: 8
 		maxRange: 8
-		damage: 50
+		damage: 25
 		speed: 4
 		lifetime: 2
 		hitSound: none
@@ -73,14 +62,15 @@ weapons:
 		hitShake: 0
 		despawnShake: 0
 		despawnHit: true
-		splashDamage: 50
+		splashDamage: 25
 		splashDamageRadius: 8
+		//instantDisappear: true
 		width: 0
 		height: 0
-		hittable: true
+		hittable: false
 		reflectable: false
 		absorbable: false
-		collideTerrain: true
+		shieldDamageMultiplier: 10000
 		}
 	}
 
@@ -136,7 +126,7 @@ abilities:
 	type: SpawnDeathAbility
 	unit: dead-man-horse
 	spread: 6
-	amount: 8
+	amount: 1
 	display: false
 	}
 
@@ -156,7 +146,7 @@ abilities:
 		lifetime: 3
 		randLength: false
 		length: 0
-		region: bnb-unit-cavalrymen-full
+		region: bnb-unit-universal-colonel-full
 		sizeFrom: 4
 		sizeTo: 4
 		spin: 0
@@ -169,7 +159,34 @@ abilities:
 
 	{
 	type: StatusFieldAbility
-	effect: recovery1.5
+	effect: none
+	reload: 1
+	effectY: 0
+	effectX: 0
+	parentizeEffects: true
+	activeEffect: {
+		cone: 0
+		followParent: true
+		rotWithParent: false
+		useRotation: false
+		particles: 1
+		lifetime: 3
+		randLength: false
+		length: 0
+		region: bnb-16circle
+		sizeFrom: 130
+		sizeTo: 130
+		spin: 0
+		lightScl: 0
+		lightOpacity: 0
+		lightColor: ffffff00
+		layer: 95.05
+		}
+	}
+
+	{
+	type: StatusFieldAbility
+	effect: recovery1.2
 	duration: 600
 	reload: 600
 	range: 0
@@ -178,25 +195,11 @@ abilities:
 	}
 
 	{
-	type: MoveEffectAbility
-	minVelocity: 0.01
-	effect: 
-		{
-		type: ParticleEffect
-		particles: 1
-		cone: 0
-		length: 0
-		colorFrom: ffffffff
-		colorTo: ffffff00
-		lifetime: 120
-		lightScl: 0
-		lightOpacity: 0
-		sizeFrom: 4
-		sizeTo: 0
-		rotWithParent: true
-		parentizeEffects: true
-		rotateEffect: true
-		layer: 28.9
-		}
+	type: StatusFieldAbility
+	effect: universal-buff
+	duration: 600
+	reload: 600
+	range: 96
 	}
+
 ]

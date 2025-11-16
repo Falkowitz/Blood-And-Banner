@@ -53,7 +53,9 @@ weapons:
 		backColor: 90776a
 		shootEffect: none
 		smokeEffect: none
-		hitEffect: {
+		hitEffect: 
+		[
+			{
 			type: WaveEffect
 			lifetime: 15
 			followParent: false
@@ -61,6 +63,33 @@ weapons:
 			lightScl: 0
 			lightOpacity: 0
 			}
+			{
+			type: ParticleEffect
+			region: "bnb-arrows"
+			offsetX: 0
+			offsetY: 0
+			colorFrom: ffffffff
+			colorTo: ffffff00
+			interp: fade
+			spin: 0
+			followParent: true
+			rotWithParent: true
+			useRotation: true
+			sizeFrom: 2
+			sizeTo: 2
+			randLength: true
+			length: 0
+			baseLength: 0.1
+			cone: 0
+			particles: 16
+			lifetime: 3600
+			lightScl: 0
+			lightOpacity: 0
+			lightColor: 00ffffff
+			layer: 28.1
+			baseRotation: 360
+			}
+		]
 		despawnEffect: none
 		range: 64
 		maxRange: 64
@@ -68,7 +97,6 @@ weapons:
 		speed: 1
 		lifetime: 64
 		hitSound: arrow-hit
-		despawnSound: arrow-hit
 		hitShake: 0
 		hittable: true
 		despawnShake: 0
@@ -139,6 +167,14 @@ abilities:
 	type: SpawnDeathAbility
 	unit: dead
 	spread: 0.1
+	display: false
+	}
+
+	{
+	type: SpawnDeathAbility
+	unit: dead-man
+	spread: 6
+	amount: 16
 	display: false
 	}
 

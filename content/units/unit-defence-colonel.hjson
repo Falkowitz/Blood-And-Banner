@@ -124,6 +124,14 @@ abilities:
 	}
 
 	{
+	type: SpawnDeathAbility
+	unit: dead-man-horse
+	spread: 6
+	amount: 1
+	display: false
+	}
+
+	{
 	type: ShieldRegenFieldAbility
 	amount: 300
 	max: 300

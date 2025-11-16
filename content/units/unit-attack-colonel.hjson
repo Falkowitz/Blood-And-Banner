@@ -123,6 +123,14 @@ abilities:
 	}
 
 	{
+	type: SpawnDeathAbility
+	unit: dead-man-horse
+	spread: 6
+	amount: 1
+	display: false
+	}
+
+	{
 	type: StatusFieldAbility
 	effect: none
 	reload: 1

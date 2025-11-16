@@ -16,9 +16,9 @@ consumesPower: false
 fogRadius: 0
 itemCapacity: 5
 customShadow: true
-loopSound: manpower-prod
+loopSound: resupply
 loopSoundVolume: 0.3
-ambientSound: manpower-prod
+ambientSound: resupply
 ambientSoundVolume: 0.3
 
 placeSound: stone-building-destroyed

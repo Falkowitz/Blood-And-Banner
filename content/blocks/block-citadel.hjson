@@ -13,7 +13,7 @@ alwaysUnlocked: true
 allowResupply: true
 placeSound: stone-building-destroyed
 breakSound: stone-building-destroyed
-destroySound: defeat
+destroySound: victory
 thrusterLength: 0
 squareSprite: false
 buildVisibility: editorOnly

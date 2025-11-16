@@ -118,6 +118,14 @@ abilities:
 	}
 
 	{
+	type: SpawnDeathAbility
+	unit: dead-man
+	spread: 6
+	amount: 16
+	display: false
+	}
+
+	{
 	type: StatusFieldAbility
 	effect: none
 	reload: 1
