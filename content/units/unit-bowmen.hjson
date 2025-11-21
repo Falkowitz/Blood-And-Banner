@@ -81,7 +81,7 @@ weapons:
 			length: 0
 			baseLength: 0.1
 			cone: 0
-			particles: 16
+			particles: 1
 			lifetime: 3600
 			lightScl: 0
 			lightOpacity: 0
@@ -202,6 +202,7 @@ abilities:
 		lightOpacity: 0
 		lightColor: ffffff00
 		layer: 95.1
+		offsetY: 3
 		}
 	}
 

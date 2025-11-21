@@ -1,0 +1,257 @@
+type: mech
+mechSideSway: 0
+mechFrontSway: 0
+strafePenalty: 0.6
+
+fogRadius: 8
+speed: 0.1
+range: 64
+maxRange: 64
+targetAir: false
+createScorch: false
+commands: [move]
+outlines: false
+lightRadius: 8
+deathExplosionEffect: none
+rotateSpeed: 1
+health: 1400
+armor: 0
+hitSize: 8
+groundLayer: 29
+healFlash: false
+deathSound: battalion-death
+rotateMoveFirst: true
+
+weapons:
+[
+	{
+	name: unit-musketmen-soldiers
+	mirror: false
+	reload: 1500
+	x: 0
+	y: 0
+	shootX: 0
+	shootY: 0
+	xRand: 4
+	yRand: 1
+	shootSound: musket-shot
+	soundPitchMin: 0.8
+	soundPitchMax: 1.2
+	shootStatus: slowness90
+	shootStatusDuration: 750
+	rotate: true
+	rotateSpeed: 1
+	recoil: 0.4
+	recoilPow: 1
+	recoilTime: 60
+	//predictTarget: true
+	inaccuracy: 10
+	bullet:
+		{
+		type: BasicBulletType
+		sprite: bnb-musket-ball-front
+		backSprite: bnb-musket-ball-back
+		frontColor: 989aa4
+		backColor: 6e7080
+		shootEffect: none
+		smokeEffect: shootSmallSmoke 
+		hitEffect: 
+		[
+			{
+			type: ParticleEffect
+			region: "bnb-musket-ball"
+			offsetX: 0
+			offsetY: 0
+			colorFrom: ffffffff
+			colorTo: ffffff00
+			interp: fade
+			spin: 0
+			followParent: true
+			rotWithParent: true
+			useRotation: true
+			sizeFrom: 0.4
+			sizeTo: 0.4
+			randLength: true
+			length: 0
+			baseLength: 0.1
+			cone: 0
+			particles: 1
+			lifetime: 3600
+			lightScl: 0
+			lightOpacity: 0
+			lightColor: 00ffffff
+			layer: 28.1
+			baseRotation: 360
+			}
+		]
+		despawnEffect: none
+		range: 64
+		maxRange: 64
+		damage: 10
+		speed: 4
+		lifetime: 16
+		hitSound: none
+		hitShake: 0
+		hittable: true
+		despawnShake: 0
+		despawnHit: true
+		//scaleLife: true
+		width: 1
+		height: 1
+		shrinkX: 0
+		shrinkY: 0
+		//scaleLife: true
+		trailColor: ffffffff
+		trailLength: 4
+		trailWidth: 0.2
+		trailSize: 0.2
+		trailEffect: none
+		lightRadius: 0
+		lightOpacity: 1
+		lightColor: ffffff
+		collidesTeam: true
+		collideTerrain: true
+		}
+		shoot:
+		{
+		shots: 20
+		shotDelay: 1
+		}
+	}
+
+
+	{
+	name: none
+	x: 0
+	y: 0
+	shootX: 0
+	shootY: 0
+	mirror: false
+	display: false
+	minShootVelocity: 0.01
+	alwaysShooting: true
+	rotate: false
+	shootSound: march
+	reload: 120
+	bullet: {
+		type: BasicBulletType
+		shootEffect: none
+		smokeEffect: none
+		despawnEffect: none
+		hitEffect: none
+		collides: false
+		hittable: false
+		reflectable: false
+		absorbable: false
+		width: 0
+		height: 0
+		instantDisappear: true
+		damage: 0
+		splashDamage: 0
+		shrinkX: 0
+		shrinkY: 0
+		lightRadius: 0
+		lightOpacity: 0
+		lightColor: ffffff
+		}
+	}
+
+	{
+	name: none
+	x: 0
+	y: 0
+	shootX: 0
+	shootY: 0
+	mirror: false
+	display: false
+	rotate: false
+	shootSound: musket-reload
+	reload: 1500
+	bullet: {
+		type: BasicBulletType
+		shootEffect: none
+		smokeEffect: none
+		despawnEffect: none
+		hitEffect: none
+		collides: false
+		hittable: false
+		reflectable: false
+		absorbable: false
+		width: 0
+		height: 0
+		instantDisappear: true
+		damage: 0
+		splashDamage: 0
+		shrinkX: 0
+		shrinkY: 0
+		lightRadius: 0
+		lightOpacity: 0
+		lightColor: ffffff
+		}
+	}
+
+]
+
+abilities: 
+[
+	{
+	type: SpawnDeathAbility
+	unit: dead
+	spread: 0.1
+	display: false
+	}
+
+	{
+	type: SpawnDeathAbility
+	unit: dead-man
+	spread: 6
+	amount: 16
+	display: false
+	}
+
+	{
+	type: StatusFieldAbility
+	effect: none
+	reload: 1
+	effectY: 0
+	effectX: 0
+	parentizeEffects: true
+	activeEffect: {
+		cone: 0
+		followParent: true
+		rotWithParent: false
+		useRotation: false
+		particles: 1
+		lifetime: 3
+		randLength: false
+		length: 0
+		region: bnb-unit-musketmen-full
+		sizeFrom: 4
+		sizeTo: 4
+		spin: 0
+		lightScl: 0
+		lightOpacity: 0
+		lightColor: ffffff00
+		layer: 95.1
+		offsetY: 3
+		offsetX: 3
+		}
+	}
+
+	{
+	type: StatusFieldAbility
+	effect: recovery1
+	duration: 600
+	reload: 600
+	range: 0
+	applyEffect: none
+	activeEffect: none
+	}
+]
+
+immunities: 
+[
+bnb-vulnerable
+bnb-on-fields
+bnb-on-dune
+]

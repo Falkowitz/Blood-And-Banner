@@ -1,4 +1,5 @@
 speedMultiplier: 2
+reloadMultiplier: 1.5
 healthMultipler: 0.5
 color: f25555
 outline: false

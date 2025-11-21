@@ -2,7 +2,7 @@ type: tank
 mechSideSway: 0
 mechFrontSway: 0
 strafePenalty: 0.4
-drag: 0.05
+drag: 0.045
 accel: 0.05
 
 fogRadius: 16
@@ -164,6 +164,8 @@ abilities:
 		lightOpacity: 0
 		lightColor: ffffff00
 		layer: 95.1
+		offsetY: 3
+		offsetX: 3
 		}
 	}
 
@@ -191,7 +193,7 @@ abilities:
 		lifetime: 120
 		lightScl: 0
 		lightOpacity: 0
-		sizeFrom: 4
+		sizeFrom: 2
 		sizeTo: 0
 		rotWithParent: true
 		parentizeEffects: true
