@@ -70,6 +70,9 @@ weapons:
 		pierce: true
 		pierceCap: -1
 		collideTerrain: true
+		lightRadius: 0
+		lightOpacity: 0
+		lightColor: ffffff
 		}
 	}
 

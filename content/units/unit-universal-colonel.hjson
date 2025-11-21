@@ -25,6 +25,18 @@ deathSound: battalion-death
 omniMovement: false
 rotateMoveFirst: true
 
+treadFrames: 1
+treadRects:
+[
+	{
+	x: 0
+	y: 0
+	width: 0
+	height: 0
+	}
+]
+
+
 weapons:
 [
 	{
@@ -51,7 +63,7 @@ weapons:
 		shootEffect: none
 		smokeEffect: none
 		hitEffect: none
-		//despawnEffect: none
+		despawnEffect: none
 		range: 8
 		maxRange: 8
 		damage: 25
@@ -70,7 +82,9 @@ weapons:
 		hittable: false
 		reflectable: false
 		absorbable: false
-		shieldDamageMultiplier: 10000
+		lightRadius: 0
+		lightOpacity: 0
+		lightColor: ffffff
 		}
 	}
 

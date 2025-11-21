@@ -101,7 +101,7 @@ weapons:
 	mirror: none
 	reload: 64
 	x: 0
-	y: 0
+	y: -1
 	shootX: 0
 	shootY: 0
 	shootSound: cavalry1
@@ -144,6 +144,9 @@ weapons:
 		pierce: true
 		pierceCap: -1
 		collideTerrain: true
+		lightRadius: 0
+		lightOpacity: 0
+		lightColor: ffffff
 		}
 	}
 

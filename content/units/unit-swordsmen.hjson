@@ -67,6 +67,9 @@ weapons:
 		hitSize: 8
 		scaleLife: true
 		collideTerrain: true
+		lightRadius: 0
+		lightOpacity: 0
+		lightColor: ffffff
 		}
 	}
 

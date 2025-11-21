@@ -27,4 +27,5 @@ deathExplosionEffect: none
 deathSound: none
 defaultController: MissileAI
 drawBody: true
+lightRadius: 0
 

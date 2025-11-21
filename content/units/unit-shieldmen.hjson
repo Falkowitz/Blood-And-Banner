@@ -66,6 +66,9 @@ weapons:
 		knockback: 1
 		impact: true
 		collideTerrain: true
+		lightRadius: 0
+		lightOpacity: 0
+		lightColor: ffffff
 		}
 	}
 
@@ -170,7 +173,7 @@ abilities:
 	regen: 0.166
 	max: 1200
 	cooldown: 180
-	sides: 6
+	sides: 4
 	}
 
 
