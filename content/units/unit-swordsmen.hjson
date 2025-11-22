@@ -20,7 +20,26 @@ hitSize: 8
 groundLayer: 29
 healFlash: false
 deathSound: battalion-death
-deathExplosionEffect: none
+deathExplosionEffect: 
+{
+	type: ParticleEffect
+	region: bnb-death
+	particles: 1
+	length: 24
+	lifetime: 180
+	randLength: true
+	sizeFrom: 4
+	sizeTo: 4
+	useRotation: false
+	offset: -90
+	baseRotation: 90
+	layer: 140.1
+	lightScl: 0
+	lightOpacity: 0
+	cone: 0
+	colorFrom: ffffffff
+	colorTo: ffffff00
+}
 
 weapons:
 [

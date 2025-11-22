@@ -11,7 +11,26 @@ createScorch: false
 commands: [move]
 outlines: false
 lightRadius: 8
-deathExplosionEffect: none
+deathExplosionEffect: 
+{
+	type: ParticleEffect
+	region: bnb-death
+	particles: 1
+	length: 24
+	lifetime: 180
+	randLength: true
+	sizeFrom: 4
+	sizeTo: 4
+	useRotation: false
+	offset: -90
+	baseRotation: 90
+	layer: 140.1
+	lightScl: 0
+	lightOpacity: 0
+	cone: 0
+	colorFrom: ffffffff
+	colorTo: ffffff00
+}
 rotateSpeed: 1.5
 health: 1800
 armor: 10
