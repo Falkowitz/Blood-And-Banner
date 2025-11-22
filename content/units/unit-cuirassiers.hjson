@@ -56,6 +56,7 @@ weapons:
 	minShootVelocity: 0.125
 	bullet:
 		{
+		type: BasicBulletType
 		lightRadius: 0
 		lightOpacity: 0
 		lightColor: ffffff

@@ -1,10 +1,10 @@
 type: mech
 mechSideSway: 0
 mechFrontSway: 0
-strafePenalty: 0.5
+strafePenalty: 0.6
 
 fogRadius: 2
-speed: 0.12
+speed: 0.16
 maxRange: 16
 range: 16
 targetAir: false
@@ -13,9 +13,9 @@ commands: [move]
 outlines: false
 lightRadius: 8
 rotateMoveFirst: true
-rotateSpeed: 2
-health: 2100
-armor: 10
+rotateSpeed: 1.5
+health: 1050
+armor: 2
 hitSize: 8
 groundLayer: 29
 healFlash: false
@@ -25,9 +25,9 @@ deathExplosionEffect: none
 weapons:
 [
 	{
-	name: unit-swordsmen-soldiers
+	name: unit-militiamen-soldiers
 	mirror: false
-	reload: 80
+	reload: 120
 	x: 0
 	y: 0
 	shootX: 0
@@ -36,12 +36,12 @@ weapons:
 	soundPitchMin: 0.8
 	soundPitchMax: 1.2
 	shootStatus: slowness90
-	shootStatusDuration: 80
+	shootStatusDuration: 120
 	rotate: true
 	rotateSpeed: 2
 	recoil: -0.4
 	recoilPow: 1
-	recoilTime: 40
+	recoilTime: 60
 	bullet:
 		{
 		type: BasicBulletType
@@ -50,7 +50,7 @@ weapons:
 		hitEffect: none
 		despawnEffect: none
 		maxRange: 8
-		damage: 45
+		damage: 20
 		speed: 4
 		lifetime: 2
 		hitSound: none
@@ -58,7 +58,7 @@ weapons:
 		hitShake: 0
 		despawnShake: 0
 		despawnHit: true
-		splashDamage: 45
+		splashDamage: 20
 		splashDamageRadius: 8
 		width: 0
 		height: 0
@@ -125,7 +125,7 @@ abilities:
 	type: SpawnDeathAbility
 	unit: dead-man
 	spread: 6
-	amount: 16
+	amount: 8
 	display: false
 	}
 
@@ -145,7 +145,7 @@ abilities:
 		lifetime: 3
 		randLength: false
 		length: 0
-		region: bnb-unit-swordsmen-full
+		region: bnb-unit-militiamen-full
 		sizeFrom: 4
 		sizeTo: 4
 		spin: 0
@@ -159,7 +159,7 @@ abilities:
 
 	{
 	type: StatusFieldAbility
-	effect: recovery1.2
+	effect: recovery1
 	duration: 600
 	reload: 600
 	range: 0
