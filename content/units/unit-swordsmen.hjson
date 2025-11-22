@@ -4,7 +4,7 @@ mechFrontSway: 0
 strafePenalty: 0.5
 
 fogRadius: 2
-speed: 0.12
+speed: 0.11
 maxRange: 16
 range: 16
 targetAir: false
@@ -14,8 +14,8 @@ outlines: false
 lightRadius: 8
 rotateMoveFirst: true
 rotateSpeed: 2
-health: 2100
-armor: 10
+health: 2200
+armor: 15
 hitSize: 8
 groundLayer: 29
 healFlash: false
@@ -27,7 +27,7 @@ weapons:
 	{
 	name: unit-swordsmen-soldiers
 	mirror: false
-	reload: 80
+	reload: 100
 	x: 0
 	y: 0
 	shootX: 0
@@ -50,7 +50,7 @@ weapons:
 		hitEffect: none
 		despawnEffect: none
 		maxRange: 8
-		damage: 45
+		damage: 35
 		speed: 4
 		lifetime: 2
 		hitSound: none
@@ -58,7 +58,7 @@ weapons:
 		hitShake: 0
 		despawnShake: 0
 		despawnHit: true
-		splashDamage: 45
+		splashDamage: 35
 		splashDamageRadius: 8
 		width: 0
 		height: 0

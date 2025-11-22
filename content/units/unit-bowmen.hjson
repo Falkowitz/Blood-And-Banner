@@ -93,7 +93,7 @@ weapons:
 		despawnEffect: none
 		range: 64
 		maxRange: 64
-		damage: 35
+		damage: 40
 		speed: 1
 		lifetime: 64
 		hitSound: arrow-hit
@@ -102,7 +102,7 @@ weapons:
 		despawnShake: 0
 		despawnHit: true
 		scaleLife: true
-		splashDamage: 35
+		splashDamage: 40
 		splashDamageRadius: 8
 		width: 4
 		height: 4

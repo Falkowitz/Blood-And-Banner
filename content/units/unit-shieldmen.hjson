@@ -4,7 +4,7 @@ mechFrontSway: 0
 strafePenalty: 0.6
 
 fogRadius: 2
-speed: 0.1
+speed: 0.11
 maxRange: 16
 targetAir: false
 createScorch: false

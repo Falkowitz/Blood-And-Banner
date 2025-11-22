@@ -4,7 +4,7 @@ mechFrontSway: 0
 strafePenalty: 0.6
 
 fogRadius: 4
-speed: 0.1
+speed: 0.11
 maxRange: 24
 targetAir: false
 createScorch: false
@@ -14,7 +14,7 @@ lightRadius: 8
 deathExplosionEffect: none
 rotateSpeed: 1.5
 health: 1800
-armor: 15
+armor: 10
 hitSize: 8
 groundLayer: 29
 healFlash: false
@@ -49,7 +49,7 @@ weapons:
 		hitEffect: none
 		despawnEffect: none
 		maxRange: 16
-		damage: 30
+		damage: 35
 		speed: 1
 		lifetime: 16
 		hitSound: none
@@ -57,7 +57,7 @@ weapons:
 		hitShake: 0
 		despawnShake: 0
 		despawnHit: true
-		splashDamage: 30
+		splashDamage: 35
 		splashDamageRadius: 8
 		width: 0
 		height: 0
