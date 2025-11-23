@@ -1,0 +1,14 @@
+type: Floor
+//walkSound: water-splashes
+status: on-snow
+statusDuration: 15
+variants: 0
+//isLiquid: true
+albedo: 0.1
+supportsOverlay: true
+hasColor: true
+mapColor: adc5d8
+useColor: true
+//liquidDrop: water
+//drownTime: 240
+dragMultiplier: 0.3

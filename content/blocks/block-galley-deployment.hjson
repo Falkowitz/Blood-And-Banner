@@ -52,9 +52,9 @@ destroySound: none
 
 requirements:
 [
-	bnb-materials/25
+	bnb-materials/20
 ]
-buildCostMultiplier: 72
+buildCostMultiplier: 90
 destroyBullet: 
 {
 		type: BasicBulletType

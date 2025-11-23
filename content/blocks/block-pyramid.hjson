@@ -11,3 +11,4 @@ destroySound: sandstone-building-destroyed
 squareSprite: false
 drawTeamOverlay: false
 variants: 11
+targetable: false

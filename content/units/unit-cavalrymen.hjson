@@ -224,3 +224,8 @@ abilities:
 		}
 	}
 ]
+
+immunities: 
+[
+bnb-on-snowdrift
+]

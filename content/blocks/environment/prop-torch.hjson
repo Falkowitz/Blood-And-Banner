@@ -14,3 +14,6 @@ radius: 8
 configurable: false
 hasShadow: false
 drawTeamOverlay: false
+groundLayer: 28
+targetable: false
+underBullets: true

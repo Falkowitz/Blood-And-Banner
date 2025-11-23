@@ -10,3 +10,4 @@ breakSound: sandstone-house-destroyed
 destroySound: sandstone-house-destroyed
 squareSprite: false
 drawTeamOverlay: false
+targetable: false

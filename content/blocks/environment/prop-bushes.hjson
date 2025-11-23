@@ -13,3 +13,4 @@ createRubble: false
 destroySound: foliage-rip
 breakSound: foliage-rip
 buildVisibility: sandboxOnly
+targetable: false

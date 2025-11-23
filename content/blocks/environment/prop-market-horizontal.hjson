@@ -11,3 +11,4 @@ destroySound: wooden-building-destroy
 squareSprite: false
 drawTeamOverlay: false
 variants: 3
+targetable: false

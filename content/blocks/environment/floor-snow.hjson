@@ -1,0 +1,12 @@
+type: Floor
+variants: 16
+supportsOverlay: true
+hasColor: true
+mapColor: f4f6f8
+useColor: true
+allowCorePlacement: false
+placeablePlayer: false
+placeableOn: false
+//walkSound: walk-on-grass
+status: on-snow
+statusDuration: 15

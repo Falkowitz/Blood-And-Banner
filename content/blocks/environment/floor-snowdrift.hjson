@@ -1,0 +1,11 @@
+type: Floor
+variants: 5
+hasColor: true
+mapColor: c5d3e5
+useColor: true
+allowCorePlacement: false
+placeablePlayer: false
+placeableOn: false
+status: on-snowdrift
+statusDuration: 15
+walkSound: leaves-rustling

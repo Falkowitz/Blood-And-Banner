@@ -72,7 +72,7 @@ weapons:
 	soundPitchMax: 1.2
 	rotate: true
 	rotateSpeed: 3
-	minShootVelocity: 0.18
+	minShootVelocity: 0.15
 	bullet:
 		{
 		type: BasicBulletType
@@ -287,4 +287,9 @@ abilities:
 		layer: 28.9
 		}
 	}
+]
+
+immunities: 
+[
+bnb-on-snowdrift
 ]

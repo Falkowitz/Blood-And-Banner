@@ -1,6 +1,6 @@
 speedMultiplier: 2
-reloadMultiplier: 1.5
-healthMultiplier: 0.5
+reloadMultiplier: 1.25
+healthMultiplier: 0.75
 color: f25555
 outline: false
 show: true

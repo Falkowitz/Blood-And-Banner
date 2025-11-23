@@ -40,7 +40,7 @@ armor: 10
 hitSize: 8
 groundLayer: 29
 healFlash: false
-deathSound: battalion-death
+deathSound: general-shatter
 omniMovement: false
 rotateMoveFirst: true
 
@@ -236,4 +236,10 @@ abilities:
 	range: 128
 	}
 
+]
+
+
+immunities: 
+[
+bnb-on-snowdrift
 ]

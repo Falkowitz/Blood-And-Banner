@@ -10,3 +10,5 @@ createRubble: false
 destroySound: stone-destroyed
 breakSound: stone-destroyed
 buildVisibility: sandboxOnly
+groundLayer: 28
+targetable: false

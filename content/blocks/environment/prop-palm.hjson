@@ -13,3 +13,5 @@ createRubble: false
 destroySound: palm-tree-fall
 breakSound: palm-tree-fall
 buildVisibility: sandboxOnly
+targetable: false
+underBullets: true

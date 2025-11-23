@@ -8,8 +8,9 @@ drawTeamOverlay: false
 hasShadow: true
 variants: 5
 drawCracks: false
-underBullets: true
+underBullets: false
 createRubble: false
 destroySound: stone-destroyed
 breakSound: stone-destroyed
 buildVisibility: sandboxOnly
+targetable: false
