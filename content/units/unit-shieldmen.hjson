@@ -177,7 +177,7 @@ abilities:
 
 	{
 	type: StatusFieldAbility
-	effect: recovery1
+	effect: recovery1.2
 	duration: 600
 	reload: 600
 	range: 0

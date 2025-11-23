@@ -55,6 +55,7 @@ abilities:
 		lightOpacity: 0
 		lightColor: ffffff00
 		layer: 95.05
+		offsetY: 3
 		}
 	}
 ]

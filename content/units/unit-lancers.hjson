@@ -1,0 +1,288 @@
+type: tank
+mechSideSway: 0
+mechFrontSway: 0
+strafePenalty: 0.5
+drag: 0.015
+accel: 0.02
+
+fogRadius: 12
+speed: 0.25
+maxRange: 24
+targetAir: false
+createScorch: false
+commands: [move]
+outlines: false
+lightRadius: 8
+deathExplosionEffect: 
+{
+	type: ParticleEffect
+	region: bnb-death
+	particles: 1
+	length: 24
+	lifetime: 180
+	randLength: true
+	sizeFrom: 4
+	sizeTo: 4
+	useRotation: false
+	offset: -90
+	baseRotation: 90
+	layer: 140.1
+	lightScl: 0
+	lightOpacity: 0
+	cone: 0
+	colorFrom: ffffffff
+	colorTo: ffffff00
+}
+rotateSpeed: 3
+health: 2200
+armor: 15
+hitSize: 8
+groundLayer: 29
+healFlash: false
+deathSound: battalion-death
+omniMovement: false
+rotateMoveFirst: true
+//circleTarget: true
+
+//treadEffect: none
+treadFrames: 1
+treadRects:
+[
+	{
+	x: 0
+	y: 0
+	width: 0
+	height: 0
+	}
+]
+
+weapons:
+[
+	{
+	alwaysShooting: true
+	name: none
+	mirror: false
+	reload: 30
+	x: 0
+	y: 0
+	shootX: 0
+	shootY: 0
+	shootSound: army-aaa
+	soundPitchMin: 0.8
+	soundPitchMax: 1.2
+	rotate: true
+	rotateSpeed: 3
+	minShootVelocity: 0.15
+	bullet:
+		{
+		type: BasicBulletType
+		lightRadius: 0
+		lightOpacity: 0
+		lightColor: ffffff
+		type: BasicBulletType
+		shootEffect: none
+		smokeEffect: none
+		hitEffect: none
+		despawnEffect: none
+		maxRange: 24
+		damage: 125
+		speed: 4
+		lifetime: 4
+		hitSound: none
+		despawnSound: none
+		hitShake: 0
+		despawnShake: 0
+		despawnHit: true
+		splashDamage: 125
+		splashDamageRadius: 8
+		width: 0
+		height: 0
+		hittable: false
+		reflectable: false
+		absorbable: false
+		status: vulnerable
+		statusDuration: 120
+		hitSize: 4
+		knockback: 4
+		impact: true
+		}
+	}
+
+
+	{
+	name: unit-lancers-soldiers
+	mirror: none
+	reload: 64
+	x: 0
+	y: -1
+	shootX: 0
+	shootY: 0
+	shootSound: cavalry1
+	soundPitchMin: 0.8
+	soundPitchMax: 1.2
+	shootStatus: slowness50
+	shootStatusDuration: 64
+	rotate: true
+	rotateSpeed: 10
+	recoil: -1
+	recoilPow: 1
+	recoilTime: 32
+	layerOffset: 1
+	bullet:
+		{
+		type: BasicBulletType
+		shootEffect: none
+		smokeEffect: none
+		hitEffect: none
+		despawnEffect: none
+		maxRange: 16
+		damage: 20
+		speed: 4
+		lifetime: 4
+		hitSound: none
+		despawnSound: none
+		hitShake: 0
+		despawnShake: 0
+		despawnHit: true
+		splashDamage: 20
+		splashDamageRadius: 8
+		width: 0
+		height: 0
+		hittable: true
+		reflectable: false
+		absorbable: false
+		status: vulnerable
+		statusDuration: 120
+		hitSize: 8
+		pierce: true
+		pierceCap: -1
+		collideTerrain: true
+		lightRadius: 0
+		lightOpacity: 0
+		lightColor: ffffff
+		}
+	}
+
+
+	{
+	name: none
+	x: 0
+	y: 0
+	shootX: 0
+	shootY: 0
+	mirror: false
+	display: false
+	minShootVelocity: 0.01
+	alwaysShooting: true
+	rotate: false
+	shootSound: horse-gallop
+	reload: 60
+	bullet: {
+		type: BasicBulletType
+		shootEffect: none
+		smokeEffect: none
+		despawnEffect: none
+		hitEffect: none
+		collides: false
+		hittable: false
+		reflectable: false
+		absorbable: false
+		width: 0
+		height: 0
+		instantDisappear: true
+		damage: 0
+		splashDamage: 0
+		shrinkX: 0
+		shrinkY: 0
+		lightRadius: 0
+		lightOpacity: 0
+		lightColor: ffffff
+		}
+	}
+
+]
+
+abilities: 
+[
+	{
+	type: SpawnDeathAbility
+	unit: dead
+	spread: 0.1
+	display: false
+	}
+
+	{
+	type: SpawnDeathAbility
+	unit: dead-man-horse
+	spread: 6
+	amount: 8
+	display: false
+	}
+
+	{
+	type: StatusFieldAbility
+	effect: none
+	reload: 1
+	effectY: 0
+	effectX: 0
+	parentizeEffects: true
+	activeEffect: {
+		cone: 0
+		followParent: true
+		rotWithParent: false
+		useRotation: false
+		particles: 1
+		lifetime: 3
+		randLength: false
+		length: 0
+		region: bnb-unit-lancers-full
+		sizeFrom: 4
+		sizeTo: 4
+		spin: 0
+		lightScl: 0
+		lightOpacity: 0
+		lightColor: ffffff00
+		layer: 95.1
+		offsetY: 3
+		offsetX: 3
+		}
+	}
+
+	{
+	type: StatusFieldAbility
+	effect: recovery0.8
+	duration: 600
+	reload: 600
+	range: 0
+	applyEffect: none
+	activeEffect: none
+	}
+
+	{
+	type: MoveEffectAbility
+	minVelocity: 0.125
+	effect: 
+		{
+		type: ParticleEffect
+		particles: 1
+		cone: 0
+		length: 0
+		colorFrom: ffffffff
+		colorTo: ffffff00
+		lifetime: 120
+		lightScl: 0
+		lightOpacity: 0
+		sizeFrom: 2
+		sizeTo: 0
+		rotWithParent: true
+		parentizeEffects: true
+		rotateEffect: true
+		layer: 28.9
+		}
+	}
+]
+
+immunities: 
+[
+bnb-on-snowdrift
+]

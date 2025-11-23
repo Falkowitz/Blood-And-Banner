@@ -158,8 +158,8 @@ weapons:
 		hittable: true
 		reflectable: false
 		absorbable: false
-		status: vulnerable
-		statusDuration: 120
+		//status: vulnerable
+		//statusDuration: 120
 		hitSize: 8
 		pierce: true
 		pierceCap: -1
@@ -257,7 +257,7 @@ abilities:
 
 	{
 	type: StatusFieldAbility
-	effect: recovery1.2
+	effect: recovery0.8
 	duration: 600
 	reload: 600
 	range: 0
