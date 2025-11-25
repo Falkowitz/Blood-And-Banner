@@ -1,6 +1,26 @@
 name: bnb
 displayName: Blood & Banner
-description: Medieval strategy mod where you control unit battalions
+subtitle: "Vexillum Sanguinis Nostri"
+description:
+'''
+>Oderint Dum Metuant
+
+
+
+Inspired by the historical YouTube videos about medieval battles with tabletop graphics
+
+This mod is about controlling units of battalions from medieval to napoleonic ages (maybe even WW1)
+
+There's minimal logistical part, most of the focus is on the combat
+
+Best intended to play in PvP
+
+Very janky due to Mindustry not being intended to be played like this
+
+
+
+Work In Progress, can't promise that i won't abandon this mod after some months
+'''
 author: Fitz
 minGameVersion: 136
 version: 0.1
