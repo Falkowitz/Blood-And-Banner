@@ -5,7 +5,7 @@ explodeOnFull: true
 destructible: true
 breakable: true
 rebuildable: false
-size: 2
+size: 1
 hasShadow: false
 itemCapacity: 20
 liquidCapacity: 20
@@ -18,7 +18,6 @@ breakEffect: none
 destroyEffect: none
 explosionRadius: 0.001
 explosionDamage: 0.001
-floating: true
 explodeEffect: 
 {
 	type: ParticleEffect
@@ -46,20 +45,20 @@ explosionShakeDuration: 0.1
 destroyBulletSameTeam: true
 createRubble: false
 
-placeSound: ship-built
+placeSound: bowmen-dep
+placePitchChange: false
 breakSound: none
 destroySound: none
 
 requirements:
 [
-	bnb-materials/20
-	bnb-manpower/10
+	bnb-manpower/8
 ]
-buildCostMultiplier: 240
+buildCostMultiplier: 120
 destroyBullet: 
 {
 		type: BasicBulletType
-		spawnUnit: unit-ship-galley
+		spawnUnit: unit-fire-bowmen
 		shootEffect: none
 		smokeEffect: none
 		despawnEffect: none
