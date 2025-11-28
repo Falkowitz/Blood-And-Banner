@@ -1,0 +1,6 @@
+type: Block
+targetable: false
+destructible: false
+variants: 0
+solid: true
+breakable: false
