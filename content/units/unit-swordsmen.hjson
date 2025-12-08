@@ -55,7 +55,7 @@ weapons:
 	soundPitchMin: 0.8
 	soundPitchMax: 1.2
 	shootStatus: slowness90
-	shootStatusDuration: 80
+	shootStatusDuration: 100
 	rotate: true
 	rotateSpeed: 2
 	recoil: -0.4

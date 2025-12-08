@@ -1,4 +1,4 @@
-type: Wall
+type: Block
 size: 1
 health: 250
 solid: false

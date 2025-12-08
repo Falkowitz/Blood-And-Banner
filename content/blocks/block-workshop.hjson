@@ -20,6 +20,7 @@ loopSound: resupply
 loopSoundVolume: 0.3
 ambientSound: resupply
 ambientSoundVolume: 0.3
+category: production
 
 placeSound: stone-building-destroyed
 breakSound: stone-building-destroyed

@@ -50,6 +50,8 @@ placePitchChange: false
 breakSound: none
 destroySound: none
 
+baseShake: 0
+
 requirements:
 [
 	bnb-manpower/5

@@ -5,8 +5,8 @@ strafePenalty: 0.5
 drag: 0.015
 accel: 0.02
 
-fogRadius: 12
-speed: 0.25
+fogRadius: 4
+speed: 0.3
 maxRange: 24
 targetAir: false
 createScorch: false
@@ -59,20 +59,22 @@ treadRects:
 weapons:
 [
 	{
-	alwaysShooting: true
+	alwaysShooting: false
 	name: none
 	mirror: false
-	reload: 30
+	reload: 300
 	x: 0
 	y: 0
 	shootX: 0
 	shootY: 0
-	shootSound: army-aaa
+	shootSound: lancer-impact
+	shootSoundVolume: 2
 	soundPitchMin: 0.8
 	soundPitchMax: 1.2
 	rotate: true
-	rotateSpeed: 3
-	minShootVelocity: 0.15
+	rotateSpeed: 10
+	minShootVelocity: 0.2
+	shootCone: 0.5
 	bullet:
 		{
 		type: BasicBulletType
@@ -85,9 +87,9 @@ weapons:
 		hitEffect: none
 		despawnEffect: none
 		maxRange: 24
-		damage: 125
+		damage: 150
 		speed: 4
-		lifetime: 4
+		lifetime: 6.5
 		hitSound: none
 		despawnSound: none
 		hitShake: 0
@@ -102,9 +104,45 @@ weapons:
 		absorbable: false
 		status: vulnerable
 		statusDuration: 120
-		hitSize: 4
+		hitSize: 1
 		knockback: 4
 		impact: true
+		}
+	}
+
+	{
+	name: none
+	x: 0
+	y: 0
+	shootX: 0
+	shootY: 0
+	mirror: false
+	display: false
+	minShootVelocity: 0.2
+	alwaysShooting: true
+	rotate: false
+	shootSound: lancer-charge
+	reload: 300
+	bullet: {
+		type: BasicBulletType
+		shootEffect: none
+		smokeEffect: none
+		despawnEffect: none
+		hitEffect: none
+		collides: false
+		hittable: false
+		reflectable: false
+		absorbable: false
+		width: 0
+		height: 0
+		instantDisappear: true
+		damage: 0
+		splashDamage: 0
+		shrinkX: 0
+		shrinkY: 0
+		lightRadius: 0
+		lightOpacity: 0
+		lightColor: ffffff
 		}
 	}
 
@@ -123,7 +161,7 @@ weapons:
 	shootStatus: slowness50
 	shootStatusDuration: 64
 	rotate: true
-	rotateSpeed: 10
+	rotateSpeed: 3
 	recoil: -1
 	recoilPow: 1
 	recoilTime: 32
@@ -135,10 +173,10 @@ weapons:
 		smokeEffect: none
 		hitEffect: none
 		despawnEffect: none
-		maxRange: 16
+		maxRange: 24
 		damage: 20
 		speed: 4
-		lifetime: 4
+		lifetime: 8
 		hitSound: none
 		despawnSound: none
 		hitShake: 0

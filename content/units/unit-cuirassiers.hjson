@@ -5,9 +5,9 @@ strafePenalty: 0.5
 drag: 0.015
 accel: 0.02
 
-fogRadius: 12
+fogRadius: 4
 speed: 0.25
-maxRange: 24
+maxRange: 16
 targetAir: false
 createScorch: false
 commands: [move]
@@ -72,7 +72,7 @@ weapons:
 	soundPitchMax: 1.2
 	rotate: true
 	rotateSpeed: 3
-	minShootVelocity: 0.15
+	minShootVelocity: 0.125
 	bullet:
 		{
 		type: BasicBulletType
@@ -84,7 +84,7 @@ weapons:
 		smokeEffect: none
 		hitEffect: none
 		despawnEffect: none
-		maxRange: 24
+		maxRange: 16
 		damage: 15
 		speed: 4
 		lifetime: 4
