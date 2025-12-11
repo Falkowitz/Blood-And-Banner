@@ -11,3 +11,4 @@ destroySound: wooden-house-destroyed
 squareSprite: false
 drawTeamOverlay: false
 targetable: false
+customShadow: true
