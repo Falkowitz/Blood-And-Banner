@@ -28,14 +28,14 @@ deathSound: none
 canDrown: false
 defaultController: MissileAI
 
-weapons:
-[
-{
 name: dead-galley-ship
-noAttack: true
-x: 0
-y: 0
-mirror: false
+weapons: [
+{
+	name: dead-galley-ship
+	noAttack: true
+	x: 0
+	y: 0
+	mirror: false
 }
 ]
 

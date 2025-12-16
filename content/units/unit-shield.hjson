@@ -29,8 +29,7 @@ defaultController: DefenderAI
 outlines: false
 controller: DefenderAI
 
-weapons:
-[
+weapons: [
 {
 name: unit-shield-weapon
 noAttack: true

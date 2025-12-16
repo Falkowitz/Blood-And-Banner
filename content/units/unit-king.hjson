@@ -45,8 +45,7 @@ bnb-maneuver-buff
 ]
 lightRadius: 24
 
-abilities: 
-[
+abilities: [
 	{
 	type: StatusFieldAbility
 	effect: none

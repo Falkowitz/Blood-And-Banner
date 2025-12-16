@@ -1,27 +1,34 @@
 type: mech
+
+// movement & handling
 mechSideSway: 0
 mechFrontSway: 0
 strafePenalty: 0.5
-
-fogRadius: 2
 speed: 0.11
-maxRange: 16
-range: 16
-targetAir: false
-createScorch: false
-commands: [move]
-outlines: false
-lightRadius: 8
-rotateMoveFirst: true
 rotateSpeed: 2
+rotateMoveFirst: true
+
+// vision & targeting
+fogRadius: 2
+range: 16
+maxRange: 16
+targetAir: false
+
+// core stats
 health: 2200
 armor: 15
 hitSize: 8
 groundLayer: 29
 healFlash: false
+
+// visuals
+outlines: false
+lightRadius: 8
+createScorch: false
+
+// audio & death
 deathSound: battalion-death
-deathExplosionEffect: 
-{
+deathExplosionEffect: {
 	type: ParticleEffect
 	region: bnb-death
 	particles: 1
@@ -41,155 +48,157 @@ deathExplosionEffect:
 	colorTo: ffffff00
 }
 
-weapons:
-[
+// control
+commands: [move]
+
+// weapons
+weapons: [
 	{
-	name: unit-swordsmen-soldiers
-	mirror: false
-	reload: 100
-	x: 0
-	y: 0
-	shootX: 0
-	shootY: 0
-	shootSound: melee1
-	soundPitchMin: 0.8
-	soundPitchMax: 1.2
-	shootStatus: slowness90
-	shootStatusDuration: 100
-	rotate: true
-	rotateSpeed: 2
-	recoil: -0.4
-	recoilPow: 1
-	recoilTime: 40
-	bullet:
-		{
-		type: BasicBulletType
-		shootEffect: none
-		smokeEffect: none
-		hitEffect: none
-		despawnEffect: none
-		maxRange: 8
-		damage: 35
-		speed: 4
-		lifetime: 2
-		hitSound: none
-		despawnSound: none
-		hitShake: 0
-		despawnShake: 0
-		despawnHit: true
-		splashDamage: 35
-		splashDamageRadius: 8
-		width: 0
-		height: 0
-		hittable: false
-		absorbable: false
-		hitSize: 8
-		scaleLife: true
-		collideTerrain: true
-		lightRadius: 0
-		lightOpacity: 0
-		lightColor: ffffff
-		}
-	}
-
-
-	{
-	name: none
-	x: 0
-	y: 0
-	shootX: 0
-	shootY: 0
-	mirror: false
-	display: false
-	minShootVelocity: 0.01
-	alwaysShooting: true
-	rotate: false
-	shootSound: march
-	reload: 120
-	bullet: {
-		type: BasicBulletType
-		shootEffect: none
-		smokeEffect: none
-		despawnEffect: none
-		hitEffect: none
-		collides: false
-		hittable: true
-		reflectable: false
-		absorbable: false
-		width: 0
-		height: 0
-		instantDisappear: true
-		damage: 0
-		splashDamage: 0
-		shrinkX: 0
-		shrinkY: 0
-		lightRadius: 0
-		lightOpacity: 0
-		lightColor: ffffff
-		}
-	}
-
-]
-
-abilities: 
-[
-	{
-	type: SpawnDeathAbility
-	unit: dead
-	spread: 0.1
-	display: false
-	}
-
-	{
-	type: SpawnDeathAbility
-	unit: dead-man
-	spread: 6
-	amount: 16
-	display: false
-	}
-
-	{
-	type: StatusFieldAbility
-	effect: none
-	reload: 1
-	effectY: 0
-	effectX: 0
-	parentizeEffects: true
-	activeEffect: {
-		cone: 0
-		followParent: true
-		rotWithParent: false
-		useRotation: false
-		particles: 1
-		lifetime: 3
-		randLength: false
-		length: 0
-		region: bnb-unit-swordsmen-full
-		sizeFrom: 4
-		sizeTo: 4
-		spin: 0
-		lightScl: 0
-		lightOpacity: 0
-		lightColor: ffffff00
-		layer: 95.1
-		offsetY: 3
+		// main melee attack
+		name: unit-swordsmen-soldiers
+		mirror: false
+		x: 0
+		y: 0
+		shootX: 0
+		shootY: 0
+		reload: 100
+		shootSound: melee1
+		soundPitchMin: 0.8
+		soundPitchMax: 1.2
+		shootStatus: slowness90
+		shootStatusDuration: 100
+		rotate: true
+		rotateSpeed: 2
+		recoil: -0.4
+		recoilPow: 1
+		recoilTime: 40
+		bullet: {
+			type: BasicBulletType
+			damage: 35
+			maxRange: 8
+			speed: 4
+			lifetime: 2
+			splashDamage: 35
+			splashDamageRadius: 8
+			width: 0
+			height: 0
+			hitSize: 8
+			hittable: false
+			absorbable: false
+			scaleLife: true
+			collideTerrain: true
+			despawnHit: true
+			hitShake: 0
+			despawnShake: 0
+			shootEffect: none
+			smokeEffect: none
+			hitEffect: none
+			despawnEffect: none
+			hitSound: none
+			despawnSound: none
+			lightRadius: 0
+			lightOpacity: 0
+			lightColor: ffffff
 		}
 	}
 
 	{
-	type: StatusFieldAbility
-	effect: recovery1.2
-	duration: 600
-	reload: 600
-	range: 0
-	applyEffect: none
-	activeEffect: none
+		// marching sound loop
+		name: none
+		mirror: false
+		display: false
+		x: 0
+		y: 0
+		shootX: 0
+		shootY: 0
+		reload: 120
+		minShootVelocity: 0.01
+		alwaysShooting: true
+		rotate: false
+		shootSound: march
+		bullet: {
+			type: BasicBulletType
+			damage: 0
+			splashDamage: 0
+			width: 0
+			height: 0
+			hittable: true
+			reflectable: false
+			absorbable: false
+			instantDisappear: true
+			shrinkX: 0
+			shrinkY: 0
+			collides: false
+			shootEffect: none
+			smokeEffect: none
+			despawnEffect: none
+			hitEffect: none
+			lightRadius: 0
+			lightOpacity: 0
+			lightColor: ffffff
+		}
 	}
 ]
 
-immunities: 
-[
-bnb-vulnerable
-bnb-on-fields
-bnb-on-dune
+// abilities
+abilities: [
+	{
+		type: SpawnDeathAbility
+		unit: dead
+		spread: 0.1
+		display: false
+	}
+
+	{
+		type: SpawnDeathAbility
+		unit: dead-man
+		spread: 6
+		amount: 16
+		display: false
+	}
+
+	{
+		type: StatusFieldAbility
+		effect: none
+		reload: 1
+		effectY: 0
+		effectX: 0
+		parentizeEffects: true
+		activeEffect: {
+			cone: 0
+			followParent: true
+			rotWithParent: false
+			useRotation: false
+			particles: 1
+			lifetime: 3
+			randLength: false
+			length: 0
+			region: bnb-unit-swordsmen-full
+			sizeFrom: 4
+			sizeTo: 4
+			spin: 0
+			lightScl: 0
+			lightOpacity: 0
+			lightColor: ffffff00
+			layer: 95.1
+			offsetY: 3
+		}
+	}
+
+	{
+		type: StatusFieldAbility
+		effect: recovery1.2
+		duration: 600
+		reload: 600
+		range: 0
+		applyEffect: none
+		activeEffect: none
+	}
+]
+
+// status immunities
+immunities: [
+	bnb-vulnerable
+	bnb-on-fields
+	bnb-on-dune
 ]

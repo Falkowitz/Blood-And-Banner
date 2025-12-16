@@ -1,20 +1,37 @@
 type: tank
+
+// movement & handling
 mechSideSway: 0
 mechFrontSway: 0
 strafePenalty: 0.4
 drag: 0.045
 accel: 0.05
-
-fogRadius: 16
 speed: 0.3
+rotateSpeed: 4
+omniMovement: false
+rotateMoveFirst: true
+//circleTarget: true
+
+// vision & targeting
+fogRadius: 16
 maxRange: 16
 targetAir: false
-createScorch: false
-commands: [move]
+
+// core stats
+health: 1800
+armor: 10
+hitSize: 8
+groundLayer: 29
+healFlash: false
+
+// visuals
 outlines: false
 lightRadius: 8
-deathExplosionEffect: 
-{
+createScorch: false
+
+// audio & death
+deathSound: battalion-death
+deathExplosionEffect: {
 	type: ParticleEffect
 	region: bnb-death
 	particles: 1
@@ -33,199 +50,190 @@ deathExplosionEffect:
 	colorFrom: ffffffff
 	colorTo: ffffff00
 }
-rotateSpeed: 4
-health: 1800
-armor: 10
-hitSize: 8
-groundLayer: 29
-healFlash: false
-deathSound: battalion-death
-omniMovement: false
-rotateMoveFirst: true
-//circleTarget: true
 
+// control
+commands: [move]
+
+// tread visuals
 //treadEffect: none
 treadFrames: 1
-treadRects:
-[
+treadRects: [
 	{
-	x: 0
-	y: 0
-	width: 0
-	height: 0
+		x: 0
+		y: 0
+		width: 0
+		height: 0
 	}
 ]
 
-weapons:
-[
+// weapons
+weapons: [
 	{
-	name: unit-cavalrymen-soldiers
-	mirror: false
-	reload: 48
-	x: 0
-	y: -1
-	shootX: 0
-	shootY: 0
-	shootSound: cavalry2
-	soundPitchMin: 0.8
-	soundPitchMax: 1.2
-	shootStatus: slowness50
-	shootStatusDuration: 48
-	rotate: true
-	rotateSpeed: 4
-	recoil: -1
-	recoilPow: 1
-	recoilTime: 24
-	bullet:
-		{
-		type: BasicBulletType
-		shootEffect: none
-		smokeEffect: none
-		hitEffect: none
-		despawnEffect: none
-		maxRange: 8
-		damage: 50
-		speed: 4
-		lifetime: 2
-		hitSound: none
-		despawnSound: none
-		hitShake: 0
-		despawnShake: 0
-		despawnHit: true
-		splashDamage: 50
-		splashDamageRadius: 8
-		width: 0
-		height: 0
-		hittable: true
-		reflectable: false
-		absorbable: false
-		collideTerrain: true
-		lightRadius: 0
-		lightOpacity: 0
-		lightColor: ffffff
+		// primary charge / melee hit
+		name: unit-cavalrymen-soldiers
+		mirror: false
+		reload: 48
+		x: 0
+		y: -1
+		shootX: 0
+		shootY: 0
+		shootSound: cavalry2
+		soundPitchMin: 0.8
+		soundPitchMax: 1.2
+		shootStatus: slowness50
+		shootStatusDuration: 48
+		rotate: true
+		rotateSpeed: 4
+		recoil: -1
+		recoilPow: 1
+		recoilTime: 24
+		bullet: {
+			type: BasicBulletType
+			maxRange: 8
+			damage: 50
+			speed: 4
+			lifetime: 2
+			splashDamage: 50
+			splashDamageRadius: 8
+			width: 0
+			height: 0
+			hittable: true
+			reflectable: false
+			absorbable: false
+			collideTerrain: true
+			despawnHit: true
+			hitShake: 0
+			despawnShake: 0
+			shootEffect: none
+			smokeEffect: none
+			hitEffect: none
+			despawnEffect: none
+			hitSound: none
+			despawnSound: none
+			lightRadius: 0
+			lightOpacity: 0
+			lightColor: ffffff
 		}
 	}
 
-
 	{
-	name: none
-	x: 0
-	y: 0
-	shootX: 0
-	shootY: 0
-	mirror: false
-	display: false
-	minShootVelocity: 0.01
-	alwaysShooting: true
-	rotate: false
-	shootSound: horse-gallop
-	reload: 60
-	bullet: {
-		type: BasicBulletType
-		shootEffect: none
-		smokeEffect: none
-		despawnEffect: none
-		hitEffect: none
-		collides: false
-		hittable: false
-		reflectable: false
-		absorbable: false
-		width: 0
-		height: 0
-		instantDisappear: true
-		damage: 0
-		splashDamage: 0
-		shrinkX: 0
-		shrinkY: 0
-		lightRadius: 0
-		lightOpacity: 0
-		lightColor: ffffff
+		// galloping loop
+		name: none
+		x: 0
+		y: 0
+		shootX: 0
+		shootY: 0
+		mirror: false
+		display: false
+		reload: 60
+		minShootVelocity: 0.01
+		alwaysShooting: true
+		rotate: false
+		shootSound: horse-gallop
+		bullet: {
+			type: BasicBulletType
+			damage: 0
+			splashDamage: 0
+			width: 0
+			height: 0
+			instantDisappear: true
+			shrinkX: 0
+			shrinkY: 0
+			collides: false
+			hittable: false
+			reflectable: false
+			absorbable: false
+			shootEffect: none
+			smokeEffect: none
+			despawnEffect: none
+			hitEffect: none
+			lightRadius: 0
+			lightOpacity: 0
+			lightColor: ffffff
 		}
 	}
-
 ]
 
-abilities: 
-[
+// abilities
+abilities: [
 	{
-	type: SpawnDeathAbility
-	unit: dead
-	spread: 0.1
-	display: false
+		type: SpawnDeathAbility
+		unit: dead
+		spread: 0.1
+		display: false
 	}
 
 	{
-	type: SpawnDeathAbility
-	unit: dead-man-horse
-	spread: 6
-	amount: 8
-	display: false
+		type: SpawnDeathAbility
+		unit: dead-man-horse
+		spread: 6
+		amount: 8
+		display: false
 	}
 
 	{
-	type: StatusFieldAbility
-	effect: none
-	reload: 1
-	effectY: 0
-	effectX: 0
-	parentizeEffects: true
-	activeEffect: {
-		cone: 0
-		followParent: true
-		rotWithParent: false
-		useRotation: false
-		particles: 1
-		lifetime: 3
-		randLength: false
-		length: 0
-		region: bnb-unit-cavalrymen-full
-		sizeFrom: 4
-		sizeTo: 4
-		spin: 0
-		lightScl: 0
-		lightOpacity: 0
-		lightColor: ffffff00
-		layer: 95.1
-		offsetY: 3
-		offsetX: 3
-		}
-	}
-
-	{
-	type: StatusFieldAbility
-	effect: recovery1
-	duration: 600
-	reload: 600
-	range: 0
-	applyEffect: none
-	activeEffect: none
-	}
-
-	{
-	type: MoveEffectAbility
-	minVelocity: 0.01
-	effect: 
-		{
-		type: ParticleEffect
-		particles: 1
-		cone: 0
-		length: 0
-		colorFrom: ffffffff
-		colorTo: ffffff00
-		lifetime: 120
-		lightScl: 0
-		lightOpacity: 0
-		sizeFrom: 2
-		sizeTo: 0
-		rotWithParent: true
+		type: StatusFieldAbility
+		effect: none
+		reload: 1
+		effectY: 0
+		effectX: 0
 		parentizeEffects: true
-		rotateEffect: true
-		layer: 28.9
+		activeEffect: {
+			cone: 0
+			followParent: true
+			rotWithParent: false
+			useRotation: false
+			particles: 1
+			lifetime: 3
+			randLength: false
+			length: 0
+			region: bnb-unit-cavalrymen-full
+			sizeFrom: 4
+			sizeTo: 4
+			spin: 0
+			lightScl: 0
+			lightOpacity: 0
+			lightColor: ffffff00
+			layer: 95.1
+			offsetY: 3
+			offsetX: 3
+		}
+	}
+
+	{
+		type: StatusFieldAbility
+		effect: recovery1
+		duration: 600
+		reload: 600
+		range: 0
+		applyEffect: none
+		activeEffect: none
+	}
+
+	{
+		type: MoveEffectAbility
+		minVelocity: 0.01
+		effect: {
+			type: ParticleEffect
+			particles: 1
+			cone: 0
+			length: 0
+			colorFrom: ffffffff
+			colorTo: ffffff00
+			lifetime: 120
+			lightScl: 0
+			lightOpacity: 0
+			sizeFrom: 2
+			sizeTo: 0
+			rotWithParent: true
+			parentizeEffects: true
+			rotateEffect: true
+			layer: 28.9
 		}
 	}
 ]
 
-immunities: 
-[
-bnb-on-snowdrift
+// terrain / status immunities
+immunities: [
+	bnb-on-snowdrift
 ]

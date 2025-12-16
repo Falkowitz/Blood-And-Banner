@@ -29,33 +29,32 @@ defaultController: MissileAI
 drawBody: false
 lightRadius: 0
 
-abilities: 
-[
+abilities: [
 	{
-	type: StatusFieldAbility
-	effect: none
-	reload: 1
-	effectY: 0
-	effectX: 0
-	parentizeEffects: true
-	activeEffect: {
-		cone: 0
-		followParent: true
-		rotWithParent: false
-		useRotation: false
-		particles: 1
-		lifetime: 3
-		randLength: false
-		length: 0
-		region: bnb-dead-banner
-		sizeFrom: 4
-		sizeTo: 4
-		spin: 0
-		lightScl: 0
-		lightOpacity: 0
-		lightColor: ffffff00
-		layer: 95.05
-		offsetY: 3
+		type: StatusFieldAbility
+		effect: none
+		reload: 1
+		effectY: 0
+		effectX: 0
+		parentizeEffects: true
+		activeEffect: {
+			cone: 0
+			followParent: true
+			rotWithParent: false
+			useRotation: false
+			particles: 1
+			lifetime: 3
+			randLength: false
+			length: 0
+			region: bnb-dead-banner
+			sizeFrom: 4
+			sizeTo: 4
+			spin: 0
+			lightScl: 0
+			lightOpacity: 0
+			lightColor: ffffff00
+			layer: 95.05
+			offsetY: 3
 		}
 	}
 ]

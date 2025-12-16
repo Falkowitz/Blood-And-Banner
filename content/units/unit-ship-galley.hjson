@@ -52,8 +52,7 @@ trailScl: 0
 
 trailLenght: 0
 
-weapons:
-[
+weapons: [
 
 	{
 	name: unit-ship-galley-hull
@@ -606,17 +605,14 @@ weapons:
 
 ]
 
-immunities:
-[
+immunities: [
 bnb-in-water
 bnb-in-a-swamp
 ]
 
 
 
-
-abilities: 
-[
+abilities: [
 	{
 	type: SpawnDeathAbility
 	unit: dead-galley
