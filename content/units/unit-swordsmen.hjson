@@ -24,6 +24,7 @@ healFlash: false
 // visuals
 outlines: false
 lightRadius: 8
+createWreck: false
 createScorch: false
 
 // audio & death

@@ -1,19 +1,30 @@
-health: 999999
 type: missile
+
+// type & core properties
 internal: true
 hidden: true
+isEnemy: false
+defaultController: MissileAI
+
+// core stats
+health: 999999
 armor: 0
-groundLayer: 29
+hitSize: 0
 speed: 0
 rotateSpeed: 0
-hitSize: 0
+lifetime: 3600
+
+// visuals & behavior
+groundLayer: 29
 outlines: false
 createScorch: false
 fogRadius: 0
 drawCell: true
+drawBody: false
+lightRadius: 0
 targetAir: false
-physics: false
 targetGround: false
+physics: false
 hittable: false
 drawMinimap: false
 targetable: false
@@ -21,14 +32,10 @@ killable: true
 useUnitCap: false
 playerControllable: false
 logicControllable: false
-isEnemy: false
-lifetime: 3600
 deathExplosionEffect: none
 deathSound: none
-defaultController: MissileAI
-drawBody: false
-lightRadius: 0
 
+// abilities
 abilities: [
 	{
 		type: StatusFieldAbility

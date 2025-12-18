@@ -1,76 +1,91 @@
 type: flying
+
+// type & core properties
 coreUnitDock: true
 isEnemy: false
 targetPriority: -3
 flying: true
-health: 100
+
+// movement & physics
+speed: 3
+drag: 0.05
+accel: 0.05
+rotateSpeed: 10
 lowAltitude: true
 shadowElevation: 0
 shadowElevationScl: 0
-hitSize: 4
-speed: 3
-drag: 0.05
-drawCell: true
-accel: 0.05
 engineSize: 0
+
+// vision & targeting
+fogRadius: 0
 targetGround: false
 targetAir: false
-buildBeamOffset: 0
+targetable: false
+hittable: false
+
+// core stats
+health: 100
+hitSize: 4
+
+// visuals
+outlines: false
+lightRadius: 24
+drawCell: true
 drawBuildBeam: false
-rotateSpeed: 10
+buildBeamOffset: 0
+drawMinimap: false
+createScorch: false
+
+// building & mining
 buildSpeed: 1
 buildRange: 400000
 mineSpeed: 0
 mineTier: 1
 itemCapacity: 0
-targetable: false
-hittable: false
 payloadCapacity: 0
 pickupUnits: false
-outlines: false
-fogRadius: 0
-createScorch: false
-drawMinimap: false
-immunities: [
-bnb-vulnerable
-bnb-slowness90
-bnb-slowness50
-bnb-recovery0.8
-bnb-recovery1
-bnb-recovery1.2
-bnb-recovery1.5
-bnb-attack-buff
-bnb-defence-buff
-bnb-maneuver-buff
-]
-lightRadius: 24
 
+// immunities
+immunities: [
+	bnb-vulnerable
+	bnb-slowness90
+	bnb-slowness50
+	bnb-recovery0.8
+	bnb-recovery1
+	bnb-recovery1.2
+	bnb-recovery1.5
+	bnb-attack-buff
+	bnb-defence-buff
+	bnb-maneuver-buff
+]
+
+// abilities
 abilities: [
 	{
-	type: StatusFieldAbility
-	effect: none
-	reload: 1
-	effectY: 0
-	effectX: 0
-	parentizeEffects: true
-	activeEffect: {
-		cone: 0
-		followParent: true
-		rotWithParent: false
-		useRotation: false
-		particles: 1
-		lifetime: 3
-		randLength: false
-		length: 0
-		region: bnb-unit-king-full
-		sizeFrom: 4
-		sizeTo: 4
-		spin: 0
-		lightScl: 0
-		lightOpacity: 0
-		lightColor: ffffff00
-		layer: 95.2
-		offsetY: 3
+		type: StatusFieldAbility
+		effect: none
+		reload: 1
+		effectY: 0
+		effectX: 0
+		parentizeEffects: true
+		activeEffect: {
+			cone: 0
+			followParent: true
+			rotWithParent: false
+			useRotation: false
+			particles: 1
+			lifetime: 3
+			randLength: false
+			length: 0
+			region: bnb-unit-king-full
+			sizeFrom: 4
+			sizeTo: 4
+			spin: 0
+			lightScl: 0
+			lightOpacity: 0
+			lightColor: ffffff00
+			layer: 95.2
+			offsetY: 3
 		}
 	}
 ]
