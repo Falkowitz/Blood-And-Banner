@@ -239,7 +239,6 @@ abilities: [
 		reload: 1
 		effectY: 0
 		effectX: 0
-		parentizeEffects: true
 		activeEffect: {
 			cone: 0
 			followParent: true
@@ -289,8 +288,7 @@ abilities: [
 			sizeTo: 0
 			rotWithParent: true
 			parentizeEffects: true
-			rotateEffect: true
-			layer: 28.9
+						layer: 28.9
 		}
 	}
 ]

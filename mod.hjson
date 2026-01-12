@@ -26,8 +26,14 @@ Special thanks to D&X for ideas and maps
 Work In Progress, can't promise that i won't abandon this mod after some months
 '''
 author: Fitz
-minGameVersion: 136
-version: 0.1
+minGameVersion: 154
+version: 0.2
 hideBrowser: true
 java: false
 //dependencies: ["multi-crafter"]
+
+
+
+//contentOrder: [
+
+//]

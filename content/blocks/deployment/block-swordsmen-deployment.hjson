@@ -12,7 +12,6 @@ liquidCapacity: 20
 itemDuration: 300
 powerProduction: 0
 outputLiquid: water/1024
-fuelItem: bnb-manpower
 hasPower: false
 breakEffect: none
 destroyEffect: none
@@ -50,7 +49,6 @@ placePitchChange: false
 breakSound: none
 destroySound: none
 
-baseShake: 0
 
 requirements:
 [

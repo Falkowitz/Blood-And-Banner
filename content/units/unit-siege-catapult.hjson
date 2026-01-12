@@ -54,7 +54,7 @@ deathExplosionEffect: {
 commands: [move]
 
 // tread visuals
-treadFranes: 1
+treadFrames: 1
 treadRects: [
 	{
 		x: 0

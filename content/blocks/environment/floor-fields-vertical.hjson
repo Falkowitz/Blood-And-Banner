@@ -8,4 +8,4 @@ placeablePlayer: false
 placeableOn: false
 status: on-fields
 statusDuration: 15
-walksound: walk-on-field
+walkSound: walk-on-field

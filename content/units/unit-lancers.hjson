@@ -79,7 +79,6 @@ weapons: [
 		shootX: 0
 		shootY: 0
 		shootSound: lancer-impact
-		shootSoundVolume: 2
 		soundPitchMin: 0.8
 		soundPitchMax: 1.2
 		rotate: true
@@ -271,7 +270,6 @@ abilities: [
 		reload: 1
 		effectY: 0
 		effectX: 0
-		parentizeEffects: true
 		activeEffect: {
 			cone: 0
 			followParent: true
@@ -321,8 +319,7 @@ abilities: [
 			sizeTo: 0
 			rotWithParent: true
 			parentizeEffects: true
-			rotateEffect: true
-			layer: 28.9
+						layer: 28.9
 		}
 	}
 ]

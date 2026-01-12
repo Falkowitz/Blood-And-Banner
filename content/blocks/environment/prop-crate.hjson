@@ -13,5 +13,4 @@ createRubble: false
 breakSound: wood-destroyed
 destroySound: wood-destroyed
 buildVisibility: sandboxOnly
-groundLayer: 28
 targetable: false

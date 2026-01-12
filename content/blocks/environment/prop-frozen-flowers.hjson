@@ -10,5 +10,4 @@ createRubble: false
 destroySound: foliage-rip
 breakSound: foliage-rip
 buildVisibility: sandboxOnly
-groundLayer: 28
 targetable: false

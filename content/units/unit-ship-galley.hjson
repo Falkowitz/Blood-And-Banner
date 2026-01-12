@@ -12,10 +12,9 @@ fogRadius: 16
 range: 128
 maxRange: 128
 aimDst: 32
-targetAit: false
+targetAir: false
 createScorch: false
 commands: [move]
-rightRadius: 16
 faceTarget: false
 forceMultiTarget: true
 
@@ -55,7 +54,7 @@ canDrown: false
 waveTrailX: 0
 waveTrailY: 0
 trailScl: 0
-trailLenght: 0
+trailLength: 0
 
 // weapons
 weapons: [
@@ -307,7 +306,7 @@ weapons: [
 		shootSound: ballista-shoot
 		alternate: false
 		bullet: {
-			type: BalisBulletType
+			type: BasicBulletType
 			sprite: bnb-arrow-front
 			backSprite: bnb-arrow-back
 			frontColor: b0bac0
@@ -343,8 +342,7 @@ weapons: [
 			trailColor: ffffffff
 			trailLength: 4
 			trailWidth: 0.2
-			trailSize: 0.2
-			trailEffect: none
+						trailEffect: none
 			lightRadius: 0
 			lightOpacity: 1
 			lightColor: ffffff
@@ -371,7 +369,7 @@ weapons: [
 		shootSound: ballista-shoot
 		alternate: false
 		bullet: {
-			type: BalisBulletType
+			type: BasicBulletType
 			sprite: bnb-arrow-front
 			backSprite: bnb-arrow-back
 			frontColor: b0bac0
@@ -407,8 +405,7 @@ weapons: [
 			trailColor: ffffffff
 			trailLength: 4
 			trailWidth: 0.2
-			trailSize: 0.2
-			trailEffect: none
+						trailEffect: none
 			lightRadius: 0
 			lightOpacity: 1
 			lightColor: ffffff
@@ -435,7 +432,7 @@ weapons: [
 		shootSound: ballista-shoot
 		alternate: false
 		bullet: {
-			type: BalisBulletType
+			type: BasicBulletType
 			sprite: bnb-arrow-front
 			backSprite: bnb-arrow-back
 			frontColor: b0bac0
@@ -471,8 +468,7 @@ weapons: [
 			trailColor: ffffffff
 			trailLength: 4
 			trailWidth: 0.2
-			trailSize: 0.2
-			trailEffect: none
+						trailEffect: none
 			lightRadius: 0
 			lightOpacity: 1
 			lightColor: ffffff
@@ -499,7 +495,7 @@ weapons: [
 		shootSound: ballista-shoot
 		alternate: false
 		bullet: {
-			type: BalisBulletType
+			type: BasicBulletType
 			sprite: bnb-arrow-front
 			backSprite: bnb-arrow-back
 			frontColor: b0bac0
@@ -535,8 +531,7 @@ weapons: [
 			trailColor: ffffffff
 			trailLength: 4
 			trailWidth: 0.2
-			trailSize: 0.2
-			trailEffect: none
+						trailEffect: none
 			lightRadius: 0
 			lightOpacity: 1
 			lightColor: ffffff

@@ -1,0 +1,101 @@
+type: PowerTurret
+placeSound: block-place
+breakSound: block-destroy
+destroySound: block-destroy
+size: 1
+category: defense
+reload: 180
+recoil: 0.4
+maxAmmo: 90
+outlineRadius: 0
+buildCostMultiplier: 3.6
+fogRadius: 30
+shake: 0
+ammoUseEffect: none
+targetAir: true
+targetGround: true
+health: 800
+range: 240
+shootSound: arrow1
+shootY: 4
+lightColor: fbd367ff
+emitLight: true
+lightRadius: 24
+	requirements: [
+	manpower/3
+	materials/3
+	]
+	shootType: {
+			type: ArtilleryBulletType
+			sprite: bnb-arrows-front
+			backSprite: bnb-arrows-back
+			frontColor: b0bac0
+			backColor: 90776a
+			shootEffect: none
+			smokeEffect: none
+			hitEffect: [
+				{
+					type: WaveEffect
+					lifetime: 15
+					followParent: false
+					sizeTo: 4
+					lightScl: 0
+					lightOpacity: 0
+				}
+				{
+					type: ParticleEffect
+					region: "bnb-arrows"
+					offsetX: 0
+					offsetY: 0
+					colorFrom: ffffffff
+					colorTo: ffffff00
+					interp: fade
+					spin: 0
+					followParent: true
+					rotWithParent: true
+					useRotation: true
+					sizeFrom: 2
+					sizeTo: 2
+					randLength: true
+					length: 0
+					baseLength: 0.1
+					cone: 0
+					particles: 1
+					lifetime: 3600
+					lightScl: 0
+					lightOpacity: 0
+					lightColor: 00ffffff
+					layer: 28.1
+					baseRotation: 360
+				}
+			]
+			range: 64
+			maxRange: 64
+			damage: 40
+			speed: 1
+			lifetime: 64
+			hitSound: arrow-hit
+			hitShake: 0
+			hittable: true
+			despawnHit: true
+			despawnShake: 0
+			scaleLife: true
+			splashDamage: 40
+			splashDamageRadius: 8
+			width: 4
+			height: 4
+			shrinkX: 0
+			shrinkY: 1
+			trailColor: ffffffff
+			trailLength: 4
+			trailWidth: 0.2
+			trailSize: 0.2
+			trailEffect: none
+			lightRadius: 0
+			lightOpacity: 1
+			lightColor: ffffff
+			collidesTeam: true
+			collideTerrain: true
+			despawnEffect: none
+
+	}

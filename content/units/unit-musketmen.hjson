@@ -51,8 +51,7 @@ weapons: [
 	shootX: 0
 	shootY: 0
 	xRand: 4
-	yRand: 1
-	shootSound: musket-shot
+		shootSound: musket-shot
 	soundPitchMin: 0.8
 	soundPitchMax: 1.2
 	shootStatus: slowness90
@@ -122,7 +121,6 @@ weapons: [
 		trailColor: ffffffff
 		trailLength: 4
 		trailWidth: 0.2
-		trailSize: 0.2
 		trailEffect: none
 		lightRadius: 0
 		lightOpacity: 1
