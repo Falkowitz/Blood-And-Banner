@@ -5,6 +5,10 @@
 // Define SystemCursor to avoid ReferenceError
 const SystemCursor = Packages.arc.graphics.Cursor.SystemCursor;
 const State = Packages.mindustry.core.GameState.State;
+const Label = Packages.arc.scene.ui.Label;
+const Table = Packages.arc.scene.ui.layout.Table;
+const Touchable = Packages.arc.scene.event.Touchable;
+const Styles = Packages.mindustry.ui.Styles;
 
 Events.on(ClientLoadEvent, e => {
     print("[BnB] Mod script loaded. STARTING MERGED LOGIC...");
@@ -317,11 +321,9 @@ Events.on(ClientLoadEvent, e => {
             Events.on(StateChangeEvent, e => {
                 if (e.to == State.menu) {
                     playRandomMusic();
-                } else {
-                    // STOP music when leaving menu (loading map, etc)
-                    if (currentBnbTrack != null) {
-                        currentBnbTrack.stop();
-                    }
+                } else if (currentBnbTrack != null) {
+                    // STOP music when leaving menu (to game, editor, etc)
+                    currentBnbTrack.stop();
                 }
             });
 
@@ -347,6 +349,9 @@ Events.on(ClientLoadEvent, e => {
                             print("[BnB] Track finished, shuffling...");
                             playRandomMusic();
                         }
+                    } else if (currentBnbTrack != null && currentBnbTrack.isPlaying()) {
+                        // Safeguard: Kill music if we are accidentally playing outside the menu
+                        currentBnbTrack.stop();
                     }
                 } catch (err) {
                     print("[BnB] Playlist Timer Error: " + err);
@@ -379,4 +384,114 @@ Events.on(ClientLoadEvent, e => {
     } catch (e) {
         print("[BnB] MUSIC SYSTEM ERROR: " + e);
     }
+});
+
+/* Casualty Counter System */
+const CasualtySystem = {
+    casualties: {}, // team.id -> lives lost
+    lastHealth: new Map(), // unit.id -> health
+
+    teamNames: (function () {
+        let names = {};
+        names[Team.crux.id] = "Redwyn";
+        names[Team.blue.id] = "Valdier";
+        names[Team.green.id] = "Turqis";
+        names[Team.sharded.id] = "Hispalis";
+        names[Team.malis.id] = "Basilaeum";
+        return names;
+    })(),
+
+    teamColors: (function () {
+        let colors = {};
+        colors[Team.crux.id] = "[#f25555]";
+        colors[Team.blue.id] = "[#6c87fd]";
+        colors[Team.green.id] = "[#54d67d]";
+        colors[Team.sharded.id] = "[#ffd37f]";
+        colors[Team.malis.id] = "[#a27ce5]";
+        return colors;
+    })(),
+
+    reset() {
+        this.casualties = {};
+        this.lastHealth.clear();
+    },
+
+    update() {
+        if (Vars.state.isPaused() || Vars.state.isMenu()) return;
+
+        Groups.unit.each(u => {
+            let prev = this.lastHealth.get(u.id);
+            if (prev !== undefined && u.health < prev) {
+                let loss = prev - u.health;
+                if (loss > 0) {
+                    this.casualties[u.team.id] = (this.casualties[u.team.id] || 0) + loss;
+                }
+            }
+            this.lastHealth.set(u.id, u.health);
+        });
+    },
+
+    removeUnit(unit) {
+        this.lastHealth.delete(unit.id);
+    },
+
+    getActiveTeams() {
+        return Object.keys(this.casualties).filter(id => this.casualties[id] > 0.1);
+    }
+};
+
+// Event Bindings
+Events.on(ResetEvent, () => CasualtySystem.reset());
+Events.run(Trigger.update, () => CasualtySystem.update());
+Events.on(UnitDestroyEvent, e => CasualtySystem.removeUnit(e.unit));
+
+// UI Integration
+Events.on(ClientLoadEvent, () => {
+    if (!Vars.ui || !Vars.ui.hudfrag || !Vars.ui.hudGroup) return;
+
+    Vars.ui.hudGroup.fill(null, t => {
+        t.name = "bnb-casualty-counter";
+        t.top().left().margin(10);
+
+        // Dynamic margin to avoid overlapping with core items or wave info
+        t.update(() => {
+            let itemsShown = Core.settings.getBool("coreitems") && !Vars.mobile;
+            t.marginTop(itemsShown ? 160 : 100);
+        });
+
+        t.touchable = Touchable.disabled;
+
+        t.table(Styles.black3, list => {
+            list.margin(8);
+
+            const rebuild = () => {
+                list.clear();
+                list.add("--- Lives Lost ---").style(Styles.outlineLabel).row();
+
+                let activeIds = CasualtySystem.getActiveTeams();
+                activeIds.sort((a, b) => b - a);
+
+                activeIds.forEach(id => {
+                    let team = Team.get(id);
+                    let name = CasualtySystem.teamNames[team.id] || team.name;
+                    let color = CasualtySystem.teamColors[team.id] || "";
+
+                    list.label(() => {
+                        let count = Math.round(CasualtySystem.casualties[id] || 0);
+                        return color + name + ": [white]" + count + " men";
+                    }).style(Styles.outlineLabel).left().row();
+                });
+            };
+
+            let lastActiveCount = -1;
+            list.update(() => {
+                let activeIds = CasualtySystem.getActiveTeams();
+                if (activeIds.length !== lastActiveCount) {
+                    rebuild();
+                    lastActiveCount = activeIds.length;
+                }
+            });
+
+        }).visible(() => !Vars.state.isMenu() && CasualtySystem.getActiveTeams().length > 0);
+    });
 });
