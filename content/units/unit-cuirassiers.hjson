@@ -287,8 +287,7 @@ abilities: [
 			sizeFrom: 2
 			sizeTo: 0
 			rotWithParent: true
-			parentizeEffects: true
-						layer: 28.9
+			layer: 28.9
 		}
 	}
 ]

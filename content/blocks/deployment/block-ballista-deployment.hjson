@@ -44,7 +44,7 @@ explosionShakeDuration: 0.1
 destroyBulletSameTeam: true
 createRubble: false
 
-placeSound: none //attack-colonel-dep
+placeSound: none
 placePitchChange: false
 breakSound: none
 destroySound: none
