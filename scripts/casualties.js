@@ -6,26 +6,6 @@ const CasualtySystem = {
     battalions: {}, // team.id -> full units lost
     lastHealth: new Map(), // unit.id -> health
 
-    teamNames: (function () {
-        let names = {};
-        names[Team.crux.id] = "Redwyn";
-        names[Team.blue.id] = "Valdier";
-        names[Team.green.id] = "Turqis";
-        names[Team.sharded.id] = "Hispalis";
-        names[Team.malis.id] = "Basilaeum";
-        return names;
-    })(),
-
-    teamColors: (function () {
-        let colors = {};
-        colors[Team.crux.id] = "[#f25555]";
-        colors[Team.blue.id] = "[#6c87fd]";
-        colors[Team.green.id] = "[#54d67d]";
-        colors[Team.sharded.id] = "[#ffd37f]";
-        colors[Team.malis.id] = "[#a27ce5]";
-        return colors;
-    })(),
-
     // Color thresholds for dynamic text
     thresholds: {
         men: [0, 50000, 100000, 1000000, 3000000],
@@ -114,8 +94,8 @@ const CasualtySystem = {
             let batt = this.battalions[teamId] || 0;
 
             let team = Team.get(parseInt(teamId));
-            let teamName = (this.teamNames[team.id] || team.name).toUpperCase();
-            let teamColorMarkup = this.teamColors[team.id] || "";
+            let teamName = (global.TEAM_NAMES[team.id] || team.name).toUpperCase();
+            let teamColorMarkup = global.TEAM_COLORS_STRING[team.id] || "";
 
             // Calculate threshold colors
             let menColor = this.getThresholdColor(men, "men");
@@ -178,6 +158,6 @@ Events.on(ClientLoadEvent, () => {
                 }
             });
 
-        }).visible(() => !Vars.state.isMenu() && CasualtySystem.getActiveTeams().length > 0);
+        }).visible(() => Vars.ui.hudfrag.shown && !Vars.state.isMenu() && CasualtySystem.getActiveTeams().length > 0);
     });
 });

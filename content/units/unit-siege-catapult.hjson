@@ -10,7 +10,7 @@ omniMovement: false
 rotateMoveFirst: true
 
 // vision & targeting
-fogRadius: 16
+fogRadius: 20
 range: 128
 maxRange: 128
 aimDst: 64
@@ -25,7 +25,7 @@ healFlash: false
 
 // visuals
 outlines: false
-lightRadius: 16
+lightRadius: 8
 createScorch: false
 
 // audio & death
@@ -78,6 +78,7 @@ weapons: [
 		shootSound: none
 		display: false
 		recoil: 0
+		layerOffset: 0.2
 		bullet: {
 			type: BasicBulletType
 			collides: false
@@ -111,6 +112,7 @@ weapons: [
 		recoil: 0
 		predictTarget: true
 		inaccuracy: 5
+		layerOffset: 0.2
 
 		parts: [
 			{

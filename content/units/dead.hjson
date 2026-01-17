@@ -34,6 +34,7 @@ playerControllable: false
 logicControllable: false
 deathExplosionEffect: none
 deathSound: none
+deathShake: 0
 
 // abilities
 abilities: [

@@ -9,7 +9,7 @@ rotateSpeed: 1.5
 rotateMoveFirst: true
 
 // vision & targeting
-fogRadius: 4
+fogRadius: 2
 maxRange: 24
 targetAir: false
 
@@ -71,6 +71,7 @@ weapons: [
 		recoil: -0.4
 		recoilPow: 1
 		recoilTime: 52
+		layerOffset: 0.2
 		bullet: {
 			type: BasicBulletType
 			maxRange: 16

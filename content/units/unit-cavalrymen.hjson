@@ -13,14 +13,15 @@ rotateMoveFirst: true
 //circleTarget: true
 
 // vision & targeting
-fogRadius: 16
+fogRadius: 8
 maxRange: 16
 targetAir: false
 
 // core stats
 health: 1800
 armor: 10
-hitSize: 8
+hitSize: 20
+
 groundLayer: 29
 healFlash: false
 
@@ -87,6 +88,7 @@ weapons: [
 		recoil: -1
 		recoilPow: 1
 		recoilTime: 24
+		layerOffset: 0.2
 		bullet: {
 			type: BasicBulletType
 			maxRange: 8

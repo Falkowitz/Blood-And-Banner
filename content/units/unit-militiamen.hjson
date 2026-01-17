@@ -72,6 +72,7 @@ weapons: [
 		recoil: -0.4
 		recoilPow: 1
 		recoilTime: 60
+		layerOffset: 0.2
 		bullet: {
 			type: BasicBulletType
 			maxRange: 8

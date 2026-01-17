@@ -26,10 +26,11 @@ hittable: false
 // core stats
 health: 100
 hitSize: 4
+fogRadius: 0
 
 // visuals
 outlines: false
-lightRadius: 24
+lightRadius: 8
 drawCell: true
 drawBuildBeam: false
 buildBeamOffset: 0
@@ -57,6 +58,7 @@ immunities: [
 	bnb-attack-buff
 	bnb-defence-buff
 	bnb-maneuver-buff
+	bnb-universal-buff
 ]
 
 // abilities

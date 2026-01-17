@@ -7,28 +7,6 @@ var FrontlineUI = {
         yOffset: 32
     },
 
-    teamNames: (function () {
-        let names = {};
-        names[Team.crux.id] = "Redwyn";
-        names[Team.blue.id] = "Valdier";
-        names[Team.green.id] = "Turqis";
-        names[Team.sharded.id] = "Hispalis";
-        names[Team.malis.id] = "Basilaeum";
-        names[Team.derelict.id] = "Neutral";
-        return names;
-    })(),
-
-    teamColors: (function () {
-        let colors = {};
-        colors[Team.blue.id] = "[#6c87fd]";
-        colors[Team.crux.id] = "[#f25555]";
-        colors[Team.green.id] = "[#54d67d]";
-        colors[Team.sharded.id] = "[#ffd37f]";
-        colors[Team.malis.id] = "[#a27ce5]";
-        colors[Team.derelict.id] = "[lightgray]";
-        return colors;
-    })(),
-
     updateCounts() {
         let newCounts = {};
         Groups.build.each(build => {
@@ -51,8 +29,8 @@ var FrontlineUI = {
             t.margin(6);
             activeTeams.forEach((teamId, index) => {
                 let team = Team.get(parseInt(teamId));
-                let color = this.teamColors[teamId] || "[white]";
-                let factionName = this.teamNames[teamId] || team.name.toUpperCase();
+                let color = global.TEAM_COLORS_STRING[teamId] || "[white]";
+                let factionName = global.TEAM_NAMES[teamId] || team.name.toUpperCase();
                 let count = this.counts[teamId];
 
                 t.add(color + factionName + " [white]: " + count).padLeft(index === 0 ? 0 : 12).padRight(index === activeTeams.length - 1 ? 0 : 5);
@@ -65,8 +43,12 @@ var FrontlineUI = {
     }
 };
 
+// Store reference for global update
+var uiTable = null;
+
 Events.on(ClientLoadEvent, e => {
     Vars.ui.hudGroup.fill(null, t => {
+        uiTable = t; // Capture reference
         t.top();
         t.name = "bnb-frontline-ui";
 
@@ -75,14 +57,31 @@ Events.on(ClientLoadEvent, e => {
 
             let coreInfo = Vars.ui.hudGroup.find("coreinfo");
             if (coreInfo != null) {
+                // Force layout validation to get accurate measurements
+                coreInfo.validate();
+                coreInfo.layout();
+
                 let inner = coreInfo.getChildren().get(0);
+                if (inner) {
+                    inner.validate();
+                    inner.layout();
+                }
+
                 let shift = (inner ? inner.getPrefHeight() : coreInfo.getPrefHeight()) + FrontlineUI.config.yOffset;
                 t.marginTop(shift);
             }
 
-            FrontlineUI.drawUI(t);
+            FrontlineUI.updateCounts(); // Moved inside update loop
+            FrontlineUI.drawUI(t); // Moved inside update loop
         });
     });
+});
+
+// Global update loop to handle visibility even when hidden
+Events.run(Trigger.update, () => {
+    if (uiTable != null) {
+        uiTable.visible = Vars.ui.hudfrag.shown;
+    }
 });
 
 Events.on(WorldLoadEvent, e => FrontlineUI.updateCounts());
@@ -111,4 +110,4 @@ if (!Vars.state.isMenu()) {
     Timer.schedule(() => FrontlineUI.updateCounts(), 0.5);
 }
 
-print("[BnB] Frontline UI loaded.");
+print("[BnB] Frontline UI loaded v3 (Global Update).");

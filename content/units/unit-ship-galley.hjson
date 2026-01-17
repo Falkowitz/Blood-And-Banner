@@ -22,9 +22,11 @@ forceMultiTarget: true
 health: 2400
 armor: 10
 hitSize: 16
+fogRadius: 2
 
 // visuals & audio
 outlines: false
+lightRadius: 8
 groundLayer: 29
 healFlash: false
 deathSound: ship-destroyed

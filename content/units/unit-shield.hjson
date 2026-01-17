@@ -27,6 +27,7 @@ deathExplosionEffect: none
 deathSound: none
 defaultController: DefenderAI
 outlines: false
+lightRadius: 8
 controller: DefenderAI
 
 weapons: [

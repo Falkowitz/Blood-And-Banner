@@ -15,11 +15,11 @@ rotateSpeed: 0
 lifetime: 3600
 
 // visuals & behavior
-groundLayer: 29.1
+groundLayer: 28
 outlines: false
 createScorch: false
 fogRadius: 0
-drawCell: false
+drawCell: true
 drawBody: true
 lightRadius: 0
 targetAir: false
@@ -34,3 +34,4 @@ playerControllable: false
 logicControllable: false
 deathExplosionEffect: none
 deathSound: none
+deathShake: 0

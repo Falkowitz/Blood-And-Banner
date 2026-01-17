@@ -1,0 +1,85 @@
+type: PowerTurret
+placeSound: block-place
+breakSound: block-destroy
+destroySound: block-destroy
+size: 1
+category: defense
+reload: 180
+recoil: 0
+maxAmmo: 90
+outlineRadius: 0
+buildCostMultiplier: 360
+fogRadius: 20
+shake: 0
+ammoUseEffect: none
+targetAir: true
+targetGround: true
+health: 5000
+range: 128
+shootSound: ballista-shot
+shootY: 4
+lightColor: fbd367ff
+emitLight: true
+rotate: false
+lightRadius: 2
+	requirements: [
+	manpower/5
+	materials/5
+	]
+	shootType: {
+			type: BasicBulletType
+			sprite: bnb-ballista-bolt-front
+			backSprite: bnb-ballista-bolt-back
+			frontColor: b0bac0ff
+			backColor: 8c7a70ff
+			hitSound: ballista-hit
+			despawnSound: ballista-hit
+			despawnHit: true
+
+			hitShake: 5
+			despawnShake: 5
+			shrinkY: 0
+
+			range: 128
+			maxRange: 128
+			speed: 4
+			lifetime: 32
+
+			damage: 240
+
+			hittable: false
+			width: 8
+			height: 8
+			lightOpacity: 0
+
+			trailColor: ffffffff
+			trailLength: 4
+			trailWidth: 0.4
+			trailEffect: none
+
+			pierce: true
+			pierceCap: 100
+			pierceBuilding: true
+			pierceArmor: true
+			absorbable: false
+
+			shootEffect: none
+			smokeEffect: none
+			hitEffect: none
+			despawnEffect: {
+				type: ParticleEffect
+				region: "bnb-ballista-bolt"
+				colorTo: ffffff00
+				interp: fade
+				rotWithParent: true
+				sizeFrom: 4
+				sizeTo: 4
+				length: 0
+				baseLength: 0.1
+				cone: 0
+				particles: 1
+				lifetime: 3600
+				lightOpacity: 0
+				layer: 28.1
+			}
+		}

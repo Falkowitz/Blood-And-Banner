@@ -13,7 +13,7 @@ rotateMoveFirst: true
 //circleTarget: true
 
 // vision & targeting
-fogRadius: 4
+fogRadius: 2
 maxRange: 16
 targetAir: false
 
@@ -99,8 +99,8 @@ weapons: [
 			absorbable: false
 			status: vulnerable
 			statusDuration: 120
-			hitSize: 4
-			knockback: 4
+			hitSize: 2
+			knockback: 1
 			impact: true
 			despawnHit: true
 			hitShake: 0
@@ -143,7 +143,7 @@ weapons: [
 		recoil: -1
 		recoilPow: 1
 		recoilTime: 32
-		layerOffset: 1
+		layerOffset: 0.2
 		bullet: {
 			type: BasicBulletType
 			maxRange: 16

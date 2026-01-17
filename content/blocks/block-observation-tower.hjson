@@ -4,23 +4,24 @@ breakSound: block-destroy
 destroySound: block-destroy
 size: 1
 category: defense
-reload: 180
-recoil: 0.4
+reload: 60
+recoil: 0
 maxAmmo: 90
 outlineRadius: 0
-buildCostMultiplier: 3.6
-fogRadius: 30
+buildCostMultiplier: 150
+fogRadius: 32
 shake: 0
 ammoUseEffect: none
 targetAir: true
 targetGround: true
-health: 800
-range: 240
+health: 2500
+range: 64
 shootSound: arrow1
 shootY: 4
 lightColor: fbd367ff
 emitLight: true
-lightRadius: 24
+rotate: false
+lightRadius: 2
 	requirements: [
 	manpower/3
 	materials/3
@@ -71,7 +72,7 @@ lightRadius: 24
 			]
 			range: 64
 			maxRange: 64
-			damage: 40
+			damage: 160
 			speed: 1
 			lifetime: 64
 			hitSound: arrow-hit
@@ -80,7 +81,7 @@ lightRadius: 24
 			despawnHit: true
 			despawnShake: 0
 			scaleLife: true
-			splashDamage: 40
+			splashDamage: 160
 			splashDamageRadius: 8
 			width: 4
 			height: 4

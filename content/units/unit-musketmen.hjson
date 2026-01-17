@@ -36,6 +36,7 @@ rotateSpeed: 1
 health: 1400
 armor: 0
 hitSize: 8
+fogRadius: 2
 groundLayer: 29
 healFlash: false
 deathSound: battalion-death
@@ -61,6 +62,7 @@ weapons: [
 	recoil: 0.4
 	recoilPow: 1
 	recoilTime: 60
+	layerOffset: 0.2
 	//predictTarget: true
 	inaccuracy: 10
 	bullet:

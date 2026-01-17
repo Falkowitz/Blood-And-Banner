@@ -1,0 +1,7 @@
+damageMultiplier: 1.15
+reloadMultiplier: 1.15
+healthMultiplier: 1.15
+speedMultiplier: 1.15
+color: e2b86a
+outline: false
+show: true

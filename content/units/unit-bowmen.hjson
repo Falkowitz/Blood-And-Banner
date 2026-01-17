@@ -9,7 +9,7 @@ rotateSpeed: 2.5
 rotateMoveFirst: true
 
 // vision & targeting
-fogRadius: 8
+fogRadius: 12
 range: 64
 maxRange: 64
 targetAir: false
@@ -72,6 +72,7 @@ weapons: [
 		recoil: 0.4
 		recoilPow: 1
 		recoilTime: 68
+		layerOffset: 0.2
 		predictTarget: true
 		inaccuracy: 5
 		bullet: {

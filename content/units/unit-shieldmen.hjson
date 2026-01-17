@@ -71,6 +71,7 @@ weapons: [
 		recoil: -0.4
 		recoilPow: 1
 		recoilTime: 44
+		layerOffset: 0.2
 		bullet: {
 			type: BasicBulletType
 			damage: 25

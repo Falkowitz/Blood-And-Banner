@@ -26,7 +26,7 @@ const ProductionTimers = {
 };
 
 Events.run(Trigger.draw, () => {
-    if (Vars.state.isMenu()) return;
+    if (Vars.state.isMenu() || !Vars.ui.hudfrag.shown) return;
 
     // Made the text smaller for 1x1 blocks
     const fontScale = 0.18;
