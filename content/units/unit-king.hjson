@@ -31,6 +31,10 @@ fogRadius: 0
 // visuals
 outlines: false
 lightRadius: 8
+wreckSound: none
+stepSound: none
+tankMoveSound: none
+moveSound: none
 drawCell: true
 drawBuildBeam: false
 buildBeamOffset: 0

@@ -34,4 +34,8 @@ playerControllable: false
 logicControllable: false
 deathExplosionEffect: none
 deathSound: none
+wreckSound: none
+stepSound: none
+tankMoveSound: none
+moveSound: none
 deathShake: 0

@@ -20,6 +20,9 @@ function initUnitHistory(unit) {
     if (!unit) return;
     if (unitHistory[unit.id]) return;
 
+    // Exclude King unit
+    if (unit.type.name.includes("king")) return;
+
     // Find closest friendly citadel to determine origin
     let originCitadel = "Unknown";
     try {
@@ -347,5 +350,9 @@ Events.run(Trigger.update, () => {
         currentHistoryPanel.visible = Vars.ui.hudfrag.shown;
     }
 });
+
+// Export globally
+global.unitHistory = unitHistory;
+global.initUnitHistory = initUnitHistory;
 
 print("[BnB] Unit History & Veterancy System loaded.");

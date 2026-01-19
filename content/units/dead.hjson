@@ -34,6 +34,10 @@ playerControllable: false
 logicControllable: false
 deathExplosionEffect: none
 deathSound: none
+wreckSound: none
+stepSound: none
+tankMoveSound: none
+moveSound: none
 deathShake: 0
 
 // abilities
@@ -62,7 +66,7 @@ abilities: [
 			lightOpacity: 0
 			lightColor: ffffff00
 			layer: 95.05
-			offsetY: 3
+			offsetY: 0
 		}
 	}
 ]

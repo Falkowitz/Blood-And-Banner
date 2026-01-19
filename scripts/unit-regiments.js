@@ -52,6 +52,9 @@ function scanCitadels() {
 function getRegimentName(unit) {
     if (unitRegimentNames[unit.id]) return unitRegimentNames[unit.id];
 
+    // Exclude King unit
+    if (unit.type.name.includes("king")) return "";
+
     // Find closest friendly citadel
     let closest = null;
     let minDst = MAX_NAMING_DIST;

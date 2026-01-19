@@ -28,6 +28,10 @@ deathSound: none
 defaultController: DefenderAI
 outlines: false
 lightRadius: 8
+wreckSound: none
+stepSound: none
+tankMoveSound: none
+moveSound: none
 controller: DefenderAI
 
 weapons: [

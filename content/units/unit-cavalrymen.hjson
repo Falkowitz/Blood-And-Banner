@@ -20,7 +20,7 @@ targetAir: false
 // core stats
 health: 1800
 armor: 10
-hitSize: 20
+hitSize: 8
 
 groundLayer: 29
 healFlash: false
@@ -32,6 +32,10 @@ createScorch: false
 
 // audio & death
 deathSound: battalion-death
+wreckSound: none
+stepSound: none
+tankMoveSound: none
+moveSound: none
 deathExplosionEffect: {
 	type: ParticleEffect
 	region: bnb-death

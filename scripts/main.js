@@ -26,6 +26,12 @@ require("frontline-ui");
 // capture-notifications is now in its own separate module
 require("unit-regiments");
 require("blood-effect");
+// Unit History (Must load before Morale System for veterancy bonuses)
 require("unit-history");
+
+// Morale system (load config first, then system, then visuals)
+require("morale-config");
+require("morale-system");
+require("morale-visuals");
 
 print("[BnB] All modular scripts loaded successfully.");

@@ -40,6 +40,10 @@ fogRadius: 2
 groundLayer: 29
 healFlash: false
 deathSound: battalion-death
+wreckSound: none
+stepSound: none
+tankMoveSound: none
+moveSound: none
 rotateMoveFirst: true
 
 weapons: [

@@ -31,6 +31,10 @@ lightRadius: 8
 
 // audio & death
 deathSound: wooden-house-destroyed
+wreckSound: none
+stepSound: none
+tankMoveSound: none
+moveSound: none
 deathExplosionEffect: {
 	type: ParticleEffect
 	region: bnb-death

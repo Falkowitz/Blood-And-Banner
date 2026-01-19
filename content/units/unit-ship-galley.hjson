@@ -30,6 +30,10 @@ lightRadius: 8
 groundLayer: 29
 healFlash: false
 deathSound: ship-destroyed
+wreckSound: none
+stepSound: none
+tankMoveSound: none
+moveSound: none
 deathExplosionEffect: {
 	type: ParticleEffect
 	region: bnb-death
