@@ -1,20 +1,17 @@
 // scripts/menu-bg.js
 
-
-
 Events.on(ClientLoadEvent, e => {
     try {
         const mod = Vars.mods.getMod("bnb");
-        const spritesRoot = mod.root.child("sprites");
+        const spritesRoot = mod.root.child("sprites").child("main menu");
 
-        // 1. DISCOVER BACKGROUNDS
         let backgrounds = [];
+        let cache = {};
 
-        // Check main-menu.png (Default/Legacy)
-        let legacy = spritesRoot.child("main-menu.png");
+        // Discover backgrounds directly in sprites folder
+        const legacy = spritesRoot.child("main-menu.png");
         if (legacy.exists()) backgrounds.push(legacy);
 
-        // Check main-menu1.png, main-menu2.png, ...
         let index = 1;
         while (true) {
             let f = spritesRoot.child("main-menu" + index + ".png");
@@ -22,82 +19,131 @@ Events.on(ClientLoadEvent, e => {
                 backgrounds.push(f);
                 index++;
             } else {
-                break; // Stop at first missing number
+                break;
             }
         }
 
         print("[BnB] Found " + backgrounds.length + " menu backgrounds.");
 
         if (backgrounds.length > 0) {
-            // 2. DEFINE SWAP FUNCTION
-            const randomizeBackground = () => {
+            let currentImage = null;
+
+            const getDrawable = (file) => {
+                let path = file.path();
+                if (cache[path]) return cache[path];
+
                 try {
-                    // Pick random file
-                    const bgFile = backgrounds[Math.floor(Math.random() * backgrounds.length)];
-                    print("[BnB] Applying background: " + bgFile.name());
+                    let p = new Pixmap(file);
+                    let tex = new Texture(p);
+                    tex.setFilter(Texture.TextureFilter.linear);
+                    p.dispose();
 
-                    // Load Texture
-                    const tex = new Texture(new Pixmap(bgFile));
-                    const region = new TextureRegion(tex);
+                    let drawable = new TextureRegionDrawable(new TextureRegion(tex));
+                    cache[path] = drawable;
+                    return drawable;
+                } catch (err) {
+                    print("[BnB] Failed to load background: " + file.name() + " -> " + err);
+                    return null;
+                }
+            };
 
-                    // Find or Create Background Element
-                    if (Vars.ui.menuGroup.getChildren().size > 0) {
-                        const wrapper = Vars.ui.menuGroup.getChildren().get(0);
+            const displayBackground = (bgFile, animate) => {
+                try {
+                    if (Vars.ui.menuGroup == null || Vars.ui.menuGroup.getChildren().isEmpty()) return;
+                    let wrapper = Vars.ui.menuGroup.getChildren().get(0);
 
-                        if (wrapper.getChildren().size > 0) {
-                            const firstChild = wrapper.getChildren().get(0);
+                    let drawable = getDrawable(bgFile);
+                    if (drawable == null) return;
 
-                            if (firstChild.name == "bnb-bg" && firstChild instanceof Image) {
-                                // Already has our background -> Just update Drawable
-                                firstChild.setDrawable(region);
-                                // Also update scaling just in case
-                                firstChild.setScaling(Scaling.fill);
-                            } else {
-                                // Replace old renderer
-                                if (!(firstChild instanceof Image) || firstChild.name != "bnb-bg") {
-                                    // Remove the old one if it's the renderer or a plain image from before
-                                    firstChild.remove();
-                                }
+                    const Act = (typeof Actions !== 'undefined') ? Actions : null;
 
-                                const bgImage = new Image(region);
-                                bgImage.name = "bnb-bg"; // Tag it
-                                bgImage.setFillParent(true);
-                                bgImage.setScaling(Scaling.fill);
-                                bgImage.touchable = Touchable.disabled;
-                                wrapper.addChildAt(0, bgImage);
-                                bgImage.toBack();
+                    if (!animate || !currentImage || currentImage.parent != wrapper) {
+                        // Clear existing
+                        let children = wrapper.getChildren();
+                        for (let i = children.size - 1; i >= 0; i--) {
+                            let child = children.get(i);
+                            if (child && (child.name == "bnb-bg" || child.name == "bnb-bg-next")) {
+                                child.remove();
                             }
                         }
+
+                        currentImage = new Image(drawable);
+                        currentImage.name = "bnb-bg";
+                        currentImage.setFillParent(true);
+                        currentImage.setScaling(Scaling.fill);
+                        currentImage.touchable = Touchable.disabled;
+
+                        // Above vanilla renderer (0), below UI tables
+                        wrapper.addChildAt(Math.min(wrapper.getChildren().size, 1), currentImage);
+                    } else if (Act) {
+                        // Crossfade animation
+                        let nextImage = new Image(drawable);
+                        nextImage.name = "bnb-bg-next";
+                        nextImage.setFillParent(true);
+                        nextImage.setScaling(Scaling.fill);
+                        nextImage.touchable = Touchable.disabled;
+                        nextImage.color.a = 0;
+
+                        let currentIndex = wrapper.getChildren().indexOf(currentImage);
+                        wrapper.addChildAt(currentIndex + 1, nextImage);
+
+                        nextImage.addAction(Act.sequence(
+                            Act.fadeIn(1.5),
+                            Act.run(new java.lang.Runnable({
+                                run: () => {
+                                    if (currentImage) currentImage.remove();
+                                    currentImage = nextImage;
+                                    currentImage.name = "bnb-bg";
+                                }
+                            }))
+                        ));
                     }
                 } catch (err) {
                     print("[BnB] BG Swap Error: " + err);
                 }
             };
 
-            // 3. APPLY ON ENTRY
             let inMenu = false;
+            let slideshowTask = null;
+
             const handleEntry = () => {
                 if (inMenu) return;
                 inMenu = true;
-                randomizeBackground();
+
+                let randomBg = backgrounds[Math.floor(Math.random() * backgrounds.length)];
+                displayBackground(randomBg, false);
+
+                if (backgrounds.length > 1) {
+                    slideshowTask = Timer.schedule(() => {
+                        if (!inMenu || !Vars.state.isMenu()) return;
+                        let nextBg = backgrounds[Math.floor(Math.random() * backgrounds.length)];
+                        displayBackground(nextBg, true);
+                    }, 15, 15);
+                }
             };
 
-            // 4. TRIGGER ON START OR RETURN
+            const handleExit = () => {
+                inMenu = false;
+                if (slideshowTask) {
+                    slideshowTask.cancel();
+                    slideshowTask = null;
+                }
+            };
+
             Events.on(StateChangeEvent, e => {
                 if (e.to == GameState.State.menu) {
                     handleEntry();
                 } else {
-                    inMenu = false; // Reset when leaving
+                    handleExit();
                 }
             });
 
-            // Catch initial load
-            if (Vars.state.is(GameState.State.menu)) {
+            if (Vars.state.isMenu()) {
                 handleEntry();
             }
 
         } else {
-            print("[BnB] Warning: No 'main-menu*.png' files found.");
+            print("[BnB] Warning: No menu backgrounds found in sprites folder.");
         }
     } catch (e) {
         print("[BnB] MENU BG ERROR: " + e);

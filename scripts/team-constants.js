@@ -1,5 +1,4 @@
-// scripts/team-constants.js
-// Shared constants for team names and colors used across all Blood & Banner scripts
+// Shared constants for team names and colors
 
 // Team Names (Faction Names)
 var TEAM_NAMES = {};
@@ -10,7 +9,7 @@ TEAM_NAMES[Team.sharded.id] = "Hispalis";
 TEAM_NAMES[Team.malis.id] = "Basilaeum";
 TEAM_NAMES[Team.derelict.id] = "Neutral";
 
-// Team Colors (for UI elements - as hex strings)
+// Team Colors (UI hex strings)
 var TEAM_COLORS_STRING = {};
 TEAM_COLORS_STRING[Team.blue.id] = "[#6c87fd]";
 TEAM_COLORS_STRING[Team.crux.id] = "[#f25555]";
@@ -19,7 +18,7 @@ TEAM_COLORS_STRING[Team.sharded.id] = "[#ffd37f]";
 TEAM_COLORS_STRING[Team.malis.id] = "[#a27ce5]";
 TEAM_COLORS_STRING[Team.derelict.id] = "[lightgray]";
 
-// Team Colors (for Color objects)
+// Team Colors (Color objects)
 var TEAM_COLORS = {};
 TEAM_COLORS[Team.blue.id] = Color.valueOf("6c87fd");
 TEAM_COLORS[Team.crux.id] = Color.valueOf("f25555");

@@ -3,40 +3,40 @@
 Events.on(ClientLoadEvent, e => {
     try {
         const mod = Vars.mods.getMod("bnb");
-        const cursorsFolder = mod.root.child("sprites").child("cursors");
-        const mainCursorFile = cursorsFolder.child("bnb-cursor.png");
+        const cursorsDir = mod.root.child("sprites").child("cursors");
 
-        if (mainCursorFile.exists()) {
-            const pixmap = new Pixmap(mainCursorFile);
-            const mainCursor = Core.graphics.newCursor(pixmap, 32, 32);
+        const loadCursor = (filename) => {
+            let file = cursorsDir.child(filename);
+            if (!file.exists()) return null;
+            let pm = new Pixmap(file);
+            return Core.graphics.newCursor(pm, pm.width / 2, pm.height / 2);
+        };
 
-            Vars.ui.drillCursor = mainCursor;
-            Vars.ui.unloadCursor = mainCursor;
-            Vars.ui.targetCursor = mainCursor;
-            Vars.ui.repairCursor = mainCursor;
+        // Set game specific cursors
+        let drill = loadCursor("bnb-drill.png");
+        if (drill) Vars.ui.drillCursor = drill;
 
-            const forceCursor = () => {
-                Core.graphics.cursor(mainCursor);
-            };
+        let unload = loadCursor("bnb-unload.png");
+        if (unload) Vars.ui.unloadCursor = unload;
 
-            Events.run(Trigger.update, forceCursor);
-            Events.run(Trigger.draw, forceCursor);
-            Events.run(Trigger.postDraw, forceCursor);
-            Events.run(Trigger.uiDrawEnd, forceCursor);
-            Timer.schedule(forceCursor, 0, 0.01);
+        let target = loadCursor("bnb-target.png");
+        if (target) Vars.ui.targetCursor = target;
 
-            Events.on(EventType.WorldLoadEvent, e => {
-                Timer.schedule(forceCursor, 0.1);
-                Timer.schedule(forceCursor, 0, 0.01);
-            });
+        let repair = loadCursor("bnb-repair.png");
+        if (repair) Vars.ui.repairCursor = repair;
 
-            print("[BnB] AGGRESSIVE CURSOR MODE ACTIVE. Timers firing.");
+        // Override system cursors (arrow, hand, ibeam)
+        let main = loadCursor("bnb-cursor.png");
+        let hand = loadCursor("bnb-hand.png");
+        let ibeam = loadCursor("bnb-ibeam.png");
 
-        } else {
-            print("[BnB] Error: 'bnb-cursor.png' not found!");
-        }
+        if (main) Graphics.Cursor.SystemCursor.arrow.set(main);
+        if (hand) Graphics.Cursor.SystemCursor.hand.set(hand);
+        if (ibeam) Graphics.Cursor.SystemCursor.ibeam.set(ibeam);
+
+        print("[BnB] Cursors initialized via SystemCursor.set()");
 
     } catch (err) {
-        print("[BnB] CURSOR ERROR: " + err);
+        print("[BnB] Cursor system error: " + err);
     }
 });

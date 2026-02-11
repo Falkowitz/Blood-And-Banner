@@ -1,8 +1,7 @@
 // scripts/production-timers.js
 
 const ProductionTimers = {
-    // List of blocks to track with custom Y-offsets (relative to bottom edge)
-    // You can add more blocks here and adjust the number to move the timer up/down
+    // Blocks to track with custom vertical offsets (relative to bottom edge)
     config: {
         "bnb-block-workshop": -1,
         "bnb-block-barrack": -1
@@ -33,6 +32,9 @@ Events.run(Trigger.draw, () => {
     Draw.z(Layer.playerName);
 
     Groups.build.each(build => {
+        // Fix for the broken team comparison
+        if (build.team != Vars.player.team()) return;
+
         let offset = ProductionTimers.getOffset(build);
         if (offset === null) return;
 
@@ -71,4 +73,4 @@ Events.run(Trigger.draw, () => {
     });
 });
 
-print("[BnB] Production Timers system loaded.");
+print("[BnB] Production Timers system restored and fixed.");

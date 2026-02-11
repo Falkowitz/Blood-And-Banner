@@ -1,7 +1,7 @@
 // scripts/team-icons.js
 
 Events.on(ClientLoadEvent, e => {
-    print("[BnB] Mod script loaded. STARTING TEAM ICONS...");
+    print("[BnB] Loading team icons...");
 
     let startUnicode = 0xF950;
     const replacements = [

@@ -5,7 +5,7 @@ Events.on(ClientLoadEvent, e => {
         const mod = Vars.mods.getMod("bnb");
         const musicFolder = mod.root.child("music").child("main menu");
 
-        // 1. DISCOVER MUSIC TRACKS
+        // Initialize music tracks array
         let musicTracks = [];
 
         // Check main-menu1.ogg, main-menu2.ogg, ...
@@ -56,7 +56,7 @@ Events.on(ClientLoadEvent, e => {
                 }
             };
 
-            // 2. PLAY FUNCTION
+            // Function to play a random track from the list
             const playRandomMusic = () => {
                 try {
                     if (musicTracks.length === 0) return;
@@ -95,7 +95,7 @@ Events.on(ClientLoadEvent, e => {
                 }
             };
 
-            // 3. APPLY ON ENTRY
+            // Event handler for entering the menu
             let inMenu = false;
             const handleEntry = () => {
                 if (inMenu) return;
@@ -103,7 +103,7 @@ Events.on(ClientLoadEvent, e => {
                 playRandomMusic();
             };
 
-            // 4. TRIGGER ON START OR RETURN
+            // Triggers for starting or returning to the menu
             Events.on(StateChangeEvent, e => {
                 if (e.to == GameState.State.menu) {
                     handleEntry();
@@ -120,7 +120,7 @@ Events.on(ClientLoadEvent, e => {
                 handleEntry();
             }
 
-            // 5. AUTO-SHUFFLE & VOLUME SYNC
+            // Handle automatic shuffling and volume synchronization
             let musicErrorCount = 0;
             Timer.schedule(() => {
                 if (musicErrorCount > 5) return;
@@ -152,7 +152,7 @@ Events.on(ClientLoadEvent, e => {
                 }
             }, 1, 1);
 
-            // 6. ADD SETTING SLIDER
+            // Add music volume slider to the sound settings
             try {
                 if (Vars.ui && Vars.ui.settings && Vars.ui.settings.sound) {
                     Vars.ui.settings.sound.sliderPref("bnb-music-volume", 80, 0, 100, 5, i => i + "%");
