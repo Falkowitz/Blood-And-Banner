@@ -1,0 +1,89 @@
+localizedName: Orbterralis
+description: A terrestrial world where conflict never stops.
+alwaysUnlocked: true
+mesh: [
+  {
+    type: NoiseMesh
+    planet: orbterralis
+    seed: 42
+    divisions: 5
+    radius: 1.2
+    color1: 1a3b5c
+    color2: 2c5a85
+    octaves: 3
+    persistence: 0.8
+    scale: 0.7
+    mag: 0.5
+  }
+  {
+    type: NoiseMesh
+    planet: orbterralis
+    seed: 101
+    divisions: 6
+    radius: 1.208    
+    color1: 3d6e3d
+    color2: 8b7355
+    octaves: 5
+    persistence: 0.9
+    scale: 0.9
+    mag: 0.8          
+  }
+  {
+    type: NoiseMesh
+    planet: orbterralis
+    seed: 500
+    divisions: 5
+    radius: 1.212     
+    color1: ffffff
+    color2: e0e0ff
+    octaves: 4
+    persistence: 0.6
+    scale: 0.4
+    mag: 0.6
+  }
+]
+cloudMesh: [
+  {
+    type: HexSkyMesh
+    planet: orbterralis
+    speed: 0.8
+    radius: 0.05      
+    divisions: 6
+    color: ffffffaa   
+    octaves: 3
+    persistence: 0.4
+    scl: 1.1          
+    thresh: 0.4       
+  }
+]
+generator: {
+  octaves: 3
+  persistence: 0.52
+  scale: 22
+  mag: 0.721
+  thresh: 1.152
+  min: 100
+  max: 100
+  radMin: 220
+  radMax: 600
+}
+orbitRadius: 30
+sectorSize: 1
+radius: 1.2
+minZoom: 1
+drawOrbit: true
+atmosphereRadIn: 0.02
+atmosphereRadOut: 0.15 
+accessible: true
+updateLighting: true
+sectorSeed: 14513
+bloom: false
+visible: true
+atmosphereColor: 4488ff 
+iconColor: 3d6e3d
+hasAtmosphere: true
+allowWaves: true
+prebuildBase: false
+defaultCore: core-shard
+parent: sun
+solarSystem: sun
