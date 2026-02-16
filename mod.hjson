@@ -34,6 +34,221 @@ java: false
 
 
 
-//contentOrder: [
+contentOrder: [
+  // Items
+  "colonel-point",
+  "manpower",
+  "materials",
 
-//]
+  // --- BLOCKS ---
+  
+  // Functional Buildings
+  "block-citadel",
+  "block-barrack",
+  "block-workshop",
+  "block-well",
+  
+  // Towers
+  "block-observation-tower",
+  "block-defence-tower",
+
+  // Deployment Blocks (Grouped by Unit Roles)
+  // Colonels
+  "block-attack-colonel-deployment",
+  "block-defence-colonel-deployment",
+  "block-maneuver-colonel-deployment",
+  "block-universal-colonel-deployment",
+  
+  // Infantry
+  "block-militiamen-deployment",
+  "block-swordsmen-deployment",
+  "block-spearmen-deployment",
+  "block-shieldmen-deployment",
+  
+  // Ranged
+  "block-bowmen-deployment",
+  "block-fire-bowmen-deployment",
+  "block-musketmen-deployment",
+  
+  // Cavalry
+  "block-cavalrymen-deployment",
+  "block-cuirassiers-deployment",
+  "block-lancers-deployment",
+  
+  // Siege & Naval
+  "block-catapult-deployment",
+  "block-ballista-deployment",
+  "block-galley-deployment",
+
+
+  // --- DECORATIONS / ENVIRONMENT ---
+
+  // Walls & Fortifications
+  "block-wall-straight",
+  "block-wall-corner",
+  "block-wall-intersection",
+  "block-wall-t",
+  "block-wall-end",
+  "block-wall-single",
+  
+  "block-palisade-straight",
+  "block-palisade-corner",
+  "block-palisade-intersection",
+  "block-palisade-t",
+  "block-palisade-end",
+  "block-palisade-single",
+  
+  "block-gate-h",
+  "block-gate-v",
+  
+  "block-tower-straight",
+  "block-tower-corner",
+  "block-tower-intersection",
+  "block-tower-t",
+  "block-tower-end",
+  "block-tower-single",
+
+  // Tree Walls (Green)
+  "wall-tree-single",
+  "wall-tree-ortho-straight-up", "wall-tree-ortho-straight-down", "wall-tree-ortho-straight-left", "wall-tree-ortho-straight-right",
+  "wall-tree-ortho-up", "wall-tree-ortho-down", "wall-tree-ortho-left", "wall-tree-ortho-right",
+  "wall-tree-corner-up-l", "wall-tree-corner-up-r", "wall-tree-corner-down-l", "wall-tree-corner-down-r",
+  "wall-tree-corner-single-up-left", "wall-tree-corner-single-up-right", "wall-tree-corner-single-down-left", "wall-tree-corner-single-down-right",
+  "wall-tree-inters", "wall-tree-inters-up", "wall-tree-inters-down", "wall-tree-inters-left", "wall-tree-inters-right",
+  "wall-tree-inters-single-up", "wall-tree-inters-single-down", "wall-tree-inters-single-left", "wall-tree-inters-single-right",
+  "wall-tree-end-up", "wall-tree-end-down", "wall-tree-end-left", "wall-tree-end-right",
+  "wall-tree-inner", "wall-tree-inner-corner-up-l", "wall-tree-inner-corner-up-r", "wall-tree-inner-corner-down-l", "wall-tree-inner-corner-down-r",
+
+  // Tree Walls (Frozen)
+  "wall-frozen-tree-single",
+  "wall-frozen-tree-ortho-straight-up", "wall-frozen-tree-ortho-straight-down", "wall-frozen-tree-ortho-straight-left", "wall-frozen-tree-ortho-straight-right",
+  "wall-frozen-tree-ortho-up", "wall-frozen-tree-ortho-down", "wall-frozen-tree-ortho-left", "wall-frozen-tree-ortho-right",
+  "wall-frozen-tree-corner-up-l", "wall-frozen-tree-corner-up-r", "wall-frozen-tree-corner-down-l", "wall-frozen-tree-corner-down-r",
+  "wall-frozen-tree-corner-single-up-left", "wall-frozen-tree-corner-single-up-right", "wall-frozen-tree-corner-single-down-left", "wall-frozen-tree-corner-single-down-right",
+  "wall-frozen-tree-inters", "wall-frozen-tree-inters-up", "wall-frozen-tree-inters-down", "wall-frozen-tree-inters-left", "wall-frozen-tree-inters-right",
+  "wall-frozen-tree-inters-single-up", "wall-frozen-tree-inters-single-down", "wall-frozen-tree-inters-single-left", "wall-frozen-tree-inters-single-right",
+  "wall-frozen-tree-end-up", "wall-frozen-tree-end-down", "wall-frozen-tree-end-left", "wall-frozen-tree-end-right",
+  "wall-frozen-tree-inner", "wall-frozen-tree-inner-corner-up-l", "wall-frozen-tree-inner-corner-up-r", "wall-frozen-tree-inner-corner-down-l", "wall-frozen-tree-inner-corner-down-r",
+
+  // Frames
+  "block-frame-wood",
+  "block-frame-ortho-up", "block-frame-ortho-down", "block-frame-ortho-left", "block-frame-ortho-right",
+  "block-frame-corner-u-l", "block-frame-corner-u-r", "block-frame-corner-d-l", "block-frame-corner-d-r",
+
+  // Civilian Structures
+  "block-house-gable", "block-house-gable-long", "block-house-gable-extended", "block-house-gable-long-extended", "block-house-gable-tilted", "block-house-gable-long-tilted",
+  "block-house-hip", "block-house-hip-long",
+  
+  "block-frozen-house-gable", "block-frozen-house-gable-long", "block-frozen-house-gable-extended", "block-frozen-house-gable-long-extended", "block-frozen-house-gable-tilted", "block-frozen-house-gable-long-tilted",
+  "block-frozen-house-hip", "block-frozen-house-hip-long",
+  
+  "block-sandstone-house", "block-sandstone-house-long", "block-sandstone-house-tilted", "block-sandstone-house-long-tilted",
+  
+  "block-tents", "block-tents-tilted", "block-tent-long", "block-tent-long-tilted",
+
+  // Religious / Monumental
+  "block-church", "block-church-tilted",
+  "block-frozen-church", "block-frozen-church-tilted",
+  "block-mosque", "block-mosque-tilted",
+  "block-pyramid",
+
+  // Props / Nature
+  "prop-wood", "prop-frozen-wood",
+  "prop-bushes", "prop-cattail", "prop-lilypad",
+  "prop-flowers", "prop-frozen-flowers",
+  "prop-palm",
+  "prop-crops", "prop-dead-crops", "prop-wheat", "prop-hay-bale",
+  "prop-boulder", "prop-pebbles", "prop-sandstone",
+  "prop-barrel", "prop-crate", "prop-torch",
+  "prop-market-horizontal", "prop-market-tilted",
+  
+  "prop-fence-straight", "prop-fence-corner", "prop-fence-intersection", "prop-fence-t-intersection", "prop-fence-end", "prop-fence-single",
+
+  // --- FLOORS / TERRAIN ---
+  
+  // Basic Floors
+  "floor-grass", "floor-forest", "floor-swamp",
+  "floor-sand", "floor-sand-dune", "floor-quicksand",
+  "floor-snow", "floor-snowdrift", "floor-frozen-forest",
+  "floor-water", "floor-deep-water", "floor-frozen-water",
+  "floor-road", "floor-frozen-road", "floor-bridge",
+
+  // Farmlands (Green)
+  "floor-fields-horizontal", "floor-fields-vertical", "floor-fields-tilted-left", "floor-fields-tilted-right",
+  "floor-farmland-horizontal", "floor-farmland-vertical", "floor-farmland-tilted-left", "floor-farmland-tilted-right",
+  "floor-lush-fields-horizontal", "floor-lush-fields-vertical", "floor-lush-fields-tilted-left", "floor-lush-fields-tilted-right",
+  "floor-lush-farmland-horizontal", "floor-lush-farmland-vertical", "floor-lush-farmland-tilted-left", "floor-lush-farmland-tilted-right",
+
+  // Farmlands (Frozen)
+  "floor-frozen-fields-horizontal", "floor-frozen-fields-vertical", "floor-frozen-fields-tilted-left", "floor-frozen-fields-tilted-right",
+  "floor-frozen-farmland-horizontal", "floor-frozen-farmland-vertical", "floor-frozen-farmland-tilted-left", "floor-frozen-farmland-tilted-right",
+
+  // Simulation / Deployment Zones
+  "floor-deployment-zone", "floor-deployment-zone-road", "floor-deployment-zone-desert", "floor-deployment-zone-snow", "floor-deployment-zone-frozen-road",
+  "floor-deployment-zone-sim-top", "floor-deployment-zone-sim-middle", "floor-deployment-zone-sim-bottom",
+  
+  "floor-simulation-top", "floor-simulation-middle", "floor-simulation-bottom", "floor-simulation-abyss",
+  "terrain-simulation-top-wall", "terrain-simulation-middle-wall", "terrain-simulation-bottom-wall",
+
+
+  // --- FLUIDS (None) ---
+
+  // --- STATUS EFFECTS ---
+  
+  // Buffs / Stats
+  "attack-buff",
+  "defence-buff",
+  "maneuver-buff",
+  "universal-buff",
+  "looted-wellfed",
+  "vulnerable",
+  "veteran1", "veteran2", "veteran3",
+  
+  // Recovery / Slowness
+  "recovery0.8", "recovery1", "recovery1.2", "recovery1.5",
+  "slowness50", "slowness90",
+
+  // Environment Statuses
+  "on-a-road", "on-fields", "in-the-woods", "in-a-swamp", "in-water",
+  "on-sand", "on-dune", "in-a-quicksand",
+  "on-snow", "on-snowdrift",
+
+
+  // --- UNITS ---
+
+  // Colonels
+  "unit-attack-colonel",
+  "unit-defence-colonel",
+  "unit-maneuver-colonel",
+  "unit-universal-colonel",
+  "unit-king",
+
+  // Infantry
+  "unit-militiamen",
+  "unit-swordsmen",
+  "unit-spearmen",
+  "unit-shieldmen",
+  
+  // Ranged
+  "unit-bowmen",
+  "unit-fire-bowmen",
+  "unit-musketmen",
+  
+  // Cavalry
+  "unit-cavalrymen",
+  "unit-cuirassiers",
+  "unit-lancers",
+  
+  // Siege & Naval
+  "unit-siege-catapult",
+  "unit-siege-ballista",
+  "unit-ship-galley",
+
+  // Special / Dead
+  "unit-shield",
+  "dead", "dead-man", "dead-man-horse", "dead-galley",
+
+
+  // --- SECTORS ---
+  "kaelthas"
+]

@@ -1,0 +1,43 @@
+localizedName: Kaelthas
+description: A terrestrial world where conflict never stops.
+alwaysUnlocked: true
+// mesh is handled by scripts/planet-mesh.js (HexMesher override)
+// cloudMesh is handled by scripts/planet-mesh.js (HexSkyMesh override)
+generator: {
+  octaves: 3
+  persistence: 0.52
+  scale: 22
+  mag: 0.721
+  thresh: 1.152
+  min: 100
+  max: 100
+  radMin: 220
+  radMax: 600
+  iceChance: 0.51
+  carbonChance: 0.32
+  berylChance: 0
+  ferricChance: 0.26
+}
+orbitRadius: 50
+sectorSize: 3
+radius: 1.2
+parent: sun
+solarSystem: sun
+minZoom: 1
+drawOrbit: true
+atmosphereRadIn: 0.02
+// Increased to cover higher peaks from new mesh generation
+atmosphereRadOut: 0.6
+accessible: true
+updateLighting: true
+sectorSeed: 187
+bloom: false
+visible: true
+atmosphereColor: 2244aa
+iconColor: 3d6e3d
+hasAtmosphere: true
+clearSectorOnLose: true
+allowWaves: true
+prebuildBase: false
+defaultCore: bnb-block-citadel
+launchCandidates: []
