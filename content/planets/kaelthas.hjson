@@ -18,16 +18,17 @@ generator: {
   berylChance: 0
   ferricChance: 0.26
 }
-orbitRadius: 50
+orbitRadius: 25
+orbitOffset: 180
 sectorSize: 3
 radius: 1.2
 parent: sun
 solarSystem: sun
 minZoom: 1
 drawOrbit: true
-atmosphereRadIn: 0.02
-// Increased to cover higher peaks from new mesh generation
-atmosphereRadOut: 0.6
+atmosphereRadIn: 0.0
+// Increased significantly per user request
+atmosphereRadOut: 7
 accessible: true
 updateLighting: true
 sectorSeed: 187
@@ -40,4 +41,5 @@ clearSectorOnLose: true
 allowWaves: true
 prebuildBase: false
 defaultCore: bnb-block-citadel
+allowLaunchToNumbered: false
 launchCandidates: []

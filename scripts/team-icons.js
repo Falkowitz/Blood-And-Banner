@@ -7,17 +7,16 @@ const factions = ["hispalis", "redwyn", "basilaeum", "turqis", "valdier"];
 
 factions.forEach(name => {
     // Create Item with internal name "bnb-" + name
-    // (prefix added automatically or manually depending on context, 
-    // but explicit "bnb-" ensures uniqueness)
     const item = new Item(name);
 
     // Capitalize for display name
     item.localizedName = name.charAt(0).toUpperCase() + name.slice(1) + " Icon";
     item.description = "Faction Icon for Map Editor";
     item.alwaysUnlocked = true;
+    item.hidden = true;
 
-    // NOTE: We cannot override item.load() in JS (Rhino error).
-    // Instead, we assign the icons in ClientLoadEvent below.
+    // NOTE: item.load cannot be overridden in JS/Rhino. 
+    // Logic moved to ClientLoadEvent.
 });
 
 Events.on(ClientLoadEvent, e => {
@@ -51,7 +50,7 @@ Events.on(ClientLoadEvent, e => {
     replacements.forEach((entry, index) => {
         let regionName = "bnb-" + entry.sprite;
         let region = Core.atlas.find(regionName);
-        let unicode = startUnicode + index; // Custom unicode range
+        let unicode = startUnicode + index;
 
         if (region.found()) {
             try {

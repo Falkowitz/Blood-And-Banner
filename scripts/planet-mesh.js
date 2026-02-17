@@ -24,64 +24,65 @@ var NOISE_SCL = 1.8;
 var NOISE_POW = 2.4;
 var NOISE_MULT = 1.3;
 
-// 3. ARCHIPELAGOS (Japan/Indonesia style)
-var ISLAND_SCL = 4.5;   // Higher frequency = smaller islands
-var ISLAND_MAG = 0.6;   // Height contribution
-var ISLAND_THRESH = 0.55;  // Threshold to appear
+// 3. ARCHIPELAGOS
+var ISLAND_SCL = 4.5;
+var ISLAND_MAG = 0.6;
+var ISLAND_THRESH = 0.55;
 
 // Detail noise
 var DETAIL_SCL = 0.12;
 var DETAIL_MAG = 0.08;
 
-var OCTAVES = 7;
-var PERSISTENCE = 0.48;
+// Micro-Roughness (Rock/Coastline detail)
+var MICRO_SCL = 0.05;
+var MICRO_MAG = 0.025;
+
+var OCTAVES = 8; // Slightly more detail
+var PERSISTENCE = 0.5;
 var VAR_SEED = SEED + 100;
 
 // ===== RIDGED NOISE HELPER =====
-// Creates sharp, linear mountains/islands (like mid-ocean ridges or island arcs)
 function ridgedNoise(pos, scale, seedOffset) {
     var n = Simplex.noise3d(
         SEED + seedOffset, 4, 0.5,
         1.0 / scale,
         5.0 + pos.x, 5.0 + pos.y, 5.0 + pos.z
     );
-    // Map [-1, 1] to [0, 1] then invert absolute value to get ridge at 0
-    // abs(n) is 0 at crossing 0. 
-    // 1 - abs(n) creates peaks where noise was 0.
-    return Math.pow(1.0 - Math.abs(n), 3.0); // Power 3 makes ridges sharper/thinner
+    return Math.pow(1.0 - Math.abs(n), 4.0); // Power 4 for even sharper peaks
 }
 
 // ===== RAW HEIGHT =====
 function rawHeight(pos) {
-    // 1. Main Continents (Blobby, large)
+    // 1. Main Continents
     var hBase = Simplex.noise3d(
         SEED, OCTAVES, PERSISTENCE,
         1.0 / NOISE_SCL,
         5.0 + pos.x, 5.0 + pos.y, 5.0 + pos.z
     );
-    // Normalize base: [-1,1] -> [0,1]
     hBase = (hBase + 1.1) / 2.2;
     hBase = Math.pow(Math.max(0, hBase), NOISE_POW) * NOISE_MULT;
 
-    // 2. Island Arcs (Ridged noise)
-    // Creates chains of islands independent of continents
+    // 2. Island Arcs
     var hIslands = ridgedNoise(pos, ISLAND_SCL, 50) * ISLAND_MAG;
 
-    // Mask islands to appear only in certain 'chaotic' areas (optional, to avoid global noise)
-    // But simple addition or max works well for archipelagos.
+    // Combine
+    var hCombined = Math.max(hBase, hIslands + 0.3);
 
-    // Combine: Max of continent OR island chain
-    // This allows islands to exist in deep oceans
-    var hCombined = Math.max(hBase, hIslands + 0.3); // +0.3 to boost islands up to sea level 
-
-    // 3. Detail/Roughness (applied to everything)
+    // 3. Detail/Roughness
     var detail = Simplex.noise3d(
         SEED + 5, 3, 0.5,
         1.0 / DETAIL_SCL,
         pos.x, pos.y, pos.z
     );
 
-    return hCombined + (detail * DETAIL_MAG);
+    // 4. Micro-roughness (Jaggedness)
+    var micro = Simplex.noise3d(
+        SEED + 82, 2, 0.5,
+        1.0 / MICRO_SCL,
+        pos.x, pos.y, pos.z
+    );
+
+    return hCombined + (detail * DETAIL_MAG) + (micro * MICRO_MAG);
 }
 
 // ===== HEIGHT for mesh (clamped at water level) =====
@@ -97,27 +98,33 @@ function meshGetColor(pos, out) {
         5.0 + pos.x, 5.0 + pos.y, 5.0 + pos.z
     );
 
-    if (h < 0.55) { // Deep ocean
+    // Noise-based blending for biome borders
+    var bNoise = Simplex.noise3d(SEED + 9, 2, 0.5, 2.5, pos.x, pos.y, pos.z) * 0.03;
+    var ht = h + bNoise;
+
+    if (ht < 0.52) { // Deep ocean
+        out.set(COL_DEEP_OCEAN).mul(0.85); // Slightly darker
+    } else if (ht < 0.58) { // Transition ocean
         out.set(COL_DEEP_OCEAN);
-    } else if (h < WATER_LEVEL) { // Shallow water
+    } else if (ht < WATER_LEVEL) { // Shallow water
         out.set(COL_SHALLOW);
-    } else if (h < 0.68) { // Beach/Sand
+    } else if (ht < WATER_LEVEL + 0.04) { // Beach
         out.set(COL_SAND);
-    } else if (h < 0.76) { // Lowlands
+    } else if (ht < 0.74) { // Lowlands
         if (v > 0.15) {
             out.set(COL_TROPICS);
         } else {
             out.set(COL_GRASS);
         }
-    } else if (h < 0.88) { // Forest/Hills
+    } else if (ht < 0.86) { // Forest/Hills
         if (v < -0.2) {
             out.set(COL_HILLS);
         } else {
             out.set(COL_FOREST);
         }
-    } else if (h < 0.98) { // High Hills/Lower Mountains
+    } else if (ht < 0.96) { // High Hills
         out.set(COL_HILLS);
-    } else if (h < 1.15) { // Mountains
+    } else if (ht < 1.12) { // Mountains
         out.set(COL_MOUNTAINS);
     } else { // Peaks
         out.set(COL_SNOW);
@@ -151,19 +158,41 @@ Events.on(ClientLoadEvent, function (e) {
 
     planet.meshLoader = prov(function () {
         try {
-            return new HexMesh(planet, mesher, 6, Shaders.planet);
+            return new HexMesh(planet, mesher, 7, Shaders.planet); // Divisions 6 -> 7
         } catch (err) {
             return new ShaderSphereMesh(planet, Shaders.planet, 2);
         }
     });
 
     planet.cloudMeshLoader = prov(function () {
+        // Varied transparency: dense base (100%), mid (75%), wispy top (50%)
         return new MultiMesh(
-            new HexSkyMesh(planet, 11, 0.15, 0.13, 5, Color.valueOf("eafffd7e"), 2, 0.45, 1.35, 0.35),
-            new HexSkyMesh(planet, 1, 0.6, 0.16, 5, Color.valueOf("eafffd7e"), 2, 0.45, 1.55, 0.38)
+            new HexSkyMesh(planet, 11, 0.15, 0.13, 5, Color.valueOf("eafffdff"), 2, 0.45, 0.9, 0.40),
+            new HexSkyMesh(planet, 1, 0.6, 0.16, 6, Color.valueOf("eafffdbf"), 2, 0.45, 1.2, 0.35),
+            new HexSkyMesh(planet, 42, 0.3, 0.18, 7, Color.valueOf("eafffd80"), 3, 0.5, 1.8, 0.30)
         );
     });
 
     planet.reloadMesh();
     planet.cloudMesh = planet.cloudMeshLoader.get();
+
+    // Hide vanilla planets from campaign selection
+    // PlanetDialog.selectable() checks: (alwaysUnlocked && isLandable()) || sectors.contains(hasBase)
+    // So we set alwaysUnlocked = false and clear sectors to remove them from the UI
+    var serpulo = Vars.content.planet("serpulo");
+    var erekir = Vars.content.planet("erekir");
+
+    if (serpulo) {
+        serpulo.alwaysUnlocked = false;
+        serpulo.accessible = false;
+        serpulo.sectors.clear();
+        print("[BnB] Hid Serpulo from campaign selection");
+    }
+
+    if (erekir) {
+        erekir.alwaysUnlocked = false;
+        erekir.accessible = false;
+        erekir.sectors.clear();
+        print("[BnB] Hid Erekir from campaign selection");
+    }
 });
