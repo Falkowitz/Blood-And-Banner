@@ -25,7 +25,7 @@ WIP
 '''
 author: Fitz
 minGameVersion: 154
-version: 0.2
+version: 0.3
 hideBrowser: true
 java: false
 //dependencies: ["multi-crafter"]
@@ -37,6 +37,8 @@ contentOrder: [
   "colonel-point",
   "manpower",
   "materials",
+  "research-point",
+  "doctrine-point",
 
   // --- BLOCKS ---
   

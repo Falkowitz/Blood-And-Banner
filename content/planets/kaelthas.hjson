@@ -20,7 +20,7 @@ generator: {
 }
 orbitRadius: 25
 orbitOffset: 180
-sectorSize: 3
+sectorSize: 4
 radius: 1.2
 parent: sun
 solarSystem: sun

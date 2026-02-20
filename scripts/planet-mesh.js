@@ -41,6 +41,11 @@ var OCTAVES = 8; // Slightly more detail
 var PERSISTENCE = 0.5;
 var VAR_SEED = SEED + 100;
 
+// ===== MOON SETTINGS =====
+var COL_MOON_BASE = Color.valueOf("999999");
+var COL_MOON_CRATER = Color.valueOf("777777");
+var COL_MOON_HIGH = Color.valueOf("bbbbbb");
+
 // ===== RIDGED NOISE HELPER =====
 function ridgedNoise(pos, scale, seedOffset) {
     var n = Simplex.noise3d(
@@ -83,6 +88,49 @@ function rawHeight(pos) {
     );
 
     return hCombined + (detail * DETAIL_MAG) + (micro * MICRO_MAG);
+}
+
+// ===== MOON HEIGHT =====
+function moonGetHeight(pos) {
+    // 1. Base jaggedness (massive frequency and magnitude)
+    var h = Simplex.noise3d(SEED + 12, 5, 0.6, 1.5, pos.x, pos.y, pos.z);
+
+    // 2. High-frequency Micro-bumps (intense jitter)
+    var bumps = Simplex.noise3d(SEED + 44, 4, 0.6, 10.0, pos.x, pos.y, pos.z);
+
+    // 3. Extreme sharp ridges (ridged noise)
+    var sharp = ridgedNoise(pos, 0.25, 99) * 0.4;
+
+    // 4. Large impact depressions
+    var impact = ridgedNoise(pos, 1.2, 77) * 0.5;
+
+    // Result: Combined extreme ruggedness
+    return 1.0 + (h * 0.4) + (bumps * 0.15) + sharp - impact;
+}
+
+// ===== MOON COLOR =====
+function moonGetColor(pos, out) {
+    // Small-scale mottled noise for "all over" distribution
+    // Densify frequency significantly for the small moon
+    var freq = 6.0;
+    var n1 = Simplex.noise3d(SEED + 500, 3, 0.5, freq, pos.x, pos.y, pos.z);
+    var n2 = Simplex.noise3d(SEED + 888, 3, 0.6, freq * 2.5, pos.x, pos.y, pos.z);
+
+    var val = n1 * 0.6 + n2 * 0.4;
+
+    // Distribute variety over entire surface
+    if (val < -0.15) {
+        out.set(COL_MOON_CRATER); // Dark mottling
+    } else if (val > 0.3) {
+        out.set(COL_MOON_HIGH);   // Light mottling
+    } else {
+        out.set(COL_MOON_BASE);   // Mid grey
+    }
+
+    // Heavy grit for texture
+    var grit = Simplex.noise3d(SEED + 777, 2, 0.55, 20.0, pos.x, pos.y, pos.z) * 0.15;
+    out.mul(1.0 + grit);
+    out.a = 1.0;
 }
 
 // ===== HEIGHT for mesh (clamped at water level) =====
@@ -136,49 +184,78 @@ function meshGetColor(pos, out) {
 Events.on(ClientLoadEvent, function (e) {
     var kaelthas = Vars.content.planet("bnb-kaelthas");
     if (kaelthas == null) kaelthas = Vars.content.planet("kaelthas");
-    if (kaelthas == null) return;
 
-    var planet = kaelthas;
+    var moon = Vars.content.planet("bnb-eloriel");
+    if (moon == null) moon = Vars.content.planet("eloriel");
 
-    var mesher = java.lang.reflect.Proxy.newProxyInstance(
-        Vars.content.getClass().getClassLoader(),
-        [HexMesher],
-        new java.lang.reflect.InvocationHandler({
-            invoke: function (proxy, method, args) {
-                var name = method.getName();
-                if (name == "getHeight") return new java.lang.Float(meshGetHeight(args[0]));
-                if (name == "getColor") { meshGetColor(args[0], args[1]); return null; }
-                if (name == "isEmissive") return new java.lang.Boolean(false);
-                if (name == "skip") return new java.lang.Boolean(false);
-                if (name == "toString") return "JS_HexMesher_Proxy";
-                return null;
-            }
-        })
-    );
-
-    planet.meshLoader = prov(function () {
-        try {
-            return new HexMesh(planet, mesher, 7, Shaders.planet); // Divisions 6 -> 7
-        } catch (err) {
-            return new ShaderSphereMesh(planet, Shaders.planet, 2);
-        }
-    });
-
-    planet.cloudMeshLoader = prov(function () {
-        // Varied transparency: dense base (100%), mid (75%), wispy top (50%)
-        return new MultiMesh(
-            new HexSkyMesh(planet, 11, 0.15, 0.13, 5, Color.valueOf("eafffdff"), 2, 0.45, 0.9, 0.40),
-            new HexSkyMesh(planet, 1, 0.6, 0.16, 6, Color.valueOf("eafffdbf"), 2, 0.45, 1.2, 0.35),
-            new HexSkyMesh(planet, 42, 0.3, 0.18, 7, Color.valueOf("eafffd80"), 3, 0.5, 1.8, 0.30)
+    if (kaelthas != null) {
+        var mesher = java.lang.reflect.Proxy.newProxyInstance(
+            Vars.content.getClass().getClassLoader(),
+            [HexMesher],
+            new java.lang.reflect.InvocationHandler({
+                invoke: function (proxy, method, args) {
+                    var name = method.getName();
+                    if (name == "getHeight") return new java.lang.Float(meshGetHeight(args[0]));
+                    if (name == "getColor") { meshGetColor(args[0], args[1]); return null; }
+                    if (name == "isEmissive") return new java.lang.Boolean(false);
+                    if (name == "skip") return new java.lang.Boolean(false);
+                    if (name == "toString") return "JS_HexMesher_Proxy_Kaelthas";
+                    return null;
+                }
+            })
         );
-    });
 
-    planet.reloadMesh();
-    planet.cloudMesh = planet.cloudMeshLoader.get();
+        kaelthas.meshLoader = prov(function () {
+            try {
+                return new HexMesh(kaelthas, mesher, 7, Shaders.planet);
+            } catch (err) {
+                return new ShaderSphereMesh(kaelthas, Shaders.planet, 2);
+            }
+        });
+
+        kaelthas.cloudMeshLoader = prov(function () {
+            // Varied transparency: dense base (100%), mid (75%), wispy top (50%)
+            return new MultiMesh(
+                new HexSkyMesh(kaelthas, 11, 0.15, 0.13, 5, Color.valueOf("eafffdff"), 2, 0.45, 0.9, 0.40),
+                new HexSkyMesh(kaelthas, 1, 0.6, 0.16, 6, Color.valueOf("eafffdbf"), 2, 0.45, 1.2, 0.35),
+                new HexSkyMesh(kaelthas, 42, 0.3, 0.18, 7, Color.valueOf("eafffd80"), 3, 0.5, 1.8, 0.30)
+            );
+        });
+
+        kaelthas.reloadMesh();
+        kaelthas.cloudMesh = kaelthas.cloudMeshLoader.get();
+        print("[BnB] Kaelthas Mesh Loaded");
+    }
+
+    if (moon != null) {
+        var moonMesher = java.lang.reflect.Proxy.newProxyInstance(
+            Vars.content.getClass().getClassLoader(),
+            [HexMesher],
+            new java.lang.reflect.InvocationHandler({
+                invoke: function (proxy, method, args) {
+                    var name = method.getName();
+                    if (name == "getHeight") return new java.lang.Float(moonGetHeight(args[0]));
+                    if (name == "getColor") { moonGetColor(args[0], args[1]); return null; }
+                    if (name == "isEmissive") return new java.lang.Boolean(false);
+                    if (name == "skip") return new java.lang.Boolean(false);
+                    if (name == "toString") return "JS_HexMesher_Proxy_Eloriel";
+                    return null;
+                }
+            })
+        );
+
+        moon.meshLoader = prov(function () {
+            try {
+                return new HexMesh(moon, moonMesher, 5, Shaders.planet); // Lowered divisions to reduce lag
+            } catch (err) {
+                return new ShaderSphereMesh(moon, Shaders.planet, 1);
+            }
+        });
+
+        moon.reloadMesh();
+    }
 
     // Hide vanilla planets from campaign selection
-    // PlanetDialog.selectable() checks: (alwaysUnlocked && isLandable()) || sectors.contains(hasBase)
-    // So we set alwaysUnlocked = false and clear sectors to remove them from the UI
     var serpulo = Vars.content.planet("serpulo");
     var erekir = Vars.content.planet("erekir");
 

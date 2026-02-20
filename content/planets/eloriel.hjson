@@ -1,0 +1,22 @@
+localizedName: Eloriel
+description: A cold, barren rock orbiting Kaelthas.
+alwaysUnlocked: false
+accessible: false
+sectorSize: 0
+radius: 0.25
+parent: bnb-kaelthas
+solarSystem: sun
+orbitRadius: 4.5
+orbitOffset: 45
+drawOrbit: true
+visible: true
+bloom: false
+updateLighting: true
+hasAtmosphere: false
+iconColor: 999999
+generator: {
+  min: 100
+  max: 100
+  radMin: 20
+  radMax: 50
+}
