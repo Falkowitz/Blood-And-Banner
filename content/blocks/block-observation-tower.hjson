@@ -10,6 +10,7 @@ maxAmmo: 90
 outlineRadius: 0
 buildCostMultiplier: 150
 fogRadius: 32
+fogRadiusMultiplier: 4
 shake: 0
 ammoUseEffect: none
 targetAir: true
@@ -23,8 +24,8 @@ emitLight: true
 rotate: false
 lightRadius: 2
 	requirements: [
-	manpower/3
 	materials/3
+	manpower/3
 	]
 	shootType: {
 			type: ArtilleryBulletType

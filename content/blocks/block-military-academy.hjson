@@ -7,7 +7,7 @@ hasLiquids: false
 hasPower: false
 solid: true
 buildVisibility: shown
-squareSprite: true
+squareSprite: false
 size: 1
 destructible: false
 underBullets: true
@@ -22,20 +22,20 @@ placeSound: stone-building-destroyed
 breakSound: stone-building-destroyed
 destroySound: block-destroy
 
-buildCostMultiplier: 180
+buildCostMultiplier: 385.714285
 requirements:
 [
-	bnb-materials/3
-	bnb-manpower/2
+	bnb-materials/4
+	bnb-manpower/3
 ]
 
 warmupSpeed: 1
-outputItem: manpower/1
-craftTime: 3600
+outputItem: doctrine-point/1
+craftTime: 18000 
 craftEffect:
 {
 	type: ParticleEffect
-	region: bnb-manpower-production
+	region: bnb-doctrine-point-production
 	particles: 1
 	length: 24
 	lifetime: 180

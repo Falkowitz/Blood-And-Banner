@@ -1,0 +1,30 @@
+type: Block
+variants: 12
+health: 250
+size: 1
+squareSprite: false
+fogRadius: 0
+destructible: true
+targetable: true
+consumesPower: false
+hasItems: false
+hasLiquids: false
+hasPower: false
+solid: true
+buildVisibility: shown
+category: defense
+emitLight: false
+rotate: false
+unitCapModifier: 1
+drawTeamOverlay: false
+
+placeSound: stone-building-destroyed
+breakSound: stone-building-destroyed
+destroySound: block-destroy
+
+buildCostMultiplier: 600
+requirements:
+[
+    bnb-materials/2
+    bnb-manpower/1
+]

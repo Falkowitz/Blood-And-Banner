@@ -47,10 +47,13 @@ contentOrder: [
   "block-barrack",
   "block-workshop",
   "block-well",
+  "block-military-academy",
+  "block-intendant-yard",
   
   // Towers
   "block-observation-tower",
   "block-defence-tower",
+  "block-chevaux-de-frise",
 
   // Deployment Blocks (Grouped by Unit Roles)
   // Colonels

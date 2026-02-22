@@ -1,0 +1,39 @@
+type: RepairTower
+health: 1000
+hasItems: false
+hasLiquids: false
+hasPower: false
+solid: true
+buildVisibility: shown
+squareSprite: true
+size: 1
+destructible: true
+targetable: true
+consumesPower: false
+fogRadius: 0
+customShadow: true
+category: defense
+emitLight: false
+rotate: false
+
+placeSound: stone-building-destroyed
+breakSound: stone-building-destroyed
+destroySound: block-destroy
+
+buildCostMultiplier: 225
+requirements:
+[
+	bnb-materials/3
+	bnb-manpower/1
+]
+
+range: 64
+circleColor: 98ffa9ff
+glowColor: 98ffa97f
+circleSpeed: 300
+circleStroke: 2
+squareRad: 0
+squareSpinScl: 0
+glowMag: 0
+glowScl: 0
+healAmount: 0.025

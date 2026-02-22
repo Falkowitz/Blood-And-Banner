@@ -4,7 +4,8 @@ const ProductionTimers = {
     // Blocks to track with custom vertical offsets (relative to bottom edge)
     config: {
         "bnb-block-workshop": -1,
-        "bnb-block-barrack": -1
+        "bnb-block-barrack": -1,
+        "bnb-block-military-academy": -1
     },
 
     // Check if a building is one of our targets and get its offset
