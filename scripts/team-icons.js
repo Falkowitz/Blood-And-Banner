@@ -40,11 +40,11 @@ Events.on(ClientLoadEvent, e => {
     // 2. Register Team Fonts/Emojis
     let startUnicode = 0xF950;
     const replacements = [
-        { team: Team.sharded, name: "bnb-hispalis", sprite: "hispalis" },
-        { team: Team.crux, name: "bnb-redwyn", sprite: "redwyn" },
-        { team: Team.malis, name: "bnb-basilaeum", sprite: "basilaeum" },
-        { team: Team.green, name: "bnb-turqis", sprite: "turqis" },
-        { team: Team.blue, name: "bnb-valdier", sprite: "valdier" }
+        { team: Team.sharded, name: "bnb-hispalis", sprite: "team-sharded" },
+        { team: Team.crux, name: "bnb-redwyn", sprite: "team-crux" },
+        { team: Team.malis, name: "bnb-basilaeum", sprite: "team-malis" },
+        { team: Team.green, name: "bnb-turqis", sprite: "team-green" },
+        { team: Team.blue, name: "bnb-valdier", sprite: "team-blue" }
     ];
 
     replacements.forEach((entry, index) => {

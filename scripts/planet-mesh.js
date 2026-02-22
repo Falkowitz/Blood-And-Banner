@@ -207,7 +207,7 @@ Events.on(ClientLoadEvent, function (e) {
 
         kaelthas.meshLoader = prov(function () {
             try {
-                return new HexMesh(kaelthas, mesher, 7, Shaders.planet);
+                return new HexMesh(kaelthas, mesher, 6, Shaders.planet);
             } catch (err) {
                 return new ShaderSphereMesh(kaelthas, Shaders.planet, 2);
             }
@@ -246,7 +246,7 @@ Events.on(ClientLoadEvent, function (e) {
 
         moon.meshLoader = prov(function () {
             try {
-                return new HexMesh(moon, moonMesher, 5, Shaders.planet); // Lowered divisions to reduce lag
+                return new HexMesh(moon, moonMesher, 4, Shaders.planet); // Lowered divisions to reduce lag
             } catch (err) {
                 return new ShaderSphereMesh(moon, Shaders.planet, 1);
             }

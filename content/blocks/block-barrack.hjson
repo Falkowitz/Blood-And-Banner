@@ -17,6 +17,7 @@ fogRadius: 0
 itemCapacity: 5
 customShadow: true
 category: production
+alwaysUnlocked: true
 
 placeSound: stone-building-destroyed
 breakSound: stone-building-destroyed

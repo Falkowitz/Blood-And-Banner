@@ -13,6 +13,7 @@ require("production-timers");
 require("blood-effect");
 require("strategic-icons");
 require("team-tech");
+require("tech-tree");
 
 print("[BnB] All scripts loaded successfully.");
 

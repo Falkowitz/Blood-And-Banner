@@ -1,6 +1,7 @@
 type: ConsumeGenerator
 health: 100
 category: units
+alwaysUnlocked: true
 explodeOnFull: true
 destructible: true
 breakable: true

@@ -4,6 +4,7 @@ breakSound: block-destroy
 destroySound: block-destroy
 size: 1
 category: defense
+alwaysUnlocked: true
 reload: 60
 recoil: 0
 maxAmmo: 90

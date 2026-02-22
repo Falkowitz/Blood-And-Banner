@@ -1,4 +1,4 @@
-type: Floor
+type: Wall
 variants: 6
 hasColor: true
 mapColor: 465b5a

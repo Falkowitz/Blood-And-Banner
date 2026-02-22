@@ -46,9 +46,9 @@ contentOrder: [
   "block-citadel",
   "block-barrack",
   "block-workshop",
-  "block-well",
   "block-military-academy",
   "block-intendant-yard",
+  "block-supply-hub",
   
   // Towers
   "block-observation-tower",
@@ -148,6 +148,7 @@ contentOrder: [
   "block-sandstone-house", "block-sandstone-house-long", "block-sandstone-house-tilted", "block-sandstone-house-long-tilted",
   
   "block-tents", "block-tents-tilted", "block-tent-long", "block-tent-long-tilted",
+  "block-well",
 
   // Religious / Monumental
   "block-church", "block-church-tilted",
@@ -203,7 +204,6 @@ contentOrder: [
   "defence-buff",
   "maneuver-buff",
   "universal-buff",
-  "looted-wellfed",
   "vulnerable",
   "veteran1", "veteran2", "veteran3",
   

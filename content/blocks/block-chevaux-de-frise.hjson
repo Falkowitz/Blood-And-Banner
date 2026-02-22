@@ -6,7 +6,7 @@ outlineRadius: 0
 health: 500
 shake: 0
 shootSound: none
-range: 800
+range: 80
 fogRadius: 0
 fogRadiusMultiplier: 0
 emitLight: false
@@ -15,6 +15,11 @@ reload: 60
 rotate: false
 squareSprite: false
 
+placeSound: block-place
+breakSound: block-destroy
+destroySound: block-destroy
+
+buildCostMultiplier: 600
 requirements:
 [
     bnb-materials/3
@@ -28,7 +33,7 @@ shootType:
 	hitEffect: none
 	despawnEffect: none
 	hitSound: none
-	despawnSound: snone
+	despawnSound: none
 	hitShake: 0
 	despawnShake: 0
 	speed: 0
@@ -65,7 +70,7 @@ shootType:
 		hitEffect: none
 		despawnEffect: none
 		hitSound: none
-		despawnSound: snone
+		despawnSound: none
 		hitShake: 0
 		despawnShake: 0
 		speed: 4

@@ -1,4 +1,5 @@
 type: mech
+alwaysUnlocked: true
 
 // movement & handling
 mechSideSway: 0

@@ -1,0 +1,25 @@
+type: BuildTurret
+size: 1
+squareSprite: true
+buildSpeed: 0.2
+buildBeamOffset: 0
+elevation: 0
+health: 500
+range: 128
+rotate: false
+category: defense
+fogRadius: 0
+fogRadiusMultiplier: 0
+emitLight: false
+customShadow: true
+
+placeSound: block-place
+breakSound: block-destroy
+destroySound: block-destroy
+
+buildCostMultiplier: 385.714285
+requirements:
+[
+    bnb-materials/5
+    bnb-manpower/2
+]

@@ -41,5 +41,5 @@ clearSectorOnLose: true
 allowWaves: true
 prebuildBase: false
 defaultCore: bnb-block-citadel
-allowLaunchToNumbered: false
+//allowLaunchToNumbered: false
 launchCandidates: []
