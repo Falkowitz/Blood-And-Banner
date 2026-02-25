@@ -131,22 +131,17 @@ Events.on(UnitDestroyEvent, e => {
     }
 });
 
-// Unit registration
+// Unit registration — auto-populate from centralized UNIT_CATEGORIES (team-constants.js)
 global.bloodEffectDelay = 1.0;
 
-global.registerInfantryUnit("bnb-unit-swordsmen");
-global.registerInfantryUnit("bnb-unit-spearmen");
-global.registerInfantryUnit("bnb-unit-bowmen");
-global.registerInfantryUnit("bnb-unit-shieldmen");
-global.registerInfantryUnit("bnb-unit-militiamen");
-
-global.registerCavalryUnit("bnb-unit-cavalrymen");
-global.registerCavalryUnit("bnb-unit-cuirassiers");
-global.registerCavalryUnit("bnb-unit-lancers");
-
-global.registerCavalryUnit("bnb-unit-attack-colonel");
-global.registerCavalryUnit("bnb-unit-defence-colonel");
-global.registerCavalryUnit("bnb-unit-maneuver-colonel");
-global.registerCavalryUnit("bnb-unit-universal-colonel");
+for (var unitName in global.UNIT_CATEGORIES) {
+    var cat = global.UNIT_CATEGORIES[unitName];
+    if (cat === "infantry") {
+        global.registerInfantryUnit(unitName);
+    } else if (cat === "cavalry") {
+        global.registerCavalryUnit(unitName);
+    }
+    // siege units don't bleed (they're machines), so no registration needed
+}
 
 print("[BnB] Blood Effect system loaded.");

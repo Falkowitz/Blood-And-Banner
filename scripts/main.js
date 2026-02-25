@@ -9,6 +9,7 @@ require("team-icons");
 require("cursor");
 require("menu-bg");
 require("music");
+require("sound-manager");
 require("production-timers");
 require("blood-effect");
 require("strategic-icons");

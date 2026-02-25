@@ -1,4 +1,4 @@
-type: Wall
+type: Block
 variants: 6
 hasColor: true
 mapColor: 465b5a
@@ -9,3 +9,5 @@ placeableOn: false
 status: in-the-woods
 statusDuration: 15
 walkSound: leaves-rustling
+buildVisibility: sandboxOnly
+drawTeamOverlay: false

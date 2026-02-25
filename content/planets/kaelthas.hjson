@@ -3,21 +3,6 @@ description: A terrestrial world where conflict never stops.
 alwaysUnlocked: true
 // mesh is handled by scripts/planet-mesh.js (HexMesher override)
 // cloudMesh is handled by scripts/planet-mesh.js (HexSkyMesh override)
-generator: {
-  octaves: 3
-  persistence: 0.52
-  scale: 22
-  mag: 0.721
-  thresh: 1.152
-  min: 100
-  max: 100
-  radMin: 220
-  radMax: 600
-  iceChance: 0.51
-  carbonChance: 0.32
-  berylChance: 0
-  ferricChance: 0.26
-}
 orbitRadius: 25
 orbitOffset: 180
 sectorSize: 4
@@ -42,4 +27,9 @@ allowWaves: true
 prebuildBase: false
 defaultCore: bnb-block-citadel
 //allowLaunchToNumbered: false
-launchCandidates: []
+//launchCandidates: []
+rotateTime: 600
+lightSrcFrom: 0.0
+lightSrcTo: 0.8
+lightDstFrom: 0.0
+lightDstTo: 1.0 

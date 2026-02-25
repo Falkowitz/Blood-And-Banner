@@ -55,12 +55,13 @@ deathExplosionEffect: {
 
 // control
 commands: [move]
+forceMultiTarget: true
 
 // weapons
 weapons: [
 	{
 		// main melee attack
-		name: unit-swordsmen-soldiers
+		name: unit-swordsmen-attack
 		mirror: false
 		x: 0
 		y: 0
@@ -77,7 +78,7 @@ weapons: [
 		recoil: -0.4
 		recoilPow: 1
 		recoilTime: 40
-		layerOffset: 0.2
+		layerOffset: -0.2
 		bullet: {
 			type: BasicBulletType
 			damage: 35
@@ -144,6 +145,1237 @@ weapons: [
 			lightColor: ffffff
 		}
 	}
+
+		{
+		name: unit-swordsmen-soldier
+		mirror: false
+		display: false
+		x: 0.4
+		y: 0
+		shootX: 0
+		shootY: 0
+		reload: 92
+		rotate: true
+		rotateSpeed: 2
+		recoil: -0.4
+		recoilPow: 1
+		recoilTime: 40
+		shootSound: none
+		layerOffset: 0.2
+		bullet: {
+			type: BasicBulletType
+			damage: 0
+			splashDamage: 0
+			width: 0
+			height: 0
+			hittable: true
+			reflectable: false
+			absorbable: false
+			instantDisappear: true
+			shrinkX: 0
+			shrinkY: 0
+			collides: false
+			shootEffect: none
+			smokeEffect: none
+			despawnEffect: none
+			hitEffect: none
+			lightRadius: 0
+			lightOpacity: 0
+			lightColor: ffffff
+			range: 16
+			maxRange: 16
+			}
+		}
+
+		{
+		name: unit-swordsmen-soldier
+		mirror: false
+		display: false
+		x: 1.2
+		y: 0
+		shootX: 0
+		shootY: 0
+		reload: 105
+		rotate: true
+		rotateSpeed: 2
+		recoil: -0.4
+		recoilPow: 1
+		recoilTime: 40
+		shootSound: none
+		layerOffset: 0.2
+		bullet: {
+			type: BasicBulletType
+			damage: 0
+			splashDamage: 0
+			width: 0
+			height: 0
+			hittable: true
+			reflectable: false
+			absorbable: false
+			instantDisappear: true
+			shrinkX: 0
+			shrinkY: 0
+			collides: false
+			shootEffect: none
+			smokeEffect: none
+			despawnEffect: none
+			hitEffect: none
+			lightRadius: 0
+			lightOpacity: 0
+			lightColor: ffffff
+			range: 16
+			maxRange: 16
+			}
+		}
+
+		{
+		name: unit-swordsmen-soldier
+		mirror: false
+		display: false
+		x: 2.0
+		y: 0
+		shootX: 0
+		shootY: 0
+		reload: 98
+		rotate: true
+		rotateSpeed: 2
+		recoil: -0.4
+		recoilPow: 1
+		recoilTime: 40
+		shootSound: none
+		layerOffset: 0.2
+		bullet: {
+			type: BasicBulletType
+			damage: 0
+			splashDamage: 0
+			width: 0
+			height: 0
+			hittable: true
+			reflectable: false
+			absorbable: false
+			instantDisappear: true
+			shrinkX: 0
+			shrinkY: 0
+			collides: false
+			shootEffect: none
+			smokeEffect: none
+			despawnEffect: none
+			hitEffect: none
+			lightRadius: 0
+			lightOpacity: 0
+			lightColor: ffffff
+			range: 16
+			maxRange: 16
+			}
+		}
+
+		{
+		name: unit-swordsmen-soldier
+		mirror: false
+		display: false
+		x: -0.4
+		y: 0
+		shootX: 0
+		shootY: 0
+		reload: 110
+		rotate: true
+		rotateSpeed: 2
+		recoil: -0.4
+		recoilPow: 1
+		recoilTime: 40
+		shootSound: none
+		layerOffset: 0.2
+		bullet: {
+			type: BasicBulletType
+			damage: 0
+			splashDamage: 0
+			width: 0
+			height: 0
+			hittable: true
+			reflectable: false
+			absorbable: false
+			instantDisappear: true
+			shrinkX: 0
+			shrinkY: 0
+			collides: false
+			shootEffect: none
+			smokeEffect: none
+			despawnEffect: none
+			hitEffect: none
+			lightRadius: 0
+			lightOpacity: 0
+			lightColor: ffffff
+			range: 16
+			maxRange: 16
+			}
+		}
+
+		{
+		name: unit-swordsmen-soldier
+		mirror: false
+		display: false
+		x: -1.2
+		y: 0
+		shootX: 0
+		shootY: 0
+		reload: 95
+		rotate: true
+		rotateSpeed: 2
+		recoil: -0.4
+		recoilPow: 1
+		recoilTime: 40
+		shootSound: none
+		layerOffset: 0.2
+		bullet: {
+			type: BasicBulletType
+			damage: 0
+			splashDamage: 0
+			width: 0
+			height: 0
+			hittable: true
+			reflectable: false
+			absorbable: false
+			instantDisappear: true
+			shrinkX: 0
+			shrinkY: 0
+			collides: false
+			shootEffect: none
+			smokeEffect: none
+			despawnEffect: none
+			hitEffect: none
+			lightRadius: 0
+			lightOpacity: 0
+			lightColor: ffffff
+			range: 16
+			maxRange: 16
+			}
+		}
+
+		{
+		name: unit-swordsmen-soldier
+		mirror: false
+		display: false
+		x: -2.0
+		y: 0
+		shootX: 0
+		shootY: 0
+		reload: 102
+		rotate: true
+		rotateSpeed: 2
+		recoil: -0.4
+		recoilPow: 1
+		recoilTime: 40
+		shootSound: none
+		layerOffset: 0.2
+		bullet: {
+			type: BasicBulletType
+			damage: 0
+			splashDamage: 0
+			width: 0
+			height: 0
+			hittable: true
+			reflectable: false
+			absorbable: false
+			instantDisappear: true
+			shrinkX: 0
+			shrinkY: 0
+			collides: false
+			shootEffect: none
+			smokeEffect: none
+			despawnEffect: none
+			hitEffect: none
+			lightRadius: 0
+			lightOpacity: 0
+			lightColor: ffffff
+			range: 16
+			maxRange: 16
+			}
+		}
+
+		{
+		name: unit-swordsmen-soldier
+		mirror: false
+		display: false
+		x: 0.4
+		y: 0.8
+		shootX: 0
+		shootY: 0
+		reload: 90
+		rotate: true
+		rotateSpeed: 2
+		recoil: -0.4
+		recoilPow: 1
+		recoilTime: 40
+		shootSound: none
+		layerOffset: 0.2
+		bullet: {
+			type: BasicBulletType
+			damage: 0
+			splashDamage: 0
+			width: 0
+			height: 0
+			hittable: true
+			reflectable: false
+			absorbable: false
+			instantDisappear: true
+			shrinkX: 0
+			shrinkY: 0
+			collides: false
+			shootEffect: none
+			smokeEffect: none
+			despawnEffect: none
+			hitEffect: none
+			lightRadius: 0
+			lightOpacity: 0
+			lightColor: ffffff
+			range: 16
+			maxRange: 16
+			}
+		}
+
+		{
+		name: unit-swordsmen-soldier
+		mirror: false
+		display: false
+		x: 1.2
+		y: 0.8
+		shootX: 0
+		shootY: 0
+		reload: 108
+		rotate: true
+		rotateSpeed: 2
+		recoil: -0.4
+		recoilPow: 1
+		recoilTime: 40
+		shootSound: none
+		layerOffset: 0.2
+		bullet: {
+			type: BasicBulletType
+			damage: 0
+			splashDamage: 0
+			width: 0
+			height: 0
+			hittable: true
+			reflectable: false
+			absorbable: false
+			instantDisappear: true
+			shrinkX: 0
+			shrinkY: 0
+			collides: false
+			shootEffect: none
+			smokeEffect: none
+			despawnEffect: none
+			hitEffect: none
+			lightRadius: 0
+			lightOpacity: 0
+			lightColor: ffffff
+			range: 16
+			maxRange: 16
+			}
+		}
+
+		{
+		name: unit-swordsmen-soldier
+		mirror: false
+		display: false
+		x: 2.0
+		y: 0.8
+		shootX: 0
+		shootY: 0
+		reload: 96
+		rotate: true
+		rotateSpeed: 2
+		recoil: -0.4
+		recoilPow: 1
+		recoilTime: 40
+		shootSound: none
+		layerOffset: 0.2
+		bullet: {
+			type: BasicBulletType
+			damage: 0
+			splashDamage: 0
+			width: 0
+			height: 0
+			hittable: true
+			reflectable: false
+			absorbable: false
+			instantDisappear: true
+			shrinkX: 0
+			shrinkY: 0
+			collides: false
+			shootEffect: none
+			smokeEffect: none
+			despawnEffect: none
+			hitEffect: none
+			lightRadius: 0
+			lightOpacity: 0
+			lightColor: ffffff
+			range: 16
+			maxRange: 16
+			}
+		}
+
+		{
+		name: unit-swordsmen-soldier
+		mirror: false
+		display: false
+		x: -0.4
+		y: 0.8
+		shootX: 0
+		shootY: 0
+		reload: 112
+		rotate: true
+		rotateSpeed: 2
+		recoil: -0.4
+		recoilPow: 1
+		recoilTime: 40
+		shootSound: none
+		layerOffset: 0.2
+		bullet: {
+			type: BasicBulletType
+			damage: 0
+			splashDamage: 0
+			width: 0
+			height: 0
+			hittable: true
+			reflectable: false
+			absorbable: false
+			instantDisappear: true
+			shrinkX: 0
+			shrinkY: 0
+			collides: false
+			shootEffect: none
+			smokeEffect: none
+			despawnEffect: none
+			hitEffect: none
+			lightRadius: 0
+			lightOpacity: 0
+			lightColor: ffffff
+			range: 16
+			maxRange: 16
+			}
+		}
+
+		{
+		name: unit-swordsmen-soldier
+		mirror: false
+		display: false
+		x: -1.2
+		y: 0.8
+		shootX: 0
+		shootY: 0
+		reload: 93
+		rotate: true
+		rotateSpeed: 2
+		recoil: -0.4
+		recoilPow: 1
+		recoilTime: 40
+		shootSound: none
+		layerOffset: 0.2
+		bullet: {
+			type: BasicBulletType
+			damage: 0
+			splashDamage: 0
+			width: 0
+			height: 0
+			hittable: true
+			reflectable: false
+			absorbable: false
+			instantDisappear: true
+			shrinkX: 0
+			shrinkY: 0
+			collides: false
+			shootEffect: none
+			smokeEffect: none
+			despawnEffect: none
+			hitEffect: none
+			lightRadius: 0
+			lightOpacity: 0
+			lightColor: ffffff
+			range: 16
+			maxRange: 16
+			}
+		}
+
+		{
+		name: unit-swordsmen-soldier
+		mirror: false
+		display: false
+		x: -2.0
+		y: 0.8
+		shootX: 0
+		shootY: 0
+		reload: 104
+		rotate: true
+		rotateSpeed: 2
+		recoil: -0.4
+		recoilPow: 1
+		recoilTime: 40
+		shootSound: none
+		layerOffset: 0.2
+		bullet: {
+			type: BasicBulletType
+			damage: 0
+			splashDamage: 0
+			width: 0
+			height: 0
+			hittable: true
+			reflectable: false
+			absorbable: false
+			instantDisappear: true
+			shrinkX: 0
+			shrinkY: 0
+			collides: false
+			shootEffect: none
+			smokeEffect: none
+			despawnEffect: none
+			hitEffect: none
+			lightRadius: 0
+			lightOpacity: 0
+			lightColor: ffffff
+			range: 16
+			maxRange: 16
+			}
+		}
+
+		{
+		name: unit-swordsmen-soldier
+		mirror: false
+		display: false
+		x: 0.4
+		y: -0.8
+		shootX: 0
+		shootY: 0
+		reload: 99
+		rotate: true
+		rotateSpeed: 2
+		recoil: -0.4
+		recoilPow: 1
+		recoilTime: 40
+		shootSound: none
+		layerOffset: 0.2
+		bullet: {
+			type: BasicBulletType
+			damage: 0
+			splashDamage: 0
+			width: 0
+			height: 0
+			hittable: true
+			reflectable: false
+			absorbable: false
+			instantDisappear: true
+			shrinkX: 0
+			shrinkY: 0
+			collides: false
+			shootEffect: none
+			smokeEffect: none
+			despawnEffect: none
+			hitEffect: none
+			lightRadius: 0
+			lightOpacity: 0
+			lightColor: ffffff
+			range: 16
+			maxRange: 16
+			}
+		}
+
+		{
+		name: unit-swordsmen-soldier
+		mirror: false
+		display: false
+		x: 1.2
+		y: -0.8
+		shootX: 0
+		shootY: 0
+		reload: 107
+		rotate: true
+		rotateSpeed: 2
+		recoil: -0.4
+		recoilPow: 1
+		recoilTime: 40
+		shootSound: none
+		layerOffset: 0.2
+		bullet: {
+			type: BasicBulletType
+			damage: 0
+			splashDamage: 0
+			width: 0
+			height: 0
+			hittable: true
+			reflectable: false
+			absorbable: false
+			instantDisappear: true
+			shrinkX: 0
+			shrinkY: 0
+			collides: false
+			shootEffect: none
+			smokeEffect: none
+			despawnEffect: none
+			hitEffect: none
+			lightRadius: 0
+			lightOpacity: 0
+			lightColor: ffffff
+			range: 16
+			maxRange: 16
+			}
+		}
+
+		{
+		name: unit-swordsmen-soldier
+		mirror: false
+		display: false
+		x: 2.0
+		y: -0.8
+		shootX: 0
+		shootY: 0
+		reload: 91
+		rotate: true
+		rotateSpeed: 2
+		recoil: -0.4
+		recoilPow: 1
+		recoilTime: 40
+		shootSound: none
+		layerOffset: 0.2
+		bullet: {
+			type: BasicBulletType
+			damage: 0
+			splashDamage: 0
+			width: 0
+			height: 0
+			hittable: true
+			reflectable: false
+			absorbable: false
+			instantDisappear: true
+			shrinkX: 0
+			shrinkY: 0
+			collides: false
+			shootEffect: none
+			smokeEffect: none
+			despawnEffect: none
+			hitEffect: none
+			lightRadius: 0
+			lightOpacity: 0
+			lightColor: ffffff
+			range: 16
+			maxRange: 16
+			}
+		}
+
+		{
+		name: unit-swordsmen-soldier
+		mirror: false
+		display: false
+		x: -0.4
+		y: -0.8
+		shootX: 0
+		shootY: 0
+		reload: 115
+		rotate: true
+		rotateSpeed: 2
+		recoil: -0.4
+		recoilPow: 1
+		recoilTime: 40
+		shootSound: none
+		layerOffset: 0.2
+		bullet: {
+			type: BasicBulletType
+			damage: 0
+			splashDamage: 0
+			width: 0
+			height: 0
+			hittable: true
+			reflectable: false
+			absorbable: false
+			instantDisappear: true
+			shrinkX: 0
+			shrinkY: 0
+			collides: false
+			shootEffect: none
+			smokeEffect: none
+			despawnEffect: none
+			hitEffect: none
+			lightRadius: 0
+			lightOpacity: 0
+			lightColor: ffffff
+			range: 16
+			maxRange: 16
+			}
+		}
+
+		{
+		name: unit-swordsmen-soldier
+		mirror: false
+		display: false
+		x: -1.2
+		y: -0.8
+		shootX: 0
+		shootY: 0
+		reload: 94
+		rotate: true
+		rotateSpeed: 2
+		recoil: -0.4
+		recoilPow: 1
+		recoilTime: 40
+		shootSound: none
+		layerOffset: 0.2
+		bullet: {
+			type: BasicBulletType
+			damage: 0
+			splashDamage: 0
+			width: 0
+			height: 0
+			hittable: true
+			reflectable: false
+			absorbable: false
+			instantDisappear: true
+			shrinkX: 0
+			shrinkY: 0
+			collides: false
+			shootEffect: none
+			smokeEffect: none
+			despawnEffect: none
+			hitEffect: none
+			lightRadius: 0
+			lightOpacity: 0
+			lightColor: ffffff
+			range: 16
+			maxRange: 16
+			}
+		}
+
+		{
+		name: unit-swordsmen-soldier
+		mirror: false
+		display: false
+		x: -2.0
+		y: -0.8
+		shootX: 0
+		shootY: 0
+		reload: 101
+		rotate: true
+		rotateSpeed: 2
+		recoil: -0.4
+		recoilPow: 1
+		recoilTime: 40
+		shootSound: none
+		layerOffset: 0.2
+		bullet: {
+			type: BasicBulletType
+			damage: 0
+			splashDamage: 0
+			width: 0
+			height: 0
+			hittable: true
+			reflectable: false
+			absorbable: false
+			instantDisappear: true
+			shrinkX: 0
+			shrinkY: 0
+			collides: false
+			shootEffect: none
+			smokeEffect: none
+			despawnEffect: none
+			hitEffect: none
+			lightRadius: 0
+			lightOpacity: 0
+			lightColor: ffffff
+			range: 16
+			maxRange: 16
+			}
+		}
+
+		{
+		name: unit-swordsmen-soldier
+		mirror: false
+		display: false
+		x: 0.4
+		y: 1.6
+		shootX: 0
+		shootY: 0
+		reload: 109
+		rotate: true
+		rotateSpeed: 2
+		recoil: -0.4
+		recoilPow: 1
+		recoilTime: 40
+		shootSound: none
+		layerOffset: 0.2
+		bullet: {
+			type: BasicBulletType
+			damage: 0
+			splashDamage: 0
+			width: 0
+			height: 0
+			hittable: true
+			reflectable: false
+			absorbable: false
+			instantDisappear: true
+			shrinkX: 0
+			shrinkY: 0
+			collides: false
+			shootEffect: none
+			smokeEffect: none
+			despawnEffect: none
+			hitEffect: none
+			lightRadius: 0
+			lightOpacity: 0
+			lightColor: ffffff
+			range: 16
+			maxRange: 16
+			}
+		}
+
+		{
+		name: unit-swordsmen-soldier
+		mirror: false
+		display: false
+		x: 1.2
+		y: 1.6
+		shootX: 0
+		shootY: 0
+		reload: 97
+		rotate: true
+		rotateSpeed: 2
+		recoil: -0.4
+		recoilPow: 1
+		recoilTime: 40
+		shootSound: none
+		layerOffset: 0.2
+		bullet: {
+			type: BasicBulletType
+			damage: 0
+			splashDamage: 0
+			width: 0
+			height: 0
+			hittable: true
+			reflectable: false
+			absorbable: false
+			instantDisappear: true
+			shrinkX: 0
+			shrinkY: 0
+			collides: false
+			shootEffect: none
+			smokeEffect: none
+			despawnEffect: none
+			hitEffect: none
+			lightRadius: 0
+			lightOpacity: 0
+			lightColor: ffffff
+			range: 16
+			maxRange: 16
+			}
+		}
+
+		{
+		name: unit-swordsmen-soldier
+		mirror: false
+		display: false
+		x: 2.0
+		y: 1.6
+		shootX: 0
+		shootY: 0
+		reload: 113
+		rotate: true
+		rotateSpeed: 2
+		recoil: -0.4
+		recoilPow: 1
+		recoilTime: 40
+		shootSound: none
+		layerOffset: 0.2
+		bullet: {
+			type: BasicBulletType
+			damage: 0
+			splashDamage: 0
+			width: 0
+			height: 0
+			hittable: true
+			reflectable: false
+			absorbable: false
+			instantDisappear: true
+			shrinkX: 0
+			shrinkY: 0
+			collides: false
+			shootEffect: none
+			smokeEffect: none
+			despawnEffect: none
+			hitEffect: none
+			lightRadius: 0
+			lightOpacity: 0
+			lightColor: ffffff
+			range: 16
+			maxRange: 16
+			}
+		}
+
+		{
+		name: unit-swordsmen-soldier
+		mirror: false
+		display: false
+		x: -0.4
+		y: 1.6
+		shootX: 0
+		shootY: 0
+		reload: 92
+		rotate: true
+		rotateSpeed: 2
+		recoil: -0.4
+		recoilPow: 1
+		recoilTime: 40
+		shootSound: none
+		layerOffset: 0.2
+		bullet: {
+			type: BasicBulletType
+			damage: 0
+			splashDamage: 0
+			width: 0
+			height: 0
+			hittable: true
+			reflectable: false
+			absorbable: false
+			instantDisappear: true
+			shrinkX: 0
+			shrinkY: 0
+			collides: false
+			shootEffect: none
+			smokeEffect: none
+			despawnEffect: none
+			hitEffect: none
+			lightRadius: 0
+			lightOpacity: 0
+			lightColor: ffffff
+			range: 16
+			maxRange: 16
+			}
+		}
+
+		{
+		name: unit-swordsmen-soldier
+		mirror: false
+		display: false
+		x: -1.2
+		y: 1.6
+		shootX: 0
+		shootY: 0
+		reload: 103
+		rotate: true
+		rotateSpeed: 2
+		recoil: -0.4
+		recoilPow: 1
+		recoilTime: 40
+		shootSound: none
+		layerOffset: 0.2
+		bullet: {
+			type: BasicBulletType
+			damage: 0
+			splashDamage: 0
+			width: 0
+			height: 0
+			hittable: true
+			reflectable: false
+			absorbable: false
+			instantDisappear: true
+			shrinkX: 0
+			shrinkY: 0
+			collides: false
+			shootEffect: none
+			smokeEffect: none
+			despawnEffect: none
+			hitEffect: none
+			lightRadius: 0
+			lightOpacity: 0
+			lightColor: ffffff
+			range: 16
+			maxRange: 16
+			}
+		}
+
+		{
+		name: unit-swordsmen-soldier
+		mirror: false
+		display: false
+		x: -2.0
+		y: 1.6
+		shootX: 0
+		shootY: 0
+		reload: 106
+		rotate: true
+		rotateSpeed: 2
+		recoil: -0.4
+		recoilPow: 1
+		recoilTime: 40
+		shootSound: none
+		layerOffset: 0.2
+		bullet: {
+			type: BasicBulletType
+			damage: 0
+			splashDamage: 0
+			width: 0
+			height: 0
+			hittable: true
+			reflectable: false
+			absorbable: false
+			instantDisappear: true
+			shrinkX: 0
+			shrinkY: 0
+			collides: false
+			shootEffect: none
+			smokeEffect: none
+			despawnEffect: none
+			hitEffect: none
+			lightRadius: 0
+			lightOpacity: 0
+			lightColor: ffffff
+			range: 16
+			maxRange: 16
+			}
+		}
+
+		{
+		name: unit-swordsmen-soldier
+		mirror: false
+		display: false
+		x: 0.4
+		y: -1.6
+		shootX: 0
+		shootY: 0
+		reload: 95
+		rotate: true
+		rotateSpeed: 2
+		recoil: -0.4
+		recoilPow: 1
+		recoilTime: 40
+		shootSound: none
+		layerOffset: 0.2
+		bullet: {
+			type: BasicBulletType
+			damage: 0
+			splashDamage: 0
+			width: 0
+			height: 0
+			hittable: true
+			reflectable: false
+			absorbable: false
+			instantDisappear: true
+			shrinkX: 0
+			shrinkY: 0
+			collides: false
+			shootEffect: none
+			smokeEffect: none
+			despawnEffect: none
+			hitEffect: none
+			lightRadius: 0
+			lightOpacity: 0
+			lightColor: ffffff
+			range: 16
+			maxRange: 16
+			}
+		}
+
+		{
+		name: unit-swordsmen-soldier
+		mirror: false
+		display: false
+		x: 1.2
+		y: -1.6
+		shootX: 0
+		shootY: 0
+		reload: 111
+		rotate: true
+		rotateSpeed: 2
+		recoil: -0.4
+		recoilPow: 1
+		recoilTime: 40
+		shootSound: none
+		layerOffset: 0.2
+		bullet: {
+			type: BasicBulletType
+			damage: 0
+			splashDamage: 0
+			width: 0
+			height: 0
+			hittable: true
+			reflectable: false
+			absorbable: false
+			instantDisappear: true
+			shrinkX: 0
+			shrinkY: 0
+			collides: false
+			shootEffect: none
+			smokeEffect: none
+			despawnEffect: none
+			hitEffect: none
+			lightRadius: 0
+			lightOpacity: 0
+			lightColor: ffffff
+			range: 16
+			maxRange: 16
+			}
+		}
+
+		{
+		name: unit-swordsmen-soldier
+		mirror: false
+		display: false
+		x: 2.0
+		y: -1.6
+		shootX: 0
+		shootY: 0
+		reload: 98
+		rotate: true
+		rotateSpeed: 2
+		recoil: -0.4
+		recoilPow: 1
+		recoilTime: 40
+		shootSound: none
+		layerOffset: 0.2
+		bullet: {
+			type: BasicBulletType
+			damage: 0
+			splashDamage: 0
+			width: 0
+			height: 0
+			hittable: true
+			reflectable: false
+			absorbable: false
+			instantDisappear: true
+			shrinkX: 0
+			shrinkY: 0
+			collides: false
+			shootEffect: none
+			smokeEffect: none
+			despawnEffect: none
+			hitEffect: none
+			lightRadius: 0
+			lightOpacity: 0
+			lightColor: ffffff
+			range: 16
+			maxRange: 16
+			}
+		}
+
+		{
+		name: unit-swordsmen-soldier
+		mirror: false
+		display: false
+		x: -0.4
+		y: -1.6
+		shootX: 0
+		shootY: 0
+		reload: 102
+		rotate: true
+		rotateSpeed: 2
+		recoil: -0.4
+		recoilPow: 1
+		recoilTime: 40
+		shootSound: none
+		layerOffset: 0.2
+		bullet: {
+			type: BasicBulletType
+			damage: 0
+			splashDamage: 0
+			width: 0
+			height: 0
+			hittable: true
+			reflectable: false
+			absorbable: false
+			instantDisappear: true
+			shrinkX: 0
+			shrinkY: 0
+			collides: false
+			shootEffect: none
+			smokeEffect: none
+			despawnEffect: none
+			hitEffect: none
+			lightRadius: 0
+			lightOpacity: 0
+			lightColor: ffffff
+			range: 16
+			maxRange: 16
+			}
+		}
+
+		{
+		name: unit-swordsmen-soldier
+		mirror: false
+		display: false
+		x: -1.2
+		y: -1.6
+		shootX: 0
+		shootY: 0
+		reload: 93
+		rotate: true
+		rotateSpeed: 2
+		recoil: -0.4
+		recoilPow: 1
+		recoilTime: 40
+		shootSound: none
+		layerOffset: 0.2
+		bullet: {
+			type: BasicBulletType
+			damage: 0
+			splashDamage: 0
+			width: 0
+			height: 0
+			hittable: true
+			reflectable: false
+			absorbable: false
+			instantDisappear: true
+			shrinkX: 0
+			shrinkY: 0
+			collides: false
+			shootEffect: none
+			smokeEffect: none
+			despawnEffect: none
+			hitEffect: none
+			lightRadius: 0
+			lightOpacity: 0
+			lightColor: ffffff
+			range: 16
+			maxRange: 16
+			}
+		}
+
+		{
+		name: unit-swordsmen-soldier
+		mirror: false
+		display: false
+		x: -2.0
+		y: -1.6
+		shootX: 0
+		shootY: 0
+		reload: 114
+		rotate: true
+		rotateSpeed: 2
+		recoil: -0.4
+		recoilPow: 1
+		recoilTime: 40
+		shootSound: none
+		layerOffset: 0.2
+		bullet: {
+			type: BasicBulletType
+			damage: 0
+			splashDamage: 0
+			width: 0
+			height: 0
+			hittable: true
+			reflectable: false
+			absorbable: false
+			instantDisappear: true
+			shrinkX: 0
+			shrinkY: 0
+			collides: false
+			shootEffect: none
+			smokeEffect: none
+			despawnEffect: none
+			hitEffect: none
+			lightRadius: 0
+			lightOpacity: 0
+			lightColor: ffffff
+			range: 16
+			maxRange: 16
+			}
+		}
+
 ]
 
 // abilities
@@ -208,3 +1440,48 @@ immunities: [
 	bnb-on-fields
 	bnb-on-dune
 ]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
