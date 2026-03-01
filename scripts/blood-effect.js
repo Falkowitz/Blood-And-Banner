@@ -1,90 +1,66 @@
-// scripts/blood-effect.js
+// blood splatter + corpse spawning on unit damage
 
+global.organicUnits = new Set();
+global.bloodEffectDelay = 1.0; // seconds between blood spawns per unit
 
-// Configuration
-global.organicUnits = new Set(); // Set of unit type names that bleed
-global.bloodEffectDelay = 1.0; // Minimum seconds between blood spawns per unit (prevents clutter)
+global.infantryUnits = new Set();
+global.cavalryUnits = new Set();
+global.corpseSpawnDelay = 1.0; // seconds between corpse spawns per unit
+global.corpseSpawnAmount = 2;
 
-// Corpse spawning configuration
-global.infantryUnits = new Set(); // Units that spawn dead-man corpses
-global.cavalryUnits = new Set(); // Units that spawn dead-man-horse corpses
-global.corpseSpawnDelay = 1.0; // Minimum seconds between corpse spawns per unit
-global.corpseSpawnAmount = 2; // Number of corpses to spawn per event
-
-// Registry to track last blood spawn time per unit ID
 var lastBloodTime = {};
-// Registry to track last corpse spawn time per unit ID
 var lastCorpseTime = {};
 
-// Register a unit type as organic so it can bleed
 global.registerOrganicUnit = function (unitTypeName) {
     global.organicUnits.add(unitTypeName);
 };
 
-// Register infantry to spawn dead-man corpses
 global.registerInfantryUnit = function (unitTypeName) {
     global.infantryUnits.add(unitTypeName);
     global.registerOrganicUnit(unitTypeName);
 };
 
-// Register cavalry to spawn dead-man-horse corpses
 global.registerCavalryUnit = function (unitTypeName) {
     global.cavalryUnits.add(unitTypeName);
     global.registerOrganicUnit(unitTypeName);
 };
 
-// Create the blood splatter effect
-// Lifetime: 60 seconds (3600 ticks at 60fps)
+// 60 second lifetime blood splat
 const bloodEffect = new Effect(3600, e => {
-    // Set drawing layer to below units, above floor
     Draw.z(Layer.debris);
-
-    // Set color and fade out over time
     Draw.color(Color.valueOf("880808"));
     Draw.alpha(1.0 - e.fin(Interp.fade));
 
-    // Draw the blood sprite with a consistent random size (half of a 1x1 unit)
     let reg = Core.atlas.find("bnb-blood");
     let size = 6.0 * Mathf.randomSeed(e.id, 0.5, 1.5);
     Draw.rect(reg, e.x, e.y, size, size, e.rotation);
-
-    // Reset drawing state
     Draw.reset();
 });
 
-
-// Event listener for unit damage
 Events.on(UnitDamageEvent, e => {
     if (!e.unit) return;
-
-    // Check if this unit type is registered as organic
     if (!global.organicUnits.has(e.unit.type.name)) return;
 
-
-
-    // Throttle blood spawns using configurable delay
-    let now = Time.time; // Game time in ticks
+    // throttle blood spawns
+    let now = Time.time;
     let lastTime = lastBloodTime[e.unit.id] || 0;
-    let delayTicks = global.bloodEffectDelay * 60; // Convert seconds to ticks
+    let delayTicks = global.bloodEffectDelay * 60;
 
     if (now - lastTime < delayTicks) {
-        return; // Too soon since last blood effect
+        return;
     }
 
-    // Update last blood spawn time
     lastBloodTime[e.unit.id] = now;
 
-    // Add random offset (±4 world units = ±0.5 tiles) for natural scatter
+    // random scatter offset
     let offsetX = Mathf.range(4);
     let offsetY = Mathf.range(4);
     let bloodX = e.unit.x + offsetX;
     let bloodY = e.unit.y + offsetY;
 
-    // Spawn blood effect with random rotation (0-360 degrees)
-    let rotation = Mathf.random(360);
+    bloodEffect.at(bloodX, bloodY, Mathf.random(360));
 
-    bloodEffect.at(bloodX, bloodY, rotation);
-
+    // corpse spawning
     let spawnCorpses = false;
     let corpseUnitName = null;
 
@@ -108,12 +84,10 @@ Events.on(UnitDamageEvent, e => {
                 for (let i = 0; i < global.corpseSpawnAmount; i++) {
                     let cOffsetX = Mathf.range(5);
                     let cOffsetY = Mathf.range(5);
-                    let cX = e.unit.x + cOffsetX;
-                    let cY = e.unit.y + cOffsetY;
 
                     let corpse = corpseType.create(e.unit.team);
                     if (corpse) {
-                        corpse.set(cX, cY);
+                        corpse.set(e.unit.x + cOffsetX, e.unit.y + cOffsetY);
                         corpse.rotation = Mathf.random(360);
                         corpse.add();
                     }
@@ -123,7 +97,7 @@ Events.on(UnitDamageEvent, e => {
     }
 });
 
-// Cleanup tracking data when unit is destroyed
+// cleanup tracking on unit death
 Events.on(UnitDestroyEvent, e => {
     if (e.unit) {
         if (lastBloodTime[e.unit.id]) delete lastBloodTime[e.unit.id];
@@ -131,7 +105,7 @@ Events.on(UnitDestroyEvent, e => {
     }
 });
 
-// Unit registration — auto-populate from centralized UNIT_CATEGORIES (team-constants.js)
+// auto-register units from UNIT_CATEGORIES (siege units don't bleed)
 global.bloodEffectDelay = 1.0;
 
 for (var unitName in global.UNIT_CATEGORIES) {
@@ -141,7 +115,4 @@ for (var unitName in global.UNIT_CATEGORIES) {
     } else if (cat === "cavalry") {
         global.registerCavalryUnit(unitName);
     }
-    // siege units don't bleed (they're machines), so no registration needed
 }
-
-print("[BnB] Blood Effect system loaded.");

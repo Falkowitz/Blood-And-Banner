@@ -1,5 +1,4 @@
-// scripts/menu-bg.js
-
+// main menu background slideshow with crossfade
 Events.on(ClientLoadEvent, e => {
     try {
         const mod = Vars.mods.getMod("bnb");
@@ -8,7 +7,7 @@ Events.on(ClientLoadEvent, e => {
         let backgrounds = [];
         let cache = {};
 
-        // Discover backgrounds directly in sprites folder
+        // discover backgrounds: main-menu.png, main-menu1.png, main-menu2.png, ...
         const legacy = spritesRoot.child("main-menu.png");
         if (legacy.exists()) backgrounds.push(legacy);
 
@@ -22,8 +21,6 @@ Events.on(ClientLoadEvent, e => {
                 break;
             }
         }
-
-        print("[BnB] Found " + backgrounds.length + " menu backgrounds.");
 
         if (backgrounds.length > 0) {
             let currentImage = null;
@@ -42,7 +39,6 @@ Events.on(ClientLoadEvent, e => {
                     cache[path] = drawable;
                     return drawable;
                 } catch (err) {
-                    print("[BnB] Failed to load background: " + file.name() + " -> " + err);
                     return null;
                 }
             };
@@ -58,7 +54,7 @@ Events.on(ClientLoadEvent, e => {
                     const Act = (typeof Actions !== 'undefined') ? Actions : null;
 
                     if (!animate || !currentImage || currentImage.parent != wrapper) {
-                        // Clear existing
+                        // clear old backgrounds
                         let children = wrapper.getChildren();
                         for (let i = children.size - 1; i >= 0; i--) {
                             let child = children.get(i);
@@ -73,10 +69,10 @@ Events.on(ClientLoadEvent, e => {
                         currentImage.setScaling(Scaling.fill);
                         currentImage.touchable = Touchable.disabled;
 
-                        // Above vanilla renderer (0), below UI tables
+                        // above vanilla renderer, below UI
                         wrapper.addChildAt(Math.min(wrapper.getChildren().size, 1), currentImage);
                     } else if (Act) {
-                        // Crossfade animation
+                        // crossfade to new image
                         let nextImage = new Image(drawable);
                         nextImage.name = "bnb-bg-next";
                         nextImage.setFillParent(true);
@@ -98,9 +94,7 @@ Events.on(ClientLoadEvent, e => {
                             }))
                         ));
                     }
-                } catch (err) {
-                    print("[BnB] BG Swap Error: " + err);
-                }
+                } catch (err) { }
             };
 
             let inMenu = false;
@@ -113,6 +107,7 @@ Events.on(ClientLoadEvent, e => {
                 let randomBg = backgrounds[Math.floor(Math.random() * backgrounds.length)];
                 displayBackground(randomBg, false);
 
+                // rotate every 15 seconds
                 if (backgrounds.length > 1) {
                     slideshowTask = Timer.schedule(() => {
                         if (!inMenu || !Vars.state.isMenu()) return;
@@ -142,10 +137,6 @@ Events.on(ClientLoadEvent, e => {
                 handleEntry();
             }
 
-        } else {
-            print("[BnB] Warning: No menu backgrounds found in sprites folder.");
-        }
-    } catch (e) {
-        print("[BnB] MENU BG ERROR: " + e);
-    }
+        } else { }
+    } catch (e) { }
 });

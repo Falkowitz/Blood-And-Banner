@@ -25,7 +25,7 @@ hasAtmosphere: true
 clearSectorOnLose: true
 allowWaves: true
 prebuildBase: false
-defaultCore: bnb-block-citadel
+defaultCore: bnb-block-fort
 //allowLaunchToNumbered: false
 //launchCandidates: []
 rotateTime: 600
@@ -33,3 +33,4 @@ lightSrcFrom: 0.0
 lightSrcTo: 0.8
 lightDstFrom: 0.0
 lightDstTo: 1.0 
+generator: "SerpuloPlanetGenerator"

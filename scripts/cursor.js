@@ -1,5 +1,4 @@
-// scripts/cursor.js
-
+// replaces game cursors with custom sprites
 Events.on(ClientLoadEvent, e => {
     try {
         const mod = Vars.mods.getMod("bnb");
@@ -12,7 +11,7 @@ Events.on(ClientLoadEvent, e => {
             return Core.graphics.newCursor(pm, pm.width / 2, pm.height / 2);
         };
 
-        // Set game specific cursors
+        // game-specific cursors
         let drill = loadCursor("bnb-drill.png");
         if (drill) Vars.ui.drillCursor = drill;
 
@@ -25,7 +24,7 @@ Events.on(ClientLoadEvent, e => {
         let repair = loadCursor("bnb-repair.png");
         if (repair) Vars.ui.repairCursor = repair;
 
-        // Override system cursors (arrow, hand, ibeam)
+        // system cursors
         let main = loadCursor("bnb-cursor.png");
         let hand = loadCursor("bnb-hand.png");
         let ibeam = loadCursor("bnb-ibeam.png");
@@ -34,9 +33,5 @@ Events.on(ClientLoadEvent, e => {
         if (hand) Graphics.Cursor.SystemCursor.hand.set(hand);
         if (ibeam) Graphics.Cursor.SystemCursor.ibeam.set(ibeam);
 
-        print("[BnB] Cursors initialized via SystemCursor.set()");
-
-    } catch (err) {
-        print("[BnB] Cursor system error: " + err);
-    }
+    } catch (err) { }
 });

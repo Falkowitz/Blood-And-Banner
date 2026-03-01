@@ -164,6 +164,8 @@ weapons: [
 		layerOffset: 0.2
 		bullet: {
 			type: BasicBulletType
+			speed: 1
+			lifetime: 8
 			damage: 0
 			splashDamage: 0
 			width: 0
@@ -182,8 +184,8 @@ weapons: [
 			lightRadius: 0
 			lightOpacity: 0
 			lightColor: ffffff
-			range: 16
-			maxRange: 16
+			range: 8
+			maxRange: 8
 			}
 		}
 
@@ -205,6 +207,8 @@ weapons: [
 		layerOffset: 0.2
 		bullet: {
 			type: BasicBulletType
+			speed: 1
+			lifetime: 8
 			damage: 0
 			splashDamage: 0
 			width: 0
@@ -223,8 +227,8 @@ weapons: [
 			lightRadius: 0
 			lightOpacity: 0
 			lightColor: ffffff
-			range: 16
-			maxRange: 16
+			range: 8
+			maxRange: 8
 			}
 		}
 
@@ -246,6 +250,8 @@ weapons: [
 		layerOffset: 0.2
 		bullet: {
 			type: BasicBulletType
+			speed: 1
+			lifetime: 8
 			damage: 0
 			splashDamage: 0
 			width: 0
@@ -264,8 +270,8 @@ weapons: [
 			lightRadius: 0
 			lightOpacity: 0
 			lightColor: ffffff
-			range: 16
-			maxRange: 16
+			range: 8
+			maxRange: 8
 			}
 		}
 
@@ -287,6 +293,8 @@ weapons: [
 		layerOffset: 0.2
 		bullet: {
 			type: BasicBulletType
+			speed: 1
+			lifetime: 8
 			damage: 0
 			splashDamage: 0
 			width: 0
@@ -305,8 +313,8 @@ weapons: [
 			lightRadius: 0
 			lightOpacity: 0
 			lightColor: ffffff
-			range: 16
-			maxRange: 16
+			range: 8
+			maxRange: 8
 			}
 		}
 
@@ -328,6 +336,8 @@ weapons: [
 		layerOffset: 0.2
 		bullet: {
 			type: BasicBulletType
+			speed: 1
+			lifetime: 8
 			damage: 0
 			splashDamage: 0
 			width: 0
@@ -346,8 +356,8 @@ weapons: [
 			lightRadius: 0
 			lightOpacity: 0
 			lightColor: ffffff
-			range: 16
-			maxRange: 16
+			range: 8
+			maxRange: 8
 			}
 		}
 
@@ -369,6 +379,8 @@ weapons: [
 		layerOffset: 0.2
 		bullet: {
 			type: BasicBulletType
+			speed: 1
+			lifetime: 8
 			damage: 0
 			splashDamage: 0
 			width: 0
@@ -387,8 +399,8 @@ weapons: [
 			lightRadius: 0
 			lightOpacity: 0
 			lightColor: ffffff
-			range: 16
-			maxRange: 16
+			range: 8
+			maxRange: 8
 			}
 		}
 
@@ -410,6 +422,8 @@ weapons: [
 		layerOffset: 0.2
 		bullet: {
 			type: BasicBulletType
+			speed: 1
+			lifetime: 8
 			damage: 0
 			splashDamage: 0
 			width: 0
@@ -428,8 +442,8 @@ weapons: [
 			lightRadius: 0
 			lightOpacity: 0
 			lightColor: ffffff
-			range: 16
-			maxRange: 16
+			range: 8
+			maxRange: 8
 			}
 		}
 
@@ -451,6 +465,8 @@ weapons: [
 		layerOffset: 0.2
 		bullet: {
 			type: BasicBulletType
+			speed: 1
+			lifetime: 8
 			damage: 0
 			splashDamage: 0
 			width: 0
@@ -469,8 +485,8 @@ weapons: [
 			lightRadius: 0
 			lightOpacity: 0
 			lightColor: ffffff
-			range: 16
-			maxRange: 16
+			range: 8
+			maxRange: 8
 			}
 		}
 
@@ -492,6 +508,8 @@ weapons: [
 		layerOffset: 0.2
 		bullet: {
 			type: BasicBulletType
+			speed: 1
+			lifetime: 8
 			damage: 0
 			splashDamage: 0
 			width: 0
@@ -510,8 +528,8 @@ weapons: [
 			lightRadius: 0
 			lightOpacity: 0
 			lightColor: ffffff
-			range: 16
-			maxRange: 16
+			range: 8
+			maxRange: 8
 			}
 		}
 
@@ -533,6 +551,8 @@ weapons: [
 		layerOffset: 0.2
 		bullet: {
 			type: BasicBulletType
+			speed: 1
+			lifetime: 8
 			damage: 0
 			splashDamage: 0
 			width: 0
@@ -551,8 +571,8 @@ weapons: [
 			lightRadius: 0
 			lightOpacity: 0
 			lightColor: ffffff
-			range: 16
-			maxRange: 16
+			range: 8
+			maxRange: 8
 			}
 		}
 
@@ -574,6 +594,8 @@ weapons: [
 		layerOffset: 0.2
 		bullet: {
 			type: BasicBulletType
+			speed: 1
+			lifetime: 8
 			damage: 0
 			splashDamage: 0
 			width: 0
@@ -592,8 +614,8 @@ weapons: [
 			lightRadius: 0
 			lightOpacity: 0
 			lightColor: ffffff
-			range: 16
-			maxRange: 16
+			range: 8
+			maxRange: 8
 			}
 		}
 
@@ -615,6 +637,8 @@ weapons: [
 		layerOffset: 0.2
 		bullet: {
 			type: BasicBulletType
+			speed: 1
+			lifetime: 8
 			damage: 0
 			splashDamage: 0
 			width: 0
@@ -633,8 +657,8 @@ weapons: [
 			lightRadius: 0
 			lightOpacity: 0
 			lightColor: ffffff
-			range: 16
-			maxRange: 16
+			range: 8
+			maxRange: 8
 			}
 		}
 
@@ -656,6 +680,8 @@ weapons: [
 		layerOffset: 0.2
 		bullet: {
 			type: BasicBulletType
+			speed: 1
+			lifetime: 8
 			damage: 0
 			splashDamage: 0
 			width: 0
@@ -674,8 +700,8 @@ weapons: [
 			lightRadius: 0
 			lightOpacity: 0
 			lightColor: ffffff
-			range: 16
-			maxRange: 16
+			range: 8
+			maxRange: 8
 			}
 		}
 
@@ -697,6 +723,8 @@ weapons: [
 		layerOffset: 0.2
 		bullet: {
 			type: BasicBulletType
+			speed: 1
+			lifetime: 8
 			damage: 0
 			splashDamage: 0
 			width: 0
@@ -715,8 +743,8 @@ weapons: [
 			lightRadius: 0
 			lightOpacity: 0
 			lightColor: ffffff
-			range: 16
-			maxRange: 16
+			range: 8
+			maxRange: 8
 			}
 		}
 
@@ -738,6 +766,8 @@ weapons: [
 		layerOffset: 0.2
 		bullet: {
 			type: BasicBulletType
+			speed: 1
+			lifetime: 8
 			damage: 0
 			splashDamage: 0
 			width: 0
@@ -756,8 +786,8 @@ weapons: [
 			lightRadius: 0
 			lightOpacity: 0
 			lightColor: ffffff
-			range: 16
-			maxRange: 16
+			range: 8
+			maxRange: 8
 			}
 		}
 
@@ -779,6 +809,8 @@ weapons: [
 		layerOffset: 0.2
 		bullet: {
 			type: BasicBulletType
+			speed: 1
+			lifetime: 8
 			damage: 0
 			splashDamage: 0
 			width: 0
@@ -797,8 +829,8 @@ weapons: [
 			lightRadius: 0
 			lightOpacity: 0
 			lightColor: ffffff
-			range: 16
-			maxRange: 16
+			range: 8
+			maxRange: 8
 			}
 		}
 
@@ -820,6 +852,8 @@ weapons: [
 		layerOffset: 0.2
 		bullet: {
 			type: BasicBulletType
+			speed: 1
+			lifetime: 8
 			damage: 0
 			splashDamage: 0
 			width: 0
@@ -838,8 +872,8 @@ weapons: [
 			lightRadius: 0
 			lightOpacity: 0
 			lightColor: ffffff
-			range: 16
-			maxRange: 16
+			range: 8
+			maxRange: 8
 			}
 		}
 
@@ -861,6 +895,8 @@ weapons: [
 		layerOffset: 0.2
 		bullet: {
 			type: BasicBulletType
+			speed: 1
+			lifetime: 8
 			damage: 0
 			splashDamage: 0
 			width: 0
@@ -879,8 +915,8 @@ weapons: [
 			lightRadius: 0
 			lightOpacity: 0
 			lightColor: ffffff
-			range: 16
-			maxRange: 16
+			range: 8
+			maxRange: 8
 			}
 		}
 
@@ -902,6 +938,8 @@ weapons: [
 		layerOffset: 0.2
 		bullet: {
 			type: BasicBulletType
+			speed: 1
+			lifetime: 8
 			damage: 0
 			splashDamage: 0
 			width: 0
@@ -920,8 +958,8 @@ weapons: [
 			lightRadius: 0
 			lightOpacity: 0
 			lightColor: ffffff
-			range: 16
-			maxRange: 16
+			range: 8
+			maxRange: 8
 			}
 		}
 
@@ -943,6 +981,8 @@ weapons: [
 		layerOffset: 0.2
 		bullet: {
 			type: BasicBulletType
+			speed: 1
+			lifetime: 8
 			damage: 0
 			splashDamage: 0
 			width: 0
@@ -961,8 +1001,8 @@ weapons: [
 			lightRadius: 0
 			lightOpacity: 0
 			lightColor: ffffff
-			range: 16
-			maxRange: 16
+			range: 8
+			maxRange: 8
 			}
 		}
 
@@ -984,6 +1024,8 @@ weapons: [
 		layerOffset: 0.2
 		bullet: {
 			type: BasicBulletType
+			speed: 1
+			lifetime: 8
 			damage: 0
 			splashDamage: 0
 			width: 0
@@ -1002,8 +1044,8 @@ weapons: [
 			lightRadius: 0
 			lightOpacity: 0
 			lightColor: ffffff
-			range: 16
-			maxRange: 16
+			range: 8
+			maxRange: 8
 			}
 		}
 
@@ -1025,6 +1067,8 @@ weapons: [
 		layerOffset: 0.2
 		bullet: {
 			type: BasicBulletType
+			speed: 1
+			lifetime: 8
 			damage: 0
 			splashDamage: 0
 			width: 0
@@ -1043,8 +1087,8 @@ weapons: [
 			lightRadius: 0
 			lightOpacity: 0
 			lightColor: ffffff
-			range: 16
-			maxRange: 16
+			range: 8
+			maxRange: 8
 			}
 		}
 
@@ -1066,6 +1110,8 @@ weapons: [
 		layerOffset: 0.2
 		bullet: {
 			type: BasicBulletType
+			speed: 1
+			lifetime: 8
 			damage: 0
 			splashDamage: 0
 			width: 0
@@ -1084,8 +1130,8 @@ weapons: [
 			lightRadius: 0
 			lightOpacity: 0
 			lightColor: ffffff
-			range: 16
-			maxRange: 16
+			range: 8
+			maxRange: 8
 			}
 		}
 
@@ -1107,6 +1153,8 @@ weapons: [
 		layerOffset: 0.2
 		bullet: {
 			type: BasicBulletType
+			speed: 1
+			lifetime: 8
 			damage: 0
 			splashDamage: 0
 			width: 0
@@ -1125,8 +1173,8 @@ weapons: [
 			lightRadius: 0
 			lightOpacity: 0
 			lightColor: ffffff
-			range: 16
-			maxRange: 16
+			range: 8
+			maxRange: 8
 			}
 		}
 
@@ -1148,6 +1196,8 @@ weapons: [
 		layerOffset: 0.2
 		bullet: {
 			type: BasicBulletType
+			speed: 1
+			lifetime: 8
 			damage: 0
 			splashDamage: 0
 			width: 0
@@ -1166,8 +1216,8 @@ weapons: [
 			lightRadius: 0
 			lightOpacity: 0
 			lightColor: ffffff
-			range: 16
-			maxRange: 16
+			range: 8
+			maxRange: 8
 			}
 		}
 
@@ -1189,6 +1239,8 @@ weapons: [
 		layerOffset: 0.2
 		bullet: {
 			type: BasicBulletType
+			speed: 1
+			lifetime: 8
 			damage: 0
 			splashDamage: 0
 			width: 0
@@ -1207,8 +1259,8 @@ weapons: [
 			lightRadius: 0
 			lightOpacity: 0
 			lightColor: ffffff
-			range: 16
-			maxRange: 16
+			range: 8
+			maxRange: 8
 			}
 		}
 
@@ -1230,6 +1282,8 @@ weapons: [
 		layerOffset: 0.2
 		bullet: {
 			type: BasicBulletType
+			speed: 1
+			lifetime: 8
 			damage: 0
 			splashDamage: 0
 			width: 0
@@ -1248,8 +1302,8 @@ weapons: [
 			lightRadius: 0
 			lightOpacity: 0
 			lightColor: ffffff
-			range: 16
-			maxRange: 16
+			range: 8
+			maxRange: 8
 			}
 		}
 
@@ -1271,6 +1325,8 @@ weapons: [
 		layerOffset: 0.2
 		bullet: {
 			type: BasicBulletType
+			speed: 1
+			lifetime: 8
 			damage: 0
 			splashDamage: 0
 			width: 0
@@ -1289,8 +1345,8 @@ weapons: [
 			lightRadius: 0
 			lightOpacity: 0
 			lightColor: ffffff
-			range: 16
-			maxRange: 16
+			range: 8
+			maxRange: 8
 			}
 		}
 
@@ -1312,6 +1368,8 @@ weapons: [
 		layerOffset: 0.2
 		bullet: {
 			type: BasicBulletType
+			speed: 1
+			lifetime: 8
 			damage: 0
 			splashDamage: 0
 			width: 0
@@ -1330,8 +1388,8 @@ weapons: [
 			lightRadius: 0
 			lightOpacity: 0
 			lightColor: ffffff
-			range: 16
-			maxRange: 16
+			range: 8
+			maxRange: 8
 			}
 		}
 
@@ -1353,6 +1411,8 @@ weapons: [
 		layerOffset: 0.2
 		bullet: {
 			type: BasicBulletType
+			speed: 1
+			lifetime: 8
 			damage: 0
 			splashDamage: 0
 			width: 0
@@ -1371,8 +1431,8 @@ weapons: [
 			lightRadius: 0
 			lightOpacity: 0
 			lightColor: ffffff
-			range: 16
-			maxRange: 16
+			range: 8
+			maxRange: 8
 			}
 		}
 

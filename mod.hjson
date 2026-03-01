@@ -43,6 +43,8 @@ contentOrder: [
   // --- BLOCKS ---
   
   // Functional Buildings
+  "block-fort",
+  "block-fortress",
   "block-citadel",
   "block-barrack",
   "block-workshop",
