@@ -1,15 +1,15 @@
  type: CoreBlock
-health: 10000
+health: 15000
 itemCapacity: 100
-size: 2
-unitCapModifier: 8
+size: 3
+unitCapModifier: 10
 unitType: unit-king
 category: effect
-fogRadius: 8
+fogRadius: 12
 hasItems: true
 customShadow: true
 solid: true
-alwaysUnlocked: true
+alwaysUnlocked: false
 allowResupply: true
 placeSound: stone-building-destroyed
 breakSound: stone-building-destroyed
@@ -17,4 +17,4 @@ destroySound: victory
 thrusterLength: 0
 squareSprite: false
 buildVisibility: shown
-fullOverride: bnb-block-fort-icon
+fullOverride: bnb-block-fortress-icon
