@@ -1,6 +1,6 @@
  type: CoreBlock
 health: 10000
-itemCapacity: 100
+itemCapacity: 50
 size: 2
 unitCapModifier: 8
 unitType: unit-king

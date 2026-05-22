@@ -1,11 +1,11 @@
  type: CoreBlock
-health: 15000
-itemCapacity: 100
+health: 25000
+itemCapacity: 200
 size: 2
-unitCapModifier: 10
+unitCapModifier: 12
 unitType: unit-king
 category: effect
-fogRadius: 12
+fogRadius: 16
 hasItems: true
 customShadow: true
 solid: true
@@ -17,4 +17,4 @@ destroySound: victory
 thrusterLength: 0
 squareSprite: false
 buildVisibility: shown
-fullOverride: bnb-block-fortress-icon
+fullOverride: bnb-block-citadel-icon

@@ -117,7 +117,9 @@ Events.on(ContentInitEvent, () => {
             TechTree.node(b("block-military-academy"), cost1, () => { });
         });
 
-        TechTree.node(b("block-fortress"), cost1, () => { });
+        TechTree.node(b("block-fortress"), cost1, () => {
+            TechTree.node(b("block-citadel"), cost1, () => { });
+        });
         TechTree.node(b("block-supply-hub"), cost1, () => { });
         TechTree.node(b("block-intendant-yard"), cost1, () => { });
 
